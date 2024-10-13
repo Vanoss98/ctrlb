@@ -1,0 +1,12 @@
+venv
+db.sqlite3
+.idea/
+.DS_Store
+admin
+__pycache__
+staticfiles/*
+media
+
+/.cloud/
+.cloud/
+/.cloud
