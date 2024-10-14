@@ -8034,6 +8034,7 @@ div.wpcf7-validation-errors {
   color: var(--color-white);
   -webkit-transition: opacity 250ms ease;
   transition: opacity 250ms ease;
+  font-family: 'PeydaMedium';
 }
 .main-header.transparent-bg #primary-menu:hover > .menu-item > a,
 .page-template-slider-carousel-page
@@ -15390,4 +15391,21 @@ html:not(.js) .filter-nav__nav {
 @font-face {
     font-family: "Afarin-Bold";
     src: url(../fonts/Afarinw-Bold.woff2);
+  }
+
+  .logo-slider-dark , .logo-slider-light{
+    width:100px;
+    position:absolute;
+    left:30px;
+    top:30px;
+    right: auto;
+  }
+  @media screen and (max-width:780px){
+    .logo-slider-dark , .logo-slider-light{
+      width:70px;
+      position:absolute;
+      right:20px;
+      left: auto;
+      top:30px
+    }
   }
