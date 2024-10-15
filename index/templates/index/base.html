@@ -975,7 +975,7 @@
             </div>
         </div>
         <button class="btn btn--subtle main-header__nav-trigger js-main-header__nav-trigger" aria-label="Toggle menu"
-                aria-expanded="false" aria-controls="main-header-nav">
+                aria-expanded="false" aria-controls="main-header-nav" {% if request.path != '/' %}style="color:#000;"{% endif %}>
             <i class="main-header__nav-trigger-icon" aria-hidden="true"></i>
             <span>Menu</span>
         </button>
@@ -987,7 +987,18 @@
                 </li>
                 <li id="menu-item-346"
                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-346">
-                    <a href="/portfolio/"  {% if request.path != '/' %}style="color:#c72127;"{% endif %}>Portfolio</a>
+                    <a href=""  {% if request.path != '/' %}style="color:#c72127;"{% endif %}>Portfolio</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-242">
+                            <a href="#">portfolio1</a>
+                        </li>
+                        <li id="menu-item-243" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-portfolio menu-item-243">
+                            <a href="#">portfolio2</a>
+                        </li>
+                        <li id="menu-item-270" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270">
+                            <a href="#">portfolio3</a>
+                        </li>
+                    </ul>
                 </li>
                 <li id="menu-item-350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-350"><a
                         href="/about/"  {% if request.path != '/' %}style="color:#c72127;"{% endif %}>About</a></li>
