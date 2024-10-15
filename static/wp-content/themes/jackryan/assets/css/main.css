@@ -5337,7 +5337,7 @@ a.text-dark:hover {
   visibility: hidden !important;
 }
 .container {
-  opacity: 0;
+  opacity: 1;
 }
 .ms-p2 {
   margin-left: -24px;
@@ -6276,7 +6276,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Afarin-Bold";
+  font-family: "PeydaBold";
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0.7pt;
@@ -6315,7 +6315,7 @@ small {
 .link,
 a {
   position: relative;
-  color: var(--color-primary);
+  color: #c72127;
   text-decoration: none;
 }
 .text-component a:not(.card__title)::after + img.alignnone {
@@ -6850,10 +6850,11 @@ cite::before {
 input[type="submit"] {
   cursor: pointer;
   border: none;
-  background-color: var(--color-primary);
+  background-color: #c72127;
   color: var(--color-bg);
   padding: calc(var(--space-xs) + 2pt) var(--space-md);
   border-radius: 0.25em;
+  font-family: "PeydaRegular";
 }
 .post-password-form input[type="submit"] {
   padding: calc(var(--space-xxxs) - 1pt) var(--space-sm);
@@ -7041,6 +7042,7 @@ input[type="submit"] {
 .wpcf7 > form input[type="submit"][disabled]:focus,
 .wpcf7 > form input[type="submit"][disabled]:hover {
   background-color: var(--color-contrast-low);
+  font-family: "PeydaRegular";
 }
 @media only screen and (max-width: 512px) {
   .js .back-to-top--is-visible {
@@ -7416,7 +7418,7 @@ input[type="submit"] {
   transition: border 0.2s, -webkit-transform 0.2s;
   transition: transform 0.2s, border 0.2s;
   transition: transform 0.2s, border 0.2s, -webkit-transform 0.2s;
-  margin-right: 8pt;
+  margin-left: 8pt;
 }
 .checkbox:not(:checked):not(:focus) + .wpcf7-list-item-label:hover::before,
 .radio:not(:checked):not(:focus) + .wpcf7-list-item-label:hover::before {
@@ -7437,10 +7439,10 @@ input[type="submit"] {
 }
 .checkbox:checked + .wpcf7-list-item-label::before,
 .radio:checked + .wpcf7-list-item-label::before {
-  background-color: var(--color-primary);
+  background-color: #c72127;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-color: var(--color-primary);
+  border-color: #c72127;
   -webkit-transition: -webkit-transform 0.2s;
   transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
@@ -7528,11 +7530,11 @@ input[type="submit"] {
   transition: border-color 150ms ease;
 }
 .form-control:hover {
-  border-color: var(--color-primary);
+  border-color: #c72127;
 }
 .form-control:focus {
   outline: 0;
-  border-color: var(--color-primary);
+  border-color: #c72127;
   --color-shadow: hsla(
     var(--color-primary-h),
     var(--color-primary-s),
@@ -10515,8 +10517,8 @@ figure.wp-block-image + h5 {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-left: auto;
-  margin-right: 0;
+  margin-right: auto;
+  margin-left: 0;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
@@ -10545,8 +10547,8 @@ figure.wp-block-image + h5 {
     }
     .contact__item p {
       margin-bottom: 0;
-      margin-left: auto;
-      margin-right: 0;
+      margin-right: auto;
+      margin-left: 0;
       text-align: right;
     }
   }
@@ -10701,11 +10703,11 @@ figure.wp-block-image + h5 {
 .work-card__link .icon {
   height: 0.8em;
   width: 0.8em;
-  margin-left: 6pt;
+  margin-right: 6pt;
   stroke: currentColor;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+  -webkit-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  transform: rotate(-135deg);
 }
 .card--is-link .work-card__title h3 {
   -webkit-transition: opacity 250ms ease;
@@ -10718,9 +10720,9 @@ figure.wp-block-image + h5 {
   transform: translateY(-32pt);
 }
 .card--is-link:hover .work-card__content.text-overlay {
-  -webkit-transform: translateY(-32pt) translateX(16pt);
-  -ms-transform: translateY(-32pt) translateX(16pt);
-  transform: translateY(-32pt) translateX(16pt);
+  -webkit-transform: translateY(-32pt) translateX(-16pt);
+  -ms-transform: translateY(-32pt) translateX(-16pt);
+  transform: translateY(-32pt) translateX(-16pt);
 }
 .card--is-link:hover .work-card__badge {
   opacity: 0;
@@ -11021,7 +11023,7 @@ figure:hover .glow {
 .hero.hero--overlay-layer span {
   margin-bottom: var(--space-sm);
   text-transform: capitalize;
-  color: var(--color-primary);
+  color: #c72127;
   font-size: var(--text-sm);
   display: block;
   line-height: 24px;
@@ -11031,7 +11033,7 @@ figure:hover .glow {
   margin-top: var(--space-xxs);
 }
 .hero.hero--overlay-layer p {
-  max-width: 28rem;
+  max-width: 33rem;
   line-height: 1.5;
   font-size: var(--text-sm);
 }
@@ -15408,4 +15410,9 @@ html:not(.js) .filter-nav__nav {
       left: auto;
       top:30px
     }
+  }
+
+  .wpcf7 input[type="url"], .wpcf7 input[type="email"], .wpcf7 input[type="tel"], .form-control{
+    direction: rtl;
+    font-family: "PeydaRegular";
   }
