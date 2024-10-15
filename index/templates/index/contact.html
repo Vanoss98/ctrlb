@@ -1,5 +1,212 @@
-{% extends 'index/base.html' %}
-{% block content %}
+{% extends 'index/base.html' %} {% block content %}
 
+<section class="hero hero--overlay-layer background-image">
+  <div
+    class="hero-image jarallax"
+    data-speed="1"
+    style="
+      background-image: url('../../../static/wp-content/uploads/2020/03/dark_map_jack_ryan_theme.png');
+    "
+  ></div>
+  <div class="container">
+    <div class="hero__content text-right " dir="rtl" style="margin-top: vh">
+      <span>ارتباط با ما</span>
+      <h1>با ما در ارتباط باشید.</h1>
+
+      <p>
+        کنترل بی یک مجموعه و خانواده فوق العاده ای است که برای شما می تواند بهترین ها را به ارمغان بیاورد
+      </p>
+    </div>
+  </div>
+</section>
+<section class="container ms-content" dir="rtl">
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-6 contact__list pr-lg-5 pr-md-3">
+        <div class="contact__item">
+          <h4>آدرس</h4>
+          <p class="text-sm">
+              ایران ، تهران ، خیابان وزرا <br> کوچه هفتم ، ساختمان ماموت
+          </p>
+        </div>
+        <div class="contact__item">
+          <h4>ایمیل</h4>
+          <p class="text-sm">
+            <a href="mailto:ctrlb@gmail.com">ctrlb@gmail.com</a>
+          </p>
+        </div>
+        <div class="contact__item">
+          <h4>شماره تماس</h4>
+          <p class="text-sm">
+            <a href="tel:+989123456789">+98912345678</a> <br /><small
+              class="color-contrast-medium"
+              >شنبه - جمعه, 8 صبح - 7 بعد از ظهر</small
+            >
+          </p>
+        </div>
+        <div class="contact__item">
+          <h4>شبکه های اجتماعی</h4>
+          <ul class="socials">
+            <li class="ms-btn">
+              <a
+                class="socicon-twitter"
+                title="Twitter"
+                target="_blank"
+                href="http://twitter.com/"
+              ></a>
+            </li>
+            <li class="ms-btn">
+              <a
+                class="socicon-dribbble"
+                title="Dribbble"
+                target="_blank"
+                href="http://dribbble.com/"
+              ></a>
+            </li>
+            <li class="ms-btn">
+              <a
+                class="socicon-facebook"
+                title="Facebook"
+                target="_blank"
+                href="https://www.facebook.com/"
+              ></a>
+            </li>
+            <li class="ms-btn">
+              <a
+                class="socicon-instagram"
+                title="Instagram"
+                target="_blank"
+                href="https://www.instagram.com/"
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    <div class="col-12 col-md-6 col-lg-6 pb-3">
+        <div class="wpcf7 no-js" id="wpcf7-f31-p125-o1" lang="en-US" dir="ltr">
+          <div class="screen-reader-response">
+            <p role="status" aria-live="polite" aria-atomic="true"></p>
+            <ul></ul>
+          </div>
+          <form
+            action="/jackryan/contacts/#wpcf7-f31-p125-o1"
+            method="post"
+            class="wpcf7-form init demo"
+            aria-label="Contact form"
+            novalidate="novalidate"
+            data-status="init"
+          >
+            <div style="display: none">
+              <input type="hidden" name="_wpcf7" value="31" />
+              <input type="hidden" name="_wpcf7_version" value="5.7.6" />
+              <input type="hidden" name="_wpcf7_locale" value="en_US" />
+              <input
+                type="hidden"
+                name="_wpcf7_unit_tag"
+                value="wpcf7-f31-p125-o1"
+              />
+              <input type="hidden" name="_wpcf7_container_post" value="125" />
+              <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+            </div>
+            <div class="row">
+              <div class="form-group col-6">
+                <p>
+                  <span class="wpcf7-form-control-wrap" data-name="name"
+                    ><input
+                      size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form-control"
+                      aria-required="true"
+                      aria-invalid="false"
+                      placeholder="نام"
+                      value=""
+                      type="text"
+                      name="name"
+                  /></span>
+                </p>
+              </div>
+              <div class="form-group col-6">
+                <p>
+                  <span class="wpcf7-form-control-wrap" data-name="email"
+                    ><input
+                      size="40"
+                      class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email form-control"
+                      aria-required="true"
+                      aria-invalid="false"
+                      placeholder="ایمیل"
+                      value=""
+                      type="email"
+                      name="email"
+                  /></span>
+                </p>
+              </div>
+              <div class="form-group col-12">
+                <p>
+                  <span class="wpcf7-form-control-wrap" data-name="subject"
+                    ><input
+                      size="40"
+                      class="wpcf7-form-control wpcf7-text form-control"
+                      aria-invalid="false"
+                      placeholder="موضوع"
+                      value=""
+                      type="text"
+                      name="subject"
+                  /></span>
+                </p>
+              </div>
+              <div class="form-group col-12">
+                <p>
+                  <span class="wpcf7-form-control-wrap" data-name="message">
+                    <textarea
+                      cols="40"
+                      rows="10"
+                      class="wpcf7-form-control wpcf7-textarea form-control"
+                      aria-invalid="false"
+                      placeholder="پیام شما"
+                      name="message"
+                    ></textarea>
+                  </span>
+                </p>
+              </div>
+              <div class="custom-checkbox col-12 text-right" dir="rtl">
+                <p>
+                  <span class="wpcf7-form-control-wrap" data-name="consent"
+                    ><span class="wpcf7-form-control wpcf7-acceptance"
+                      ><span class="wpcf7-list-item"
+                        ><label
+                          ><input
+                            type="checkbox"
+                            name="consent"
+                            value="1"
+                            class="checkbox checkbox--bg"
+                            aria-invalid="false"
+                          /><span class="wpcf7-list-item-label"
+                            >شرایط و قوانین را می پذیرم.</span
+                          ></label
+                        ></span
+                      ></span
+                    ></span
+                  >
+                </p>
+                <div
+                  class="conditions-checkbox__control"
+                  aria-hidden="true"
+                ></div>
+              </div>
+              <div class="col-12 text-right" dir="rtl">
+                <p>
+                  <input
+                    class="wpcf7-form-control has-spinner wpcf7-submit btn btn--primary"
+                    type="submit"
+                    value="ارسال"
+                  />
+                </p>
+              </div>
+            </div>
+            <div class="wpcf7-response-output" aria-hidden="true"></div>
+          </form>
+        </div>
+      </div>
+  </div>
+  <div class="margin-bottom-xl"></div>
+</section>
 
 {% endblock %}
