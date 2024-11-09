@@ -8114,9 +8114,9 @@ div.wpcf7-validation-errors {
   padding: 0.5em 0;
   padding: var(--space-xs) var(--space-sm);
 }
-#primary-menu li:last-child a {
-  padding-right: 0;
-}
+/*#primary-menu li:last-child a {*/
+/*  padding-right: 0;*/
+/*}*/
 .main-header__nav-label {
   color: var(--color-contrast-medium);
   margin-bottom: var(--space-xs);
@@ -13422,7 +13422,7 @@ figure:hover .glow {
 }
 .swiper-full-page .slide-title-container .slide-title h3 {
   color: var(--color-white);
-  font-size: calc(5vw + 1vw);
+  font-size: calc(4vw + 1vw);
   line-height: 1;
   font-weight: 900;
   vertical-align: baseline;
@@ -13480,9 +13480,19 @@ figure:hover .glow {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: var(--color-white);
+  background-color: white;
   z-index: 1000;
 }
+
+/*.swiper-full-page .slide-title-container .slide-link:nth-child(3)::before{*/
+/*  background-color: #c4161c !important;*/
+/*}*/
+
+/*.swiper-full-page .slide-title-container .slide-link::before {*/
+/*  background-color: white;*/
+/*}*/
+
+
 .swiper-full-page .slide-title-container .slide-link:after {
   content: "";
   transition: all 350ms cubic-bezier(0.77, 0, 0.175, 1);
@@ -13528,6 +13538,10 @@ figure:hover .glow {
   -ms-transform: translate(100%, -50%) scale(0.5, 0.5);
   right: 20px;
 }
+
+
+
+
 .swiper-full-page .slide-title-container::after {
   content: "";
   position: absolute;
