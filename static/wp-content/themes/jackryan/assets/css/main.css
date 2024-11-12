@@ -15411,6 +15411,11 @@ html:not(.js) .filter-nav__nav {
     src: url(../fonts/Afarinw-Bold.woff2);
   }
 
+  @font-face {
+    font-family: "beausite";
+    src: url(../fonts/beausite-classic-bold.ttf);
+  }
+
   .logo-slider-dark , .logo-slider-light{
     width:100px;
     position:absolute;
@@ -15432,3 +15437,16 @@ html:not(.js) .filter-nav__nav {
     direction: rtl;
     font-family: "PeydaRegular";
   }
+
+  .beausite{
+    font-family: "beausite";
+  }
+
+  .content-container .row:hover{
+    background-color: #f2f2f2;
+  }
+@media screen and (min-width:1023px){
+  .content-container{
+    width: 90%;
+  }
+}
