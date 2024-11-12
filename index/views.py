@@ -44,3 +44,9 @@ class VideoMakingArchive(TemplateView):
 
 class PortfolioDetailSample(TemplateView):
     template_name = 'index/portfolio-detail.html'
+
+
+class ZelmondDetail(TemplateView):
+    template_name = 'index/zelmond-detail.html'
+
+
