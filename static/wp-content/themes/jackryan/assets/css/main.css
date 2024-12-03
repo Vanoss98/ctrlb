@@ -14184,9 +14184,9 @@ figure:hover .glow {
     );
     background: linear-gradient(0deg, #202020 30%, rgba(0, 0, 0, 0) 100%);
   }
-  .swiper-full-page .slide-image {
-    height: 75vh;
-  }
+  /*.swiper-full-page .slide-image {*/
+  /*  height: 75vh;*/
+  /*}*/
   .swiper-full-page .slide-title-container .slider-nav {
     z-index: 99;
     top: auto;

@@ -1,5 +1,61 @@
 {% extends 'index/base.html' %}
 {% block content %}
+    <style>
+        @media (max-width: 48rem) {
+            .swiper-full-page .slide-title-container::after {
+                background: none !important;
+            }
+
+            .light-title{
+                font-size: 25px !important;
+                text-align: center;
+                margin-top: 220px;
+                color: #303030 !important;
+
+            }
+
+            .light-title2{
+                font-size: 25px !important;
+                text-align: center;
+                margin-top: 220px;
+                color: #303030 !important;
+                margin-right: 19vw !important;
+            }
+
+            .light-title3{
+                font-size: 25px !important;
+                text-align: center;
+                margin-top: 220px;
+                color: #303030 !important;
+                margin-right: 21vw !important;
+            }
+
+
+            .light-text{
+                font-size: 17px !important;
+                text-align: center !important;
+                margin-top: 15px !important;
+                color: #303030 !important;
+            }
+
+            .red-title{
+                font-size: 25px !important;
+                text-align: center !important;
+                margin-top: 220px;
+                left: 0;
+                margin-right: 28vw !important;
+            }
+
+            .dark-title{
+                font-size: 25px !important;
+                text-align: center !important;
+                margin-top: 220px;
+                left: 0;
+                margin-right: 21vw !important;
+            }
+
+        }
+    </style>
     <div class="swiper-container swiper-full-page">
         <div class="swiper-wrapper">
             <div class="swiper-slide" data-swiper-autoplay="10000" data-autoplay="true">
@@ -7,11 +63,19 @@
                     <div class="slide-image" style="background-color: white">
                         <video class="background-video" style="position: absolute;
                             top: 0;
-                            left: -3.5%;
+                            left: -40px;
                             height: 100%;
                             object-fit: contain;
                         " autoplay loop muted playsinline>
                             <source src="/static/images/homepage-gifs/11.mp4" type="video/mp4">
+                        </video>
+                        <video class="background-image" style="position: absolute;
+                            top: 0;
+                            left: 60px;
+                            height: 100%;
+                            object-fit: contain;
+                        " autoplay loop muted playsinline>
+                            <source src="/static/images/homepage-gifs/landing%20page%201080.mp4" type="video/mp4">
                         </video>
                         <div class="logo-slider-dark">
                             <a href="index.htm">
@@ -28,11 +92,13 @@
                                 </div>
 
                                 <div class="slide-title">
-                                    <h3 class="PeydaBlack" style="color: #c4161c !important; font-size: calc(3vw + 1vw)">Your Partner in <br>crime/prime
+                                    <h3 class="PeydaBlack light-title"
+                                        style="color: #c4161c; font-size: calc(3vw + 1vw)">Your Partner In
+                                        <br>Crime/Prime
                                     </h3>
-                                    <p class="PeydaRegular" rel="noreferrer" style="color:#c4161c;text-align:right">
-                                        هر برند داستانی دارد، کنترل بی در مسیر کشف این داستان همراه شما می شود <br> تا
-                                        این ماجراجویی را به روایتی ماندگار تبدیل کند.
+                                    <p class="PeydaRegula light-text" rel="noreferrer" style="color:#c4161c;text-align:right">
+                                        هر برند داستانی دارد، کنترل‌بی هم‌مسیر داستان شما می‌شود <br>تا در کنار شما
+                                        روایتی ماندگار خلق کند.
                                         <span></span>
                                     </p>
                                 </div>
@@ -62,18 +128,25 @@
 
             <div class="swiper-slide" data-swiper-autoplay="10000" data-autoplay="true">
                 <div class="swiper-slide__inner">
-                    <div class="slide-image" style="background-color: #cc252c">
+                    <div class="slide-image" style="background-color: #060403">
                         <video class="background-video" style="position: absolute;
                             top: 0;
                             left: 1.7%;
                             height: 100%;
                             object-fit: contain;
                         " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/2.mp4" type="video/mp4">
+                            <source src="/static/images/homepage-gifs/5.mp4" type="video/mp4">
+                        </video>
+                        <video class="background-image" style="position: absolute;
+                            top: 0;
+                            height: 100%;
+                            object-fit: contain;
+                        " autoplay loop muted playsinline>
+                            <source src="/static/images/homepage-gifs/branding%201080.mp4" type="video/mp4">
                         </video>
                         <div class="logo-slider-dark">
                             <a href="index.htm">
-                                <img src="/static/images/logo-white-white.png" alt="CtrlB">
+                                <img src="/static/images/logo-white.png" alt="CtrlB">
                             </a>
                         </div>
                     </div>
@@ -86,7 +159,8 @@
                                 </div>
                                 <div class="slide-title">
                                     {#                                <div class="slide-cat PeydaBlack">Trend</div>#}
-                                    <h3 class="PeydaBlack" style="font-size: calc(3vw + 1vw)">& Business  <br>Brand
+                                    <h3 class="PeydaBlack dark-title" style="font-size: calc(3vw + 1vw)"><span
+                                            class="beausite">&</span> Business <br>Brand
                                         Identity</h3>
                                     {#                                <p class="PeydaRegular" rel="noreferrer" style="color:#fff;text-align:right">هر برند داستانی دارد، کنترل بی در مسیر کشف این داستان همراه شما می شود <br> تا این ماجراجویی را به روایتی ماندگار تبدیل کند.#}
                                     {#                                    <span></span>#}
@@ -132,6 +206,13 @@
                         " autoplay loop muted playsinline>
                             <source src="/static/images/homepage-gifs/3.mp4" type="video/mp4">
                         </video>
+                        <video class="background-image" style="position: absolute;
+                            top: 0;
+                            height: 100%;
+                            object-fit: contain;
+                        " autoplay loop muted playsinline>
+                            <source src="/static/images/homepage-gifs/graphic%201080.mp4" type="video/mp4">
+                        </video>
                         <div class="logo-slider-dark">
                             <a href="index.htm">
                                 <img src="/static/images/logo.png" alt="CtrlB">
@@ -147,10 +228,11 @@
                                 </div>
                                 <div class="slide-title">
                                     {#                                <div class="slide-cat">Graphic Design</div>#}
-                                    <h3 class="PeydaBlack" style="color: #c4161c !important;font-size: calc(3vw + 1vw)">& Visual Identity  <br> Graphic Design
+                                    <h3 class="PeydaBlack light-title2" style="color: #c4161c !important;font-size: calc(3vw + 1vw)">
+                                        <span class="beausite">&</span> Visual Identity <br> Graphic Design
                                     </h3>
                                     <a href="{% url 'logo-design-archive' %}" target=""
-                                       style="color: #c4161c !important; margin-top: 30px"
+                                       style="color: #c4161c; margin-top: 30px"
                                        class="slide-link PeydaRegular" rel="noreferrer">
                                         See More <span></span>
                                     </a>
@@ -191,6 +273,13 @@
                         " autoplay loop muted playsinline>
                             <source src="/static/images/homepage-gifs/4.mp4" type="video/mp4">
                         </video>
+                        <video class="background-image" style="position: absolute;
+                            top: 0;
+                            height: 100%;
+                            object-fit: contain;
+                        " autoplay loop muted playsinline>
+                            <source src="/static/images/homepage-gifs/camera%201080.mp4" type="video/mp4">
+                        </video>
                         <div class="logo-slider-dark">
                             <a href="index.htm">
                                 <img src="/static/images/logo-white.png" alt="CtrlB">
@@ -206,7 +295,7 @@
                                 </div>
                                 <div class="slide-title">
                                     {#                                <div class="slide-cat">Trend</div>#}
-                                    <h3 class="PeydaBlack" style="color: white !important;font-size: calc(3vw + 1vw)">
+                                    <h3 class="PeydaBlack dark-title" style="color: white !important;font-size: calc(3vw + 1vw)">
                                         <span class="beausite">&</span> Photography <br> Videography</h3>
                                     <a href="{% url 'photgraphy-and-videography' %}" target="" style="margin-top: 30px"
                                        class="slide-link PeydaRegular" rel="noreferrer">
@@ -249,6 +338,13 @@
                         " autoplay loop muted playsinline>
                             <source src="/static/images/homepage-gifs/6.mp4" type="video/mp4">
                         </video>
+                        <video class="background-image" style="position: absolute;
+                            top: 0;
+                            height: 100%;
+                            object-fit: contain;
+                        " autoplay loop muted playsinline>
+                            <source src="/static/images/homepage-gifs/motion%201080.mp4" type="video/mp4">
+                        </video>
                         <div class="logo-slider-dark">
                             <a href="index.htm">
                                 <img src="/static/images/logo.png" alt="CtrlB">
@@ -264,7 +360,8 @@
                                 </div>
                                 <div class="slide-title">
                                     {#                                <div class="slide-cat">Trend</div>#}
-                                    <h3 class="PeydaBlack" style="color: #c4161c !important;font-size: calc(3vw + 1vw)">Motion Design</h3>
+                                    <h3 class="PeydaBlack light-title3" style="color: #c4161c ;font-size: calc(3vw + 1vw)">
+                                        Motion Design</h3>
                                     <a href="{% url 'motion-design' %}" style="margin-top: 30px; color: #c4161c"
                                        target="" class="slide-link PeydaRegular" rel="noreferrer">
                                         See More <span></span>
@@ -297,18 +394,18 @@
 
             <div class="swiper-slide" data-swiper-autoplay="10000" data-autoplay="true">
                 <div class="swiper-slide__inner">
-                    <div class="slide-image" style="background-color: #060403">
+                    <div class="slide-image" style="background-color: #c62329">
                         <video class="background-video" style="position: absolute;
                             top: 0;
                             left: 1.7%;
                             height: 100%;
                             object-fit: contain;
                         " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/5.mp4" type="video/mp4">
+                            <source src="/static/images/homepage-gifs/2.mp4" type="video/mp4">
                         </video>
                         <div class="logo-slider-dark">
                             <a href="index.htm">
-                                <img src="/static/images/logo-white.png" alt="CtrlB">
+                                <img src="/static/images/logo-white-white.png" alt="CtrlB">
                             </a>
                         </div>
                     </div>
@@ -321,9 +418,9 @@
                                 </div>
                                 <div class="slide-title">
                                     {#                                <div class="slide-cat">Trend</div>#}
-                                    <h3 class="PeydaBlack" style="font-size: calc(5vw + 1vw)">
+                                    <h3 class="PeydaBlack red-title" style="font-size: calc(5vw + 1vw)">
                                         Campaign
-                                        </h3>
+                                    </h3>
                                     <a href="{% url 'campaign' %}" style="margin-top: 30px" target=""
                                        class="slide-link PeydaRegular" rel="noreferrer">
                                         See More <span></span>
@@ -355,7 +452,6 @@
             </div>
 
 
-
         </div>
         <ul class="socials">
             <li class="ms-btn"><a class="socicon-dribbble" title="Dribbble" target="_blank"
@@ -372,5 +468,25 @@
     </div>
     <div class="swiper-counter" data-counter="/ 04">
     </div>
+    <script>
+        function handleResize() {
+            const slides = document.querySelectorAll('.slide-image'); // Select all slide-image elements
+            slides.forEach(slide => {
+                const video = slide.querySelector('.background-video');
+                const image = slide.querySelector('.background-image');
+                if (window.innerWidth < 720) {
+                    video.style.display = 'none';
+                    image.style.display = 'block';
+                } else {
+                    video.style.display = 'block';
+                    image.style.display = 'none';
+                }
+            });
+        }
 
+        // Initial check
+        handleResize();
+        // Add event listener for resizing the window
+        window.addEventListener('resize', handleResize);
+    </script>
 {% endblock %}
