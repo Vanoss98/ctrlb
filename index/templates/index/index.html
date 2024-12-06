@@ -53,6 +53,11 @@
                 left: 0;
                 margin-right: 21vw !important;
             }
+            @media screen and (max-width:768px){
+                .dark-title , .light-title , .light-title2 , .light-title3 , .red-title{
+                    margin-right: 0 !important;
+                }
+            }
 
         }
     </style>
@@ -489,4 +494,5 @@
         // Add event listener for resizing the window
         window.addEventListener('resize', handleResize);
     </script>
+
 {% endblock %}

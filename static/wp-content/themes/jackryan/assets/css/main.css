@@ -8079,7 +8079,7 @@ div.wpcf7-validation-errors {
 .page-template-slider-carousel-page .main-header .main-header__nav-trigger,
 .page-template-slider-full-page .main-header .main-header__nav-trigger,
 .page-template-slider-parallax-page .main-header .main-header__nav-trigger {
-  color: #fff;
+  color: #5a5a5a;
 }
 .main-header__nav {
   margin-top: var(--space-sm);
@@ -13669,6 +13669,12 @@ figure:hover .glow {
   stroke-linejoin: round;
   stroke-miterlimit: 10;
 }
+@media screen and (max-width:768px){
+  .swiper-full-page .slider-nav .swiper-button-next svg .st0,
+.swiper-full-page .slider-nav .swiper-button-prev svg .st0{
+  stroke: #5a5a5a !important;
+}
+}
 .swiper-full-page .slider-nav .swiper-button-next:after,
 .swiper-full-page .slider-nav .swiper-button-prev:after {
   content: none;
@@ -15448,5 +15454,17 @@ html:not(.js) .filter-nav__nav {
 @media screen and (min-width:1023px){
   .content-container{
     width: 90%;
+  }
+}
+
+@media screen and (max-width:768px){
+  .swiper-full-page .slide-title-container .slide-title--inner , .swiper-full-page .slide-title-container .slide-title--inner .slide-info__left , .swiper-full-page .slide-title-container .slide-title{
+    width: 100% !important;
+  }
+  .swiper-full-page .slide-title-container .slide-title{
+    text-align: center !important;
+  }
+  .swiper-full-page .slide-title-container .slide-link{
+    margin-right: -30px;
   }
 }
