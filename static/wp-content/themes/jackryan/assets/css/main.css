@@ -8235,7 +8235,7 @@ div.wpcf7-validation-errors {
 }
 .js .main-header__nav--is-visible {
   display: block;
-  z-index: 2;
+  z-index: 1000;
 }
 .js .main-header__nav--is-visible::after {
   content: "";
@@ -14197,7 +14197,7 @@ figure:hover .glow {
     z-index: 99;
     top: auto;
     bottom: 0;
-    height: 30vh;
+    height: 20vh;
     width: 100%;
     -webkit-box-align: center;
     -webkit-align-items: center;
@@ -15461,6 +15461,7 @@ html:not(.js) .filter-nav__nav {
   .swiper-full-page .slide-title-container .slide-title--inner , .swiper-full-page .slide-title-container .slide-title--inner .slide-info__left , .swiper-full-page .slide-title-container .slide-title{
     width: 100% !important;
   }
+  
   .swiper-full-page .slide-title-container .slide-title{
     text-align: center !important;
   }
