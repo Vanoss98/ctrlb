@@ -57,16 +57,16 @@ function ms_parallax() {
 }
 
 // Page Transition Animations
-function ms_page_transition() {  
+function ms_page_transition() {
     if ($.exists('.hero-image')) {
         gsap.to(".background-image",{backgroundColor:"rgba(0, 0, 0, 0.3)", ease: "power2.inOut", duration:.8 });
         gsap.to(".hero-image",{opacity:1, ease: "power2.inOut", duration:.8 });
     }
     gsap.to(".container, .swiper-container",{ opacity:1, ease: "power2.inOut", stagger:0.15, duration:.7 });
     window.onbeforeunload = function(){
-        gsap.to(".container, .swiper-container, .sub-menu, .drawer__content",{ opacity:0, ease: "power4.inOut", duration:.3 });
+        gsap.to(".container, .swiper-container, .sub-menu, .drawer__content",{ opacity:1, ease: "power4.inOut", duration:.3 });
         if ($.exists('.hero-image')) {
-            gsap.to(".hero-image",{opacity:0, ease: "power4.inOut", duration:.3 });
+            gsap.to(".hero-image",{opacity:1, ease: "power4.inOut", duration:.3 });
             gsap.to(".background-image",{backgroundColor:"rgba(0, 0, 0, 0.0)", ease: "power2.inOut", duration:.3 });
         }
     };
