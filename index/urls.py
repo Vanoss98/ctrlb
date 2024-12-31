@@ -14,4 +14,7 @@ urlpatterns = [
     path('portfolio/gamification', GameDesignArchive.as_view(), name='gamification'),
     path('portfolio/video-making', VideoMakingArchive.as_view(), name='video-making'),
     path('portfolio/detail', PortfolioDetailSample.as_view(), name='portfolio-detail'),
+    path('portfolio/viana/detail', PortfolioVianaDetail.as_view(), name='portfolio-viana'),
+    path('portfolio/zelmond/detail', PortfolioZelmondDetail.as_view(), name='portfolio-zelmond'),
+    path('portfolio/lucano/detail', PortfolioLucanoDetail.as_view(), name='portfolio-lucano'),
 ]

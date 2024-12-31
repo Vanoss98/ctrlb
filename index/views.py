@@ -44,3 +44,14 @@ class VideoMakingArchive(TemplateView):
 
 class PortfolioDetailSample(TemplateView):
     template_name = 'index/portfolio-detail.html'
+
+
+class PortfolioVianaDetail(TemplateView):
+    template_name = 'index/portifolio-viana.html'
+
+
+class PortfolioZelmondDetail(TemplateView):
+    template_name = 'index/portfolio-zelmond.html'
+
+class PortfolioLucanoDetail(TemplateView):
+    template_name = 'index/portfolio-lucano.html'

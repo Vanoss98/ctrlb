@@ -5,14 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="https://theme.madsparrow.me/jackryan/xmlrpc.php">
+
     <title>CtrlB Studio</title>
     <meta name='robots' content='max-image-preview:large'>
     <link rel='dns-prefetch' href='//fonts.googleapis.com'>
-    <link rel="alternate" type="application/rss+xml" title="Jack Ryan &raquo; Feed" href="feed/index.htm">
-    <link rel="alternate" type="application/rss+xml" title="Jack Ryan &raquo; Comments Feed"
-          href="comments/feed/index.htm">
+    <link rel="alternate" type="application/rss+xml" title="CtrlB Homepage" href="{% url 'index' %}">
 
     <style type="text/css">
         img.wp-smiley,
@@ -562,56 +559,34 @@
             line-height: 1.6;
         }
     </style>
-    <link rel='stylesheet' id='contact-form-7-css'
-          href='/static/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.7.6' type='text/css' media='all'>
-    <link rel='stylesheet' id='em-puchase-code-validator-css'
-          href='/static/wp-content/plugins/em-purchase-code-validator/public/assets/css/em-puchase-code-validator-public.css?ver=1.1'
-          type='text/css' media='all'>
     <link rel='stylesheet' id='swiper-css' href='/static/wp-content/themes/jackryan/assets/css/vendor/swiper.min.css?ver=1.0.2'
           type='text/css' media='all'>
     <link rel='stylesheet' id='magnific-popup-css'
           href='/static/wp-content/themes/jackryan/assets/css/vendor/magnific-popup.css?ver=1.0.2' type='text/css' media='all'>
     <link rel='stylesheet' id='socicon-css' href='/static/wp-content/themes/jackryan/assets/css/vendor/socicon.css?ver=1.0.2'
           type='text/css' media='all'>
-    <link rel='stylesheet' id='jackryan-main-style-css' href='/static/wp-content/themes/jackryan/assets/css/main.css?ver=1.0.2'
+    <link rel='stylesheet' id='jackryan-main-style-css' href='/static/wp-content/themes/jackryan/assets/css/main.css?ver=2.5'
           type='text/css' media='all'>
     <script type='text/javascript' src='/static/wp-includes/js/jquery/jquery.min.js?ver=3.6.4' id='jquery-core-js'></script>
     <script type='text/javascript' src='/static/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.0'
             id='jquery-migrate-js'></script>
-    <script type='text/javascript'
-            src='/static/wp-content/plugins/em-purchase-code-validator/public/assets/js/vue.min.js?ver=1.1'
-            id='em-vue-lib-js'></script>
-    <script type='text/javascript'
-            src='/static/wp-content/plugins/em-purchase-code-validator/public/assets/js/moment.js?ver=1.1'
-            id='em-vue-moment-js'></script>
-    <script type='text/javascript'
-            src='/static/wp-content/plugins/em-purchase-code-validator/public/assets/js/moment-timezone.min.js?ver=1.1'
-            id='em-vue-moment-tz-js'></script>
-    <script type='text/javascript'
-            src='/static/wp-content/plugins/em-purchase-code-validator/public/assets/js/axios.min.js?ver=1.1'
-            id='em-axios-lib-js'></script>
-    <link rel="https://api.w.org/" href="/static/wp-json/index.htm">
     <link rel="alternate" type="application/json" href="/static/wp-json/wp/v2/pages/198">
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="xmlrpc.php?rsd">
     <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/static/wp-includes/wlwmanifest.xml">
-    <meta name="generator" content="WordPress 6.2.6">
-    <link rel="canonical" href="index.htm">
-    <link rel='shortlink' href='index.htm'>
     <link rel="alternate" type="application/json+oembed"
           href="/static/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftheme.madsparrow.me%2Fjackryan%2F">
     <link rel="alternate" type="text/xml+oembed"
           href="/static/wp-json/oembed/1.0/embed-1?url=https%3A%2F%2Ftheme.madsparrow.me%2Fjackryan%2F&#038;format=xml">
     <link rel="icon" href="/static/images/favicon.png" sizes="32x32">
     <link rel="icon" href="/static/images/favicon.png" sizes="192x192">
-    <link rel="apple-touch-icon" href="/static/wp-content/uploads/2020/04/thumb.png">
+    <link rel="apple-touch-icon" href="/static/images/favicon.png">
     <meta name="msapplication-TileImage"
-          content="https://theme.madsparrow.me/jackryan//static/wp-content/uploads/2020/04/thumb.png">
+          content="/static/images/favicon.png">
     <style type="text/css" id="wp-custom-css">
         :root {
             --background-color: #f5f5f5;
             --main-color: #202020;
             --main-color-varied: var(--main-color);
-            --animation-duration: 250ms;
         }
 
         #themeSwitch .mode-button {
@@ -677,20 +652,6 @@
             background-color: var(--main-color);
         }
 
-        .dark-mode-switcher {
-            transition: background var(--animation-duration) ease-in-out;
-        }
-
-        .main-body,
-        .shadow > div {
-            transition: var(--animation-duration) ease-in-out;
-            transition-property: background, transform;
-        }
-
-        .sunray > div {
-            transition: var(--animation-duration) ease-in-out;
-            transition-property: transform, opacity;
-        }
 
         .dark-mode-switcher input {
             top: 0;
@@ -789,135 +750,7 @@
 </head>
 <body class="home page-template page-template-slider-full-page page-template-slider-full-page-php page page-id-198 wp-embed-responsive"
       data-theme="light" data-transition="on">
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none"
-     style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-    <defs>
-        <filter id="wp-duotone-dark-grayscale">
-            <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
-                           values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-            <fecomponenttransfer color-interpolation-filters="sRGB">
-                <fefuncr type="table" tablevalues="0 0.49803921568627"></fefuncr>
-                <fefuncg type="table" tablevalues="0 0.49803921568627"></fefuncg>
-                <fefuncb type="table" tablevalues="0 0.49803921568627"></fefuncb>
-                <fefunca type="table" tablevalues="1 1"></fefunca>
-            </fecomponenttransfer>
-            <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-        </filter>
-    </defs>
-</svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none"
-     style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-    <defs>
-        <filter id="wp-duotone-grayscale">
-            <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
-                           values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-            <fecomponenttransfer color-interpolation-filters="sRGB">
-                <fefuncr type="table" tablevalues="0 1"></fefuncr>
-                <fefuncg type="table" tablevalues="0 1"></fefuncg>
-                <fefuncb type="table" tablevalues="0 1"></fefuncb>
-                <fefunca type="table" tablevalues="1 1"></fefunca>
-            </fecomponenttransfer>
-            <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-        </filter>
-    </defs>
-</svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none"
-     style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-    <defs>
-        <filter id="wp-duotone-purple-yellow">
-            <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
-                           values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-            <fecomponenttransfer color-interpolation-filters="sRGB">
-                <fefuncr type="table" tablevalues="0.54901960784314 0.98823529411765"></fefuncr>
-                <fefuncg type="table" tablevalues="0 1"></fefuncg>
-                <fefuncb type="table" tablevalues="0.71764705882353 0.25490196078431"></fefuncb>
-                <fefunca type="table" tablevalues="1 1"></fefunca>
-            </fecomponenttransfer>
-            <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-        </filter>
-    </defs>
-</svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none"
-     style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-    <defs>
-        <filter id="wp-duotone-blue-red">
-            <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
-                           values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-            <fecomponenttransfer color-interpolation-filters="sRGB">
-                <fefuncr type="table" tablevalues="0 1"></fefuncr>
-                <fefuncg type="table" tablevalues="0 0.27843137254902"></fefuncg>
-                <fefuncb type="table" tablevalues="0.5921568627451 0.27843137254902"></fefuncb>
-                <fefunca type="table" tablevalues="1 1"></fefunca>
-            </fecomponenttransfer>
-            <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-        </filter>
-    </defs>
-</svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none"
-     style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-    <defs>
-        <filter id="wp-duotone-midnight">
-            <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
-                           values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-            <fecomponenttransfer color-interpolation-filters="sRGB">
-                <fefuncr type="table" tablevalues="0 0"></fefuncr>
-                <fefuncg type="table" tablevalues="0 0.64705882352941"></fefuncg>
-                <fefuncb type="table" tablevalues="0 1"></fefuncb>
-                <fefunca type="table" tablevalues="1 1"></fefunca>
-            </fecomponenttransfer>
-            <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-        </filter>
-    </defs>
-</svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none"
-     style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-    <defs>
-        <filter id="wp-duotone-magenta-yellow">
-            <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
-                           values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-            <fecomponenttransfer color-interpolation-filters="sRGB">
-                <fefuncr type="table" tablevalues="0.78039215686275 1"></fefuncr>
-                <fefuncg type="table" tablevalues="0 0.94901960784314"></fefuncg>
-                <fefuncb type="table" tablevalues="0.35294117647059 0.47058823529412"></fefuncb>
-                <fefunca type="table" tablevalues="1 1"></fefunca>
-            </fecomponenttransfer>
-            <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-        </filter>
-    </defs>
-</svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none"
-     style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-    <defs>
-        <filter id="wp-duotone-purple-green">
-            <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
-                           values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-            <fecomponenttransfer color-interpolation-filters="sRGB">
-                <fefuncr type="table" tablevalues="0.65098039215686 0.40392156862745"></fefuncr>
-                <fefuncg type="table" tablevalues="0 1"></fefuncg>
-                <fefuncb type="table" tablevalues="0.44705882352941 0.4"></fefuncb>
-                <fefunca type="table" tablevalues="1 1"></fefunca>
-            </fecomponenttransfer>
-            <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-        </filter>
-    </defs>
-</svg>
-<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 0 0" width="0" height="0" focusable="false" role="none"
-     style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
-    <defs>
-        <filter id="wp-duotone-blue-orange">
-            <fecolormatrix color-interpolation-filters="sRGB" type="matrix"
-                           values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "></fecolormatrix>
-            <fecomponenttransfer color-interpolation-filters="sRGB">
-                <fefuncr type="table" tablevalues="0.098039215686275 1"></fefuncr>
-                <fefuncg type="table" tablevalues="0 0.66274509803922"></fefuncg>
-                <fefuncb type="table" tablevalues="0.84705882352941 0.41960784313725"></fefuncb>
-                <fefunca type="table" tablevalues="1 1"></fefunca>
-            </fecomponenttransfer>
-            <fecomposite in2="SourceGraphic" operator="in"></fecomposite>
-        </filter>
-    </defs>
-</svg>
-<header class="main-header js-main-header auto-hide-header  is-blur sticky">
+<header class="main-header js-main-header auto-hide-header is-blur sticky">
     <div class="main-header__layout">
         <div class="main-header__logo" {% if request.path == '/' %}style="display:none;"{% endif %}>
             <div class="logo-dark">
@@ -932,22 +765,22 @@
             </div>
         </div>
         <button class="btn btn--subtle main-header__nav-trigger js-main-header__nav-trigger" aria-label="Toggle menu"
-                aria-expanded="false" aria-controls="main-header-nav" {% if request.path != '/' %}style="color:#000;"{% endif %}>
+                aria-expanded="false" aria-controls="main-header-nav" {% if request.path != '/' and request.path != '/contact/' %}style="color:#000;"{% endif %}>
             <i class="main-header__nav-trigger-icon" aria-hidden="true"></i>
             <span>Menu</span>
         </button>
         <nav style="direction: rtl" class="main-header__nav js-main-header__nav" id="main-header-nav" aria-labelledby="primary-menu">
             <ul id="primary-menu" class="dropdown__wrapper dropdown__trigger">
                 <li id="menu-item-25"
-                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-25">
-                    <a href="/" {% if request.path != '/' %}style="color:#c72127;"{% endif %}>خانه</a>
+                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-25">
+                    <a href="/" {% if request.path != '/' and request.path != '/contact/' %}style="color:#c72127;"{% endif %}>خانه</a>
                 </li>
 
                 <li id="menu-item-350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-350"><a
-                        href="/about/"  {% if request.path != '/' %}style="color:#c72127;"{% endif %}>داستان‌ما</a></li>
+                        href="/about/"  {% if request.path != '/' and request.path != '/contact/' %}style="color:#c72127;"{% endif %}>داستان‌ما</a></li>
                 <li id="menu-item-346"
                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-346">
-                    <a href=""  {% if request.path != '/' %}style="color:#c72127;"{% endif %}>خدمات</a>
+                    <a href=""  {% if request.path != '/' and request.path != '/contact/' %}style="color:#c72127;"{% endif %}>خدمات</a>
                     <ul class="sub-menu" style="text-align: right">
                         <li id="menu-item-242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-242">
                             <a href="{% url 'logo-design-archive' %}">هویت بصری برند</a>
@@ -973,96 +806,12 @@
                     </ul>
                 </li>
                 <li id="menu-item-138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-138"><a
-                        href="/contact/"  {% if request.path != '/' %}style="color:#c72127;"{% endif %}>تماس</a></li>
+                        href="/contact/"  {% if request.path != '/' and request.path != '/contact/' %}style="color:#c72127;"{% endif %}>تماس</a></li>
             </ul>
-        </nav>
-        <nav class="main-header__nav ms-nav-drawer" id="main-header-nav" aria-labelledby="primary-menu">
-<span class="b_menu-wrapper" aria-controls="drawer3">
-    <span class="b_menu"></span>
-</span>
-            <div class="drawer drawer--modal js-drawer js-drawer--modal" id="drawer3">
-                <div class="drawer__content" role="alertdialog" aria-labelledby="drawerTitle3">
-                    <div class="drawer__body padding-x-md padding-y-sm js-drawer__body">
-                        <nav class="main-header__nav-drawer">
-                            <ul id="primary-menu" class="dropdown__wrapper dropdown__trigger">
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-25">
-                                    <a>Home</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-242">
-                                            <a href="slider-parallax/index.htm">Slider Parallax</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-198 current_page_item menu-item-243">
-                                            <a href="index.htm" aria-current="page">Slider Fade</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270">
-                                            <a href="slider-carousel/index.htm">Slider Carousel</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-346">
-                                    <a>Portfolio</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195">
-                                            <a href="portfolio/index.htm">Portfolio style 1</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-345">
-                                            <a href="portfolio-style-2/index.htm">Portfolio style 2</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-344">
-                                            <a href="portfolio-style-3/index.htm">Portfolio style 3</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-343">
-                                            <a href="portfolio-style-4/index.htm">Portfolio style 4</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-178">
-                                    <a>News</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-183">
-                                            <a href="blog-sidebar/index.htm">Blog With Sidebar</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-182">
-                                            <a href="blog-no-sidebar/index.htm">Blog No Sidebar</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-179">
-                                            <a href="blog-list-style/index.htm">Blog List Style</a></li>
-                                        <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-180">
-                                            <a href="blog-card-style/index.htm">Blog Card Style</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-891">
-                                    <a>Pages</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-892">
-                                            <a href="portfolios/servant-of-academy/index.htm">Single Portfolio Page</a>
-                                        </li>
-                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-894">
-                                            <a href="willow-of-soaring/index.htm">Single Post Page</a></li>
-                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-895">
-                                            <a href="https://theme.madsparrow.me/jackryan/404">Page 404</a></li>
-                                        <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-906">
-                                            <a href="index-1.htm?s=qwerty">Search Page</a></li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-350"><a
-                                        href="about/index.htm">About</a></li>
-                                <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-138"><a
-                                        href="contacts/index.htm">Contacts</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <button class="reset drawer__close-btn position-fixed js-tab-focus js-drawer__close">
-                        <svg class="icon" viewbox="0 0 18 18"><title>Close drawer panel</title>
-                            <g stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                               stroke-linejoin="round" stroke-miterlimit="10">
-                                <line x1="16" y1="2" x2="2" y2="16"></line>
-                                <line x1="2" y1="2" x2="16" y2="16"></line>
-                            </g>
-                        </svg>
-                    </button>
-                </div>
-            </div>
         </nav>
     </div>
 </header>
 
-<div class="buy_me">
-    <a href="https://themeforest.net/item/jack-ryan-creative-portfolio-wordpress-theme/26423142">
-        <img src="/static/wp-content/themes/jackryan/assets/img/envato.svg" alt="envato">
-    </a>
-</div>
 <div class="theme-mode">
     <div id="themeSwitch">
         <div class="mode-button"></div>
@@ -1097,34 +846,6 @@
 {% block content %}{% endblock %}
 
 
-<script type='text/javascript' src='/static/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.7.6'
-        id='swv-js'></script>
-<script type='text/javascript' id='contact-form-7-js-extra'>
-    /* <![CDATA[ */
-    var wpcf7 = {
-        "api": {
-            "root": "https:\/\/theme.madsparrow.me\/jackryan\//static/wp-json\/",
-            "namespace": "contact-form-7\/v1"
-        }
-    };
-    /* ]]> */
-</script>
-<script type='text/javascript' src='/static/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.7.6'
-        id='contact-form-7-js'></script>
-<script type='text/javascript' id='em-puchase-code-validator-js-extra'>
-    /* <![CDATA[ */
-    var js_response = {
-        "authToken": " jr-valid-purchases-code-kgtviw8u",
-        "responseOne": "Your purchase code is valid & result is listed above!",
-        "responseTwo": "Your purchase code is not valid or having problem with connecting with the market api. Please check again!",
-        "responseThree": "Invalid Code!",
-        "responseFour": "Please go to the settings page & set your token to see validator working!"
-    };
-    /* ]]> */
-</script>
-<script type='text/javascript'
-        src='/static/wp-content/plugins/em-purchase-code-validator/public/assets/js/em-puchase-code-validator-public.js?ver=1.1'
-        id='em-puchase-code-validator-js'></script>
 <script type='text/javascript' src='/static/wp-includes/js/imagesloaded.min.js?ver=4.1.4' id='imagesloaded-js'></script>
 <script type='text/javascript' src='/static/wp-content/themes/jackryan/assets/js/vendor/modernizr.js?ver=1.0.2'
         id='modernizr-js'></script>
@@ -1141,15 +862,6 @@
 <script type='text/javascript' src='/static/wp-content/themes/jackryan/assets/js/vendor/gsap.min.js?ver=1.0.2'
         id='gsap-js'></script>
 <script type='text/javascript' src='/static/wp-content/themes/jackryan/assets/js/util.js?ver=1.0.2' id='util-js'></script>
-<script type='text/javascript' id='jackryan-main-script-js-extra'>
-    /* <![CDATA[ */
-    var infinity_load = {
-        "startPage": "1",
-        "maxPages": "2",
-        "nextLink": "/portfolio/page/2/"
-    };
-    /* ]]> */
-</script>
 <script type='text/javascript' src='/static/wp-content/themes/jackryan/assets/js/app.js?ver=1.0.2'
         id='jackryan-main-script-js'></script>
 </body>
