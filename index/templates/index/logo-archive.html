@@ -17,25 +17,16 @@
 
     <div class="container ms-content text-right" dir="rtl">
 
-
+        <div class="mb-4" style="display: flex; align-items: center; gap: 15px;">
+            <div style="flex-grow: 1; height: 1px; background-color: black;"></div>
+            <span>Logo Design</span>
+        </div>
         <div class="work-grid row grid-content portfolio-feed ms-p2">
-		<span class="load_filter">
-			<svg class="load-filter-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="45px" height="45px" viewbox="0 0 100 100" preserveaspectratio="xMidYMid">
-		    <circle cx="50" cy="50" r="30" stroke="" stroke-width="0" fill="none"></circle>
-		    <circle cx="50" cy="50" r="30" stroke="" stroke-width="6" stroke-linecap="round" fill="none"
-                    transform="rotate(307.62 50 50)">
-		      <animatetransform attributename="transform" type="rotate" repeatcount="indefinite" dur="1s"
-                                values="0 50 50;180 50 50;720 50 50" keytimes="0;0.5;1"></animatetransform>
-		      <animate attributename="stroke-dasharray" repeatcount="indefinite" dur="1s"
-                       values="18.84955592153876 169.64600329384882;94.2477796076938 94.24777960769377;18.84955592153876 169.64600329384882"
-                       keytimes="0;0.5;1"></animate>
-		    </circle>
-		</svg></span>
             <div class="grid-sizer col-sm-12 col-md-4 col-sm-6"></div>
             <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
                 <div class="work-card card--is-link">
-                    <a href="" class="work-card__img-link" aria-label="Servant of Academy">
+                    <a href="{% url 'portfolio-breaking-muscle' %}" class="work-card__img-link"
+                       aria-label="Servant of Academy">
                         <figure class="work-card__img media-wrapper media-wrapper--4:3">
                             <img src="/static/images/breaking-muscle.jpg"
                                  alt="Servant of Academy">
@@ -45,11 +36,11 @@
                     </a>
                     <div class="work-card__content text-overlay">
                         {#                        <span class="work-card__badge margin-bottom-xxs">design</span>#}
-                        <a href="" class="work-card__title">
+                        <a href="{% url 'portfolio-breaking-muscle' %}" class="work-card__title">
                             <h3 class="PeydaSemiBold">Breaking Muscle</h3>
                         </a>
                         <h5 style="color: white; margin-top: 15px;">Logo Design</h5>
-                        <a href="" class="work-card__link">Show Project
+                        <a href="{% url 'portfolio-breaking-muscle' %}" class="work-card__link">Show Project
                             <svg class="icon" viewbox="0 0 12 12">
                                 <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
@@ -62,7 +53,8 @@
             </div>
             <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
                 <div class="work-card card--is-link">
-                    <a href="" class="work-card__img-link" aria-label="The Kissing Eyes">
+                    <a href="{% url 'portfolio-netentpoker' %}" class="work-card__img-link"
+                       aria-label="The Kissing Eyes">
                         <figure class="work-card__img media-wrapper media-wrapper--4:3">
                             <img src="/static/images/netentpoker.jpg"
                                  alt="The Kissing Eyes">
@@ -72,38 +64,11 @@
                     </a>
                     <div class="work-card__content text-overlay">
                         {#                        <span class="work-card__badge margin-bottom-xxs">trend</span>#}
-                        <a href="" class="work-card__title">
+                        <a href="{% url 'portfolio-netentpoker' %}" class="work-card__title">
                             <h3>Netent Poker</h3>
                         </a>
                         <h5 style="color: white; margin-top: 15px;">Logo Design</h5>
-                        <a href="" class="work-card__link">Show Project
-                            <svg class="icon" viewbox="0 0 12 12">
-                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
-                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
-                <div class="work-card card--is-link">
-                    <a href="" class="work-card__img-link" aria-label="Silk of Secrets">
-                        <figure class="work-card__img media-wrapper media-wrapper--4:3">
-                            <img src="/static/images/navar.jpg"
-                                 alt="Silk of Secrets">
-                            <span class="overlay"></span>
-                            <div class="glow-wrap"><i class="glow vertical"></i></div>
-                        </figure>
-                    </a>
-                    <div class="work-card__content text-overlay">
-                        {#                      <span class="work-card__badge margin-bottom-xxs">project</span>#}
-                        <a href="" class="work-card__title">
-                            <h3>Navar</h3>
-                        </a>
-                        <h5 style="color: white; margin-top: 15px;">Logo Design</h5>
-                        <a href="" class="work-card__link">Show Project
+                        <a href="{% url 'portfolio-netentpoker' %}" class="work-card__link">Show Project
                             <svg class="icon" viewbox="0 0 12 12">
                                 <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
@@ -195,11 +160,21 @@
                     </div>
                 </div>
             </div>
+
+
+        </div>
+        <div class="mb-4" style="display: flex; align-items: center; gap: 15px;">
+            <div style="flex-grow: 1; height: 1px; background-color: black;"></div>
+            <span>Visual Identity Design</span>
+        </div>
+
+        <div class="work-grid row grid-content portfolio-feed ms-p2">
+            <div class="grid-sizer col-sm-12 col-md-4 col-sm-6"></div>
             <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
                 <div class="work-card card--is-link">
                     <a href="" class="work-card__img-link" aria-label="Silk of Secrets">
                         <figure class="work-card__img media-wrapper media-wrapper--4:3">
-                            <img src="/static/images/thekmz.jpg"
+                            <img src="/static/images/inanloo-showroom.jpg"
                                  alt="Silk of Secrets">
                             <span class="overlay"></span>
                             <div class="glow-wrap"><i class="glow vertical"></i></div>
@@ -208,9 +183,9 @@
                     <div class="work-card__content text-overlay">
                         {#                        <span class="work-card__badge margin-bottom-xxs">project</span>#}
                         <a href="" class="work-card__title">
-                            <h3>thekeymz</h3>
+                            <h3>Inanlou Showroom</h3>
                         </a>
-                        <h5 style="color: white; margin-top: 15px;">Logo Design</h5>
+                        <h5 style="color: white; margin-top: 15px;">Visual Identity</h5>
                         <a href="" class="work-card__link">Show Project
                             <svg class="icon" viewbox="0 0 12 12">
                                 <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -221,23 +196,24 @@
                         </a>
                     </div>
                 </div>
+
             </div>
             <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
                 <div class="work-card card--is-link">
-                    <a href="" class="work-card__img-link" aria-label="Servant of Academy">
+                    <a href="" class="work-card__img-link" aria-label="Silk of Secrets">
                         <figure class="work-card__img media-wrapper media-wrapper--4:3">
-                            <img src="/static/images/ducky-copter.JPG"
-                                 alt="Servant of Academy">
+                            <img src="/static/images/modern-key.jpg"
+                                 alt="Silk of Secrets">
                             <span class="overlay"></span>
                             <div class="glow-wrap"><i class="glow vertical"></i></div>
                         </figure>
                     </a>
                     <div class="work-card__content text-overlay">
-                        {#                        <span class="work-card__badge margin-bottom-xxs">design</span>#}
+                        {#                        <span class="work-card__badge margin-bottom-xxs">project</span>#}
                         <a href="" class="work-card__title">
-                            <h3 class="PeydaSemiBold">Ducky Copter</h3>
+                            <h3>Modern Key</h3>
                         </a>
-                        <h5 style="color: white; margin-top: 15px;">Illustration</h5>
+                        <h5 style="color: white; margin-top: 15px;">Visual Identity</h5>
                         <a href="" class="work-card__link">Show Project
                             <svg class="icon" viewbox="0 0 12 12">
                                 <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -248,23 +224,24 @@
                         </a>
                     </div>
                 </div>
+
             </div>
             <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
                 <div class="work-card card--is-link">
-                    <a href="" class="work-card__img-link" aria-label="Servant of Academy">
+                    <a href="" class="work-card__img-link" aria-label="Silk of Secrets">
                         <figure class="work-card__img media-wrapper media-wrapper--4:3">
-                            <img src="/static/images/negah-bank.jpg"
-                                 alt="Servant of Academy">
+                            <img src="/static/images/ghabile.jpg"
+                                 alt="Silk of Secrets">
                             <span class="overlay"></span>
                             <div class="glow-wrap"><i class="glow vertical"></i></div>
                         </figure>
                     </a>
                     <div class="work-card__content text-overlay">
-                        {#                        <span class="work-card__badge margin-bottom-xxs">design</span>#}
+                        {#                        <span class="work-card__badge margin-bottom-xxs">project</span>#}
                         <a href="" class="work-card__title">
-                            <h3 class="PeydaSemiBold">Negah Bank</h3>
+                            <h3>Ghabile</h3>
                         </a>
-                        <h5 style="color: white; margin-top: 15px;">Campaign</h5>
+                        <h5 style="color: white; margin-top: 15px;">Visual Identity</h5>
                         <a href="" class="work-card__link">Show Project
                             <svg class="icon" viewbox="0 0 12 12">
                                 <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -276,33 +253,15 @@
                     </div>
                 </div>
             </div>
-            <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
-                <div class="work-card card--is-link">
-                    <a href="" class="work-card__img-link" aria-label="The Kissing Eyes">
-                        <figure class="work-card__img media-wrapper media-wrapper--4:3">
-                            <img src="/static/images/negah-pardakht.jpg"
-                                 alt="The Kissing Eyes">
-                            <span class="overlay"></span>
-                            <div class="glow-wrap"><i class="glow vertical"></i></div>
-                        </figure>
-                    </a>
-                    <div class="work-card__content text-overlay">
-                        {#                        <span class="work-card__badge margin-bottom-xxs">trend</span>#}
-                        <a href="" class="work-card__title">
-                            <h3>Negah Pardakht</h3>
-                        </a>
-                        <h5 style="color: white; margin-top: 15px;">Campaign</h5>
-                        <a href="" class="work-card__link">Show Project
-                            <svg class="icon" viewbox="0 0 12 12">
-                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
-                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        </div>
+
+        <div class="mb-4" style="display: flex; align-items: center; gap: 15px;">
+            <div style="flex-grow: 1; height: 1px; background-color: black;"></div>
+            <span>Concept Art</span>
+        </div>
+
+        <div class="work-grid row grid-content portfolio-feed ms-p2">
+            <div class="grid-sizer col-sm-12 col-md-4 col-sm-6"></div>
             <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
                 <div class="work-card card--is-link">
                     <a href="" class="work-card__img-link" aria-label="Silk of Secrets">
@@ -330,33 +289,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
-                <div class="work-card card--is-link">
-                    <a href="" class="work-card__img-link" aria-label="Silk of Secrets">
-                        <figure class="work-card__img media-wrapper media-wrapper--4:3">
-                            <img src="/static/images/ghabile.jpg"
-                                 alt="Silk of Secrets">
-                            <span class="overlay"></span>
-                            <div class="glow-wrap"><i class="glow vertical"></i></div>
-                        </figure>
-                    </a>
-                    <div class="work-card__content text-overlay">
-                        {#                        <span class="work-card__badge margin-bottom-xxs">project</span>#}
-                        <a href="" class="work-card__title">
-                            <h3>Ghabile</h3>
-                        </a>
-                        <h5 style="color: white; margin-top: 15px;">Concept Art</h5>
-                        <a href="" class="work-card__link">Show Project
-                            <svg class="icon" viewbox="0 0 12 12">
-                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
-                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
+
             <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
                 <div class="work-card card--is-link">
                     <a href="" class="work-card__img-link" aria-label="Silk of Secrets">
@@ -383,65 +316,76 @@
                         </a>
                     </div>
                 </div>
-
-
             </div>
-            <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
-                    <div class="work-card card--is-link">
-                        <a href="" class="work-card__img-link" aria-label="Silk of Secrets">
-                            <figure class="work-card__img media-wrapper media-wrapper--4:3">
-                                <img src="/static/images/inanloo-showroom.jpg"
-                                     alt="Silk of Secrets">
-                                <span class="overlay"></span>
-                                <div class="glow-wrap"><i class="glow vertical"></i></div>
-                            </figure>
-                        </a>
-                        <div class="work-card__content text-overlay">
-                            {#                        <span class="work-card__badge margin-bottom-xxs">project</span>#}
-                            <a href="" class="work-card__title">
-                                <h3>Inanlou Showroom</h3>
-                            </a>
-                            <h5 style="color: white; margin-top: 15px;">Visual Identity</h5>
-                            <a href="" class="work-card__link">Show Project
-                                <svg class="icon" viewbox="0 0 12 12">
-                                    <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
-                                        <polyline points="7.5 2 11.5 6 7.5 10"></polyline>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+        </div>
 
-                </div>
-            <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">
-                    <div class="work-card card--is-link">
-                        <a href="" class="work-card__img-link" aria-label="Silk of Secrets">
-                            <figure class="work-card__img media-wrapper media-wrapper--4:3">
-                                <img src="/static/images/modern-key.jpg"
-                                     alt="Silk of Secrets">
-                                <span class="overlay"></span>
-                                <div class="glow-wrap"><i class="glow vertical"></i></div>
-                            </figure>
-                        </a>
-                        <div class="work-card__content text-overlay">
-                            {#                        <span class="work-card__badge margin-bottom-xxs">project</span>#}
-                            <a href="" class="work-card__title">
-                                <h3>Modern Key</h3>
-                            </a>
-                            <h5 style="color: white; margin-top: 15px;">Visual Identity</h5>
-                            <a href="" class="work-card__link">Show Project
-                                <svg class="icon" viewbox="0 0 12 12">
-                                    <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                        <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
-                                        <polyline points="7.5 2 11.5 6 7.5 10"></polyline>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
+        <div class="mb-4" style="display: flex; align-items: center; gap: 15px;">
+            <div style="flex-grow: 1; height: 1px; background-color: black;"></div>
+            <span>Layout Design</span>
+        </div>
 
+
+        <div class="work-grid justify-content-center m-auto row grid-content portfolio-feed ms-p2">
+            <div class="grid-sizer col-sm-12 col-md-4 col-sm-6"></div>
+
+
+            <div class="grid-item col-sm-12 col-md-4 col-sm-6 mx-auto pb-5">
+                <div class="work-card card--is-link">
+                    <a href="" class="work-card__img-link" aria-label="Servant of Academy">
+                        <figure class="work-card__img media-wrapper media-wrapper--4:3">
+                            <img src="/static/images/negah-bank.jpg"
+                                 alt="Servant of Academy">
+                            <span class="overlay"></span>
+                            <div class="glow-wrap"><i class="glow vertical"></i></div>
+                        </figure>
+                    </a>
+                    <div class="work-card__content text-overlay">
+                        {#                        <span class="work-card__badge margin-bottom-xxs">design</span>#}
+                        <a href="" class="work-card__title">
+                            <h3 class="PeydaSemiBold">Negah Bank</h3>
+                        </a>
+                        <h5 style="color: white; margin-top: 15px;">Layout Design</h5>
+                        <a href="" class="work-card__link">Show Project
+                            <svg class="icon" viewbox="0 0 12 12">
+                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
+                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
+            </div>
+            <div class="grid-item col-sm-12 col-md-4 col-sm-6 mx-auto pb-5">
+                <div class="work-card card--is-link">
+                    <a href="" class="work-card__img-link" aria-label="The Kissing Eyes">
+                        <figure class="work-card__img media-wrapper media-wrapper--4:3">
+                            <img src="/static/images/negah-pardakht.jpg"
+                                 alt="The Kissing Eyes">
+                            <span class="overlay"></span>
+                            <div class="glow-wrap"><i class="glow vertical"></i></div>
+                        </figure>
+                    </a>
+                    <div class="work-card__content text-overlay">
+                        {#                        <span class="work-card__badge margin-bottom-xxs">trend</span>#}
+                        <a href="" class="work-card__title">
+                            <h3>Negah Pardakht</h3>
+                        </a>
+                        <h5 style="color: white; margin-top: 15px;">Layout Design</h5>
+                        <a href="" class="work-card__link">Show Project
+                            <svg class="icon" viewbox="0 0 12 12">
+                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
+                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+
+
             <div class="ms-pagination works-pagination">
 
                 <circle cx="50" cy="50" r="30" stroke="" stroke-width="0" fill="none"></circle>

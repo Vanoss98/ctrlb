@@ -62,7 +62,7 @@ function ms_page_transition() {
         gsap.to(".background-image",{backgroundColor:"rgba(0, 0, 0, 0.3)", ease: "power2.inOut", duration:.8 });
         gsap.to(".hero-image",{opacity:1, ease: "power2.inOut", duration:.8 });
     }
-    gsap.to(".container, .swiper-container",{ opacity:1, ease: "power2.inOut", stagger:0.15, duration:.7 });
+    gsap.to(".swiper-container",{ opacity:0.99, ease: "power2.inOut", stagger:0.15, duration:.7 });
     window.onbeforeunload = function(){
         gsap.to(".container, .swiper-container, .sub-menu, .drawer__content",{ opacity:1, ease: "power4.inOut", duration:.3 });
         if ($.exists('.hero-image')) {

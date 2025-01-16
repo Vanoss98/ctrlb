@@ -746,21 +746,79 @@
         --color-bg: #FFFFFF;
     }
 
+    /* Loading screen styles */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* Or any background color */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Spinner styles */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #ccc;
+    border-top-color: #3498db; /* Customize spinner color */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+#loading-screen {
+    transition: opacity 0.5s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+
 </style>
 </head>
 <body class="home page-template page-template-slider-full-page page-template-slider-full-page-php page page-id-198 wp-embed-responsive"
       data-theme="light" data-transition="on">
+<!-- Loading Screen -->
+<div id="loading-screen">
+    <div class="spinner"></div>
+</div>
+<script>
+window.addEventListener('load', function () {
+    const loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.classList.add('hidden');
+    setTimeout(() => loadingScreen.style.display = 'none', 500);
+});
+
+</script>
 <header class="main-header js-main-header auto-hide-header is-blur sticky">
     <div class="main-header__layout">
         <div class="main-header__logo" {% if request.path == '/' %}style="display:none;"{% endif %}>
             <div class="logo-dark">
-                <a href="index.htm">
+                <a href="{% url 'index' %}">
                     <img src="/static/wp-content/themes/jackryan/assets/img/logo.png" alt="CtrlB">
                 </a>
             </div>
             <div class="logo-light">
-                <a href="index.htm">
+                <a href="{% url 'index' %}">
+                    {% if request.path == '/about/' or request.path == '/contact/' %}
+                    <img src="/static/images/logo-white.png" alt="CtrlB">
+                    {% else %}
                     <img src="/static/wp-content/themes/jackryan/assets/img/logo.png" alt="CtrlB">
+                    {% endif %}
                 </a>
             </div>
         </div>
@@ -780,7 +838,7 @@
                         href="/about/"  {% if request.path != '/' and request.path != '/contact/' %}style="color:#c72127;"{% endif %}>داستان‌ما</a></li>
                 <li id="menu-item-346"
                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-346">
-                    <a href=""  {% if request.path != '/' and request.path != '/contact/' %}style="color:#c72127;"{% endif %}>خدمات</a>
+                    <a {% if request.path != '/' and request.path != '/contact/' %}style="color:#c72127;"{% endif %}>خدمات</a>
                     <ul class="sub-menu" style="text-align: right">
                         <li id="menu-item-242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-242">
                             <a href="{% url 'logo-design-archive' %}">هویت بصری برند</a>
@@ -792,7 +850,7 @@
                             <a href="{% url 'motion-design' %}">موشن دیزاین</a>
                         </li>
                         <li id="menu-item-270" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270">
-                            <a href="{% url 'photgraphy-and-videography' %}">عکاسی تبلیغاتی</a>
+                            <a href="{% url 'photgraphy-and-videography' %}">عکاسی و فیلم‌برداری تبلیغاتی</a>
                         </li>
 {#                        <li id="menu-item-270" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-270">#}
 {#                            <a href="{% url 'video-making' %}">ساخت ویدیو</a>#}

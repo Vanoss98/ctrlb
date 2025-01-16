@@ -32,7 +32,7 @@
 
 
             .light-text{
-                font-size: 17px !important;
+                font-size: 14px !important;
                 text-align: center !important;
                 margin-top: 15px !important;
                 color: #303030 !important;
@@ -83,7 +83,7 @@
                             <source src="/static/images/homepage-gifs/landing%20page%201080.mp4" type="video/mp4">
                         </video>
                         <div class="logo-slider-dark">
-                            <a href="index.htm">
+                            <a href="{% url 'index' %}">
                                 <img src="/static/images/logo.png" alt="CtrlB">
                             </a>
                         </div>
@@ -101,11 +101,16 @@
                                         style="color: #c4161c; font-size: calc(3vw + 1vw)">Your Partner In
                                         <br>Crime/Prime
                                     </h3>
-                                    <p class="PeydaRegula light-text" rel="noreferrer" style="color:#c4161c;text-align:right">
+                                    <p class="PeydaRegula light-text" rel="noreferrer" style="color:#c4161c;text-align:center">
                                         هر برند داستانی دارد، کنترل‌بی هم‌مسیر داستان شما می‌شود <br>تا در کنار شما
                                         روایتی ماندگار خلق کند.
                                         <span></span>
                                     </p>
+                                    <a href="{% url 'about' %}" target=""
+                                       style="color: #c4161c; margin-top: 30px"
+                                       class="slide-link PeydaRegular" rel="noreferrer">
+                                        See More <span></span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -150,7 +155,7 @@
                             <source src="/static/images/homepage-gifs/branding%201080.mp4" type="video/mp4">
                         </video>
                         <div class="logo-slider-dark">
-                            <a href="index.htm">
+                            <a href="{% url 'index' %}">
                                 <img src="/static/images/logo-white.png" alt="CtrlB">
                             </a>
                         </div>
@@ -219,7 +224,7 @@
                             <source src="/static/images/homepage-gifs/graphic%201080.mp4" type="video/mp4">
                         </video>
                         <div class="logo-slider-dark">
-                            <a href="index.htm">
+                            <a href="{% url 'index' %}">
                                 <img src="/static/images/logo.png" alt="CtrlB">
                             </a>
                         </div>
@@ -286,7 +291,7 @@
                             <source src="/static/images/homepage-gifs/camera%201080.mp4" type="video/mp4">
                         </video>
                         <div class="logo-slider-dark">
-                            <a href="index.htm">
+                            <a href="{% url 'index' %}">
                                 <img src="/static/images/logo-white.png" alt="CtrlB">
                             </a>
                         </div>
@@ -351,7 +356,7 @@
                             <source src="/static/images/homepage-gifs/motion%201080.mp4" type="video/mp4">
                         </video>
                         <div class="logo-slider-dark">
-                            <a href="index.htm">
+                            <a href="{% url 'index' %}">
                                 <img src="/static/images/logo.png" alt="CtrlB">
                             </a>
                         </div>
@@ -409,7 +414,7 @@
                             <source src="/static/images/homepage-gifs/2.mp4" type="video/mp4">
                         </video>
                         <div class="logo-slider-dark">
-                            <a href="index.htm">
+                            <a href="{% url 'index' %}">
                                 <img src="/static/images/logo-white-white.png" alt="CtrlB">
                             </a>
                         </div>
@@ -459,9 +464,6 @@
 
         </div>
         <ul class="socials">
-            <li class="ms-btn"><a class="socicon-dribbble" title="Dribbble" target="_blank"
-                                  href="http://dribbble.com/"></a>
-            </li>
             <li class="ms-btn"><a class="socicon-linkedin" title="Linkedin" target="_blank"
                                   href="https://www.linkedin.com/company/thectrlbstudio/"></a></li>
             <li class="ms-btn"><a class="socicon-instagram" title="Instagram" target="_blank"

@@ -17,4 +17,8 @@ urlpatterns = [
     path('portfolio/viana/detail', PortfolioVianaDetail.as_view(), name='portfolio-viana'),
     path('portfolio/zelmond/detail', PortfolioZelmondDetail.as_view(), name='portfolio-zelmond'),
     path('portfolio/lucano/detail', PortfolioLucanoDetail.as_view(), name='portfolio-lucano'),
+    path('portfolio/navar/detail', PortfolioNavarDetail.as_view(), name='portfolio-navar'),
+    path('portfolio/netent-poker/detail', PortfolioNetentPokerDetail.as_view(), name='portfolio-netentpoker'),
+    path('portfolio/breaking-muscle/detail', PortfolioBreakingMuscleDetail.as_view(), name='portfolio-breaking-muscle'),
+    path('portfolio/dyarino/detail', PortfolioDyarinoDetail.as_view(), name='portfolio-dyarino'),
 ]

@@ -13125,9 +13125,9 @@ figure:hover .glow {
 .swiper-container {
   width: 100%;
   height: 100vh;
-  position: absolute;
-  top: 0;
-  background-color: #202020;
+  /*position: absolute;*/
+  /*top: 0;*/
+  /*background-color: #202020;*/
 }
 .swiper-carousel .swiper-slide {
   text-align: center;
@@ -13438,7 +13438,7 @@ figure:hover .glow {
   -ms-transform: translate(0, -50%);
   display: block;
   width: 60px;
-  height: 2px;
+  height: 0px;
   margin: 2px var(--space-md) 0;
   background-color: var(--color-white);
 }
@@ -13554,7 +13554,7 @@ figure:hover .glow {
     rgba(255, 255, 255, 0) 0,
     #000 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=1 );
+
 }
 .swiper-full-page .swiper-slide-active .slide-desc {
   opacity: 1;

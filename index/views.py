@@ -55,3 +55,19 @@ class PortfolioZelmondDetail(TemplateView):
 
 class PortfolioLucanoDetail(TemplateView):
     template_name = 'index/portfolio-lucano.html'
+
+
+class PortfolioNavarDetail(TemplateView):
+    template_name = 'index/portfolio-navar.html'
+
+
+class PortfolioNetentPokerDetail(TemplateView):
+    template_name = 'index/portfolio-netentpoker.html'
+
+
+class PortfolioBreakingMuscleDetail(TemplateView):
+    template_name = 'index/portfolio-breakingmuscle.html'
+
+
+class PortfolioDyarinoDetail(TemplateView):
+    template_name = 'index/portfolio-dyarino.html'

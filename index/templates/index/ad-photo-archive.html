@@ -6,7 +6,7 @@
         <div class="container">
             <div class="hero__content">
                 {#            <span>نمونه کار ها</span>#}
-                <h2 class="portfolio-title" style="text-align: center; font-size: 50px">عکاسی تبلیغاتی</h2>
+                <h2 class="portfolio-title" style="text-align: center; font-size: 50px">عکاسی و فیلم‌برداری تبلیغاتی</h2>
 {#                <p style="margin-top: 30px; font-size: 20px; text-align: justify; max-width: none !important;">#}
 {#                    موشن دیزاین هنر به حرکت درآوردن تصاویر و روایت داستان برند شماست. با این ابزار، می‌توانید پیام‌های پیچیده را در زمانی کوتاه و به شکلی جذاب به مخاطب منتقل کنید. در کنترل بی، هر حرکت و انیمیشن با دقت طراحی می‌شود تا تجربه‌ای ماندگار و تاثیرگذار ایجاد کند.#}
 {#                </p>#}
@@ -16,21 +16,11 @@
 
     <div class="container ms-content text-right" dir="rtl">
 
-
+        <div class="mb-4" style="display: flex; align-items: center; gap: 15px;">
+            <div style="flex-grow: 1; height: 1px; background-color: black;"></div>
+            <span>Videography</span>
+        </div>
         <div class="work-grid row grid-content portfolio-feed ms-p2">
-		<span class="load_filter">
-			<svg class="load-filter-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                 width="45px" height="45px" viewbox="0 0 100 100" preserveaspectratio="xMidYMid">
-		    <circle cx="50" cy="50" r="30" stroke="" stroke-width="0" fill="none"></circle>
-		    <circle cx="50" cy="50" r="30" stroke="" stroke-width="6" stroke-linecap="round" fill="none"
-                    transform="rotate(307.62 50 50)">
-		      <animatetransform attributename="transform" type="rotate" repeatcount="indefinite" dur="1s"
-                                values="0 50 50;180 50 50;720 50 50" keytimes="0;0.5;1"></animatetransform>
-		      <animate attributename="stroke-dasharray" repeatcount="indefinite" dur="1s"
-                       values="18.84955592153876 169.64600329384882;94.2477796076938 94.24777960769377;18.84955592153876 169.64600329384882"
-                       keytimes="0;0.5;1"></animate>
-		    </circle>
-		</svg></span>
             <div class="grid-sizer col-sm-12 col-md-6 col-sm-6"></div>
             <div class="grid-item col-sm-12 col-md-6 col-sm-6 pb-5">
                 <div class="work-card card--is-link">
@@ -59,6 +49,44 @@
                     </div>
                 </div>
             </div>
+
+            <div class="grid-item col-sm-12 col-md-6 col-sm-6 pb-5">
+                <div class="work-card card--is-link">
+                    <a href="{% url 'portfolio-viana' %}" class="work-card__img-link" aria-label="The Kissing Eyes">
+                        <figure class="work-card__img media-wrapper media-wrapper--4:3">
+                            <img src="/static/images/viana.png"
+                                 alt="The Kissing Eyes">
+                            <span class="overlay"></span>
+                            <div class="glow-wrap"><i class="glow vertical"></i></div>
+                        </figure>
+                    </a>
+                    <div class="work-card__content text-overlay">
+
+                        <a href="{% url 'portfolio-viana' %}" class="work-card__title">
+                            <h3>Viana</h3>
+                        </a>
+                        <h5 style="color: white; margin-top: 15px;">Videography</h5>
+                        <a href="{% url 'portfolio-viana' %}" class="work-card__link">Show Project
+                            <svg class="icon" viewbox="0 0 12 12">
+                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
+                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4" style="display: flex; align-items: center; gap: 15px;">
+            <div style="flex-grow: 1; height: 1px; background-color: black;"></div>
+            <span>Photography</span>
+        </div>
+
+        <div class="work-grid row grid-content portfolio-feed ms-p2">
+            <div class="grid-sizer col-sm-12 col-md-6 col-sm-6"></div>
+
             <div class="grid-item col-sm-12 col-md-6 col-sm-6 pb-5">
                 <div class="work-card card--is-link">
                     <a href="" class="work-card__img-link" aria-label="Servant of Academy">
@@ -113,60 +141,8 @@
                     </div>
                 </div>
             </div>
-            <div class="grid-item col-sm-12 col-md-6 col-sm-6 pb-5">
-                <div class="work-card card--is-link">
-                    <a href="" class="work-card__img-link" aria-label="The Kissing Eyes">
-                        <figure class="work-card__img media-wrapper media-wrapper--4:3">
-                            <img src="/static/images/talashim.jpg"
-                                 alt="The Kissing Eyes">
-                            <span class="overlay"></span>
-                            <div class="glow-wrap"><i class="glow vertical"></i></div>
-                        </figure>
-                    </a>
-                    <div class="work-card__content text-overlay">
 
-                        <a href="" class="work-card__title">
-                            <h3>Talashim</h3>
-                        </a>
-                        <h5 style="color: white; margin-top: 15px;">Videography</h5>
-                        <a href="" class="work-card__link">Show Project
-                            <svg class="icon" viewbox="0 0 12 12">
-                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
-                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="grid-item col-sm-12 col-md-6 col-sm-6 pb-5">
-                <div class="work-card card--is-link">
-                    <a href="{% url 'portfolio-viana' %}" class="work-card__img-link" aria-label="The Kissing Eyes">
-                        <figure class="work-card__img media-wrapper media-wrapper--4:3">
-                            <img src="/static/images/viana.png"
-                                 alt="The Kissing Eyes">
-                            <span class="overlay"></span>
-                            <div class="glow-wrap"><i class="glow vertical"></i></div>
-                        </figure>
-                    </a>
-                    <div class="work-card__content text-overlay">
 
-                        <a href="{% url 'portfolio-viana' %}" class="work-card__title">
-                            <h3>Viana</h3>
-                        </a>
-                        <h5 style="color: white; margin-top: 15px;">Videography</h5>
-                        <a href="{% url 'portfolio-viana' %}" class="work-card__link">Show Project
-                            <svg class="icon" viewbox="0 0 12 12">
-                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>
-                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="ms-pagination works-pagination">
