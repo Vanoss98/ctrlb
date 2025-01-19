@@ -13577,24 +13577,25 @@ figure:hover .glow {
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
-  justify-content: center;
+  justify-content: space-between;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   z-index: 10;
-  top: 0;
+  top: 50%;
   bottom: 0;
-  right: -10px;
-  height: 99%;
+  right: auto;
+  height: 100%;
+  width: 100%;
 }
 .swiper-full-page .slider-nav .swiper-button-next,
 .swiper-full-page .slider-nav .swiper-button-prev {
   position: relative;
   top: 0;
-  width: 64px;
-  height: 64px;
+  width: 80px;
+  height: 80px;
   opacity: 0.4;
   -webkit-transition: opacity 250ms ease;
   transition: opacity 250ms ease;
@@ -13610,6 +13611,7 @@ figure:hover .glow {
 .swiper-full-page .slider-nav .swiper-button-prev svg {
   width: 80%;
   position: absolute;
+  rotate: 90deg;
 }
 .swiper-full-page .slider-nav .swiper-button-next svg .st0,
 .swiper-full-page .slider-nav .swiper-button-prev svg .st0 {
@@ -14150,13 +14152,14 @@ figure:hover .glow {
     bottom: 0;
     height: 20vh;
     width: 100%;
+    justify-content: center;
     -webkit-box-align: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    -webkit-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   .swiper-full-page .slide-title-container .slide-title--inner .slide-title h3 {
     font-size: 14vw;
