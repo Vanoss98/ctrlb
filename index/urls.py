@@ -21,4 +21,9 @@ urlpatterns = [
     path('portfolio/netent-poker/detail', PortfolioNetentPokerDetail.as_view(), name='portfolio-netentpoker'),
     path('portfolio/breaking-muscle/detail', PortfolioBreakingMuscleDetail.as_view(), name='portfolio-breaking-muscle'),
     path('portfolio/dyarino/detail', PortfolioDyarinoDetail.as_view(), name='portfolio-dyarino'),
+    path('portfolio/ghabile/detail', PortfolioGhabileDetail.as_view(), name='portfolio-ghabile'),
+    path('portfolio/hayloo/detail', PortfolioHaylooDetail.as_view(), name='portfolio-hayloo'),
+    path('portfolio/sbt/detail', PortfolioSBTDetail.as_view(), name='portfolio-sbt'),
+    path('portfolio/ariobarzan/detail', PortfolioAriobarzanDetail.as_view(), name='portfolio-ario'),
+    path('portfolio/talashim/detail', PortfolioTalashimDetail.as_view(), name='portfolio-talashim'),
 ]

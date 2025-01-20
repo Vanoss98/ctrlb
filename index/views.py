@@ -71,3 +71,23 @@ class PortfolioBreakingMuscleDetail(TemplateView):
 
 class PortfolioDyarinoDetail(TemplateView):
     template_name = 'index/portfolio-dyarino.html'
+
+
+class PortfolioGhabileDetail(TemplateView):
+    template_name = 'index/portfolio-ghabile.html'
+
+
+class PortfolioHaylooDetail(TemplateView):
+    template_name = 'index/portfolio-hayloo.html'
+
+
+class PortfolioSBTDetail(TemplateView):
+    template_name = 'index/portfolio-sbt.html'
+
+
+class PortfolioAriobarzanDetail(TemplateView):
+    template_name = 'index/portfolio-ariobarzan.html'
+
+
+class PortfolioTalashimDetail(TemplateView):
+    template_name = 'index/portfolio-talashim.html'
