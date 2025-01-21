@@ -485,4 +485,20 @@
         window.addEventListener('resize', handleResize);
     </script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.location.pathname === "/") {
+              const style = document.createElement("style");
+              style.textContent = `
+                @media screen and (max-width: 768px) {
+                  .js .main-header__layout {
+                    flex-direction: row-reverse;
+                  }
+                }
+              `;
+              document.head.appendChild(style);
+            }
+          });
+    </script>
+
 {% endblock %}

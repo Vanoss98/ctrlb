@@ -15422,9 +15422,6 @@ html:not(.js) .filter-nav__nav {
 }
 
 @media screen and (max-width:768px){
-  .js .main-header__layout{
-    flex-direction: row-reverse;
-  }
   .js .main-header__nav{
     margin-top: 25px;
   }
