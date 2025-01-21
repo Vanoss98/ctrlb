@@ -13454,7 +13454,7 @@ figure:hover .glow {
   -o-transform: translate(40%, -50%) scale(0.2, 0.2);
   -ms-transform: translate(40%, -50%) scale(0.2, 0.2);
   top: 50%;
-  right: 20px;
+  left: 50px;
   display: block;
   position: absolute;
   width: 48px;
@@ -13485,7 +13485,7 @@ figure:hover .glow {
   background-size: 70% 70%;
   background-position: center center;
   top: 50%;
-  right: -8px;
+  left: 50px;
   display: block;
   position: absolute;
   width: 48px;
@@ -13586,14 +13586,13 @@ figure:hover .glow {
   z-index: 10;
   top: 50%;
   bottom: 0;
-  right: auto;
+  left: auto;
   height: 100%;
-  width: 100%;
 }
-.swiper-full-page .slider-nav .swiper-button-next,
-.swiper-full-page .slider-nav .swiper-button-prev {
-  position: relative;
-  top: 0;
+.swiper-full-page .swiper-button-next,
+.swiper-full-page .swiper-button-prev {
+  position: absolute;
+  top: 50%;
   width: 80px;
   height: 80px;
   opacity: 0.4;
@@ -13603,18 +13602,18 @@ figure:hover .glow {
   margin-top: 0;
   background-image: none !important;
 }
-.swiper-full-page .slider-nav .swiper-button-next:hover,
-.swiper-full-page .slider-nav .swiper-button-prev:hover {
+.swiper-full-page .swiper-button-next:hover,
+.swiper-full-page .swiper-button-prev:hover {
   opacity: 1;
 }
-.swiper-full-page .slider-nav .swiper-button-next svg,
-.swiper-full-page .slider-nav .swiper-button-prev svg {
+.swiper-full-page .swiper-button-next svg,
+.swiper-full-page .swiper-button-prev svg {
   width: 80%;
   position: absolute;
   rotate: 90deg;
 }
-.swiper-full-page .slider-nav .swiper-button-next svg .st0,
-.swiper-full-page .slider-nav .swiper-button-prev svg .st0 {
+.swiper-full-page .swiper-button-next svg .st0,
+.swiper-full-page .swiper-button-prev svg .st0 {
   fill: none;
   stroke: #fff;
   stroke-width: 1;
@@ -13623,20 +13622,32 @@ figure:hover .glow {
   stroke-miterlimit: 10;
 }
 @media screen and (max-width:768px){
-  .swiper-full-page .slider-nav .swiper-button-next svg .st0,
-.swiper-full-page .slider-nav .swiper-button-prev svg .st0{
+  .swiper-full-page .swiper-button-next svg .st0,
+.swiper-full-page .swiper-button-prev svg .st0{
   stroke: #5a5a5a !important;
 }
+.swiper-full-page .swiper-button-prev {
+  right: 0px;
+  left: auto;
+  width: 50px;
 }
-.swiper-full-page .slider-nav .swiper-button-next:after,
-.swiper-full-page .slider-nav .swiper-button-prev:after {
+.swiper-full-page .swiper-button-next {
+  left: 0px;
+  right: auto;
+  width: 50px;
+}
+}
+.swiper-full-page .swiper-button-next:after,
+.swiper-full-page .swiper-button-prev:after {
   content: none;
 }
-.swiper-full-page .slider-nav .swiper-button-prev {
-  left: 0;
+.swiper-full-page .swiper-button-prev {
+  right: 20px;
+  left: auto;
 }
-.swiper-full-page .slider-nav .swiper-button-next {
-  right: 0;
+.swiper-full-page .swiper-button-next {
+  left: 20px;
+  right: auto;
 }
 .swiper-full-page .slider-scrollbar {
   position: fixed;
@@ -15387,8 +15398,7 @@ html:not(.js) .filter-nav__nav {
     .logo-slider-dark , .logo-slider-light{
       width:70px;
       position:absolute;
-      right:20px;
-      left: auto;
+      right: auto;
       top:30px
     }
   }
@@ -15412,6 +15422,12 @@ html:not(.js) .filter-nav__nav {
 }
 
 @media screen and (max-width:768px){
+  .js .main-header__layout{
+    flex-direction: row-reverse;
+  }
+  .js .main-header__nav{
+    margin-top: 25px;
+  }
   .swiper-full-page .slide-title-container .slide-title--inner , .swiper-full-page .slide-title-container .slide-title--inner .slide-info__left , .swiper-full-page .slide-title-container .slide-title{
     width: 100% !important;
   }
