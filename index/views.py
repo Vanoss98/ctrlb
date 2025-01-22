@@ -91,3 +91,51 @@ class PortfolioAriobarzanDetail(TemplateView):
 
 class PortfolioTalashimDetail(TemplateView):
     template_name = 'index/portfolio-talashim.html'
+
+
+class PortfolioKunziteDetail(TemplateView):
+    template_name = 'index/portfolio-kunzite.html'
+
+
+class PortfolioRegenbogenDetail(TemplateView):
+    template_name = 'index/portfolio-regenbogen.html'
+
+
+class PortfolioModernKeyDetail(TemplateView):
+    template_name = 'index/portfolio-modernkey.html'
+
+
+class PortfolioInanlooDetail(TemplateView):
+    template_name = 'index/portfolio-inanloo.html'
+
+
+class PortfolioNegahDetail(TemplateView):
+    template_name = 'index/portfolio-negah.html'
+
+
+class PortfolioNegahbanmamutDetail(TemplateView):
+    template_name = 'index/portfolio-negahban-mammut.html'
+
+
+class PortfolioBunnyModeDetail(TemplateView):
+    template_name = 'index/portfolio-bunny-mode.html'
+
+
+class PortfolioAzkiDetail(TemplateView):
+    template_name = 'index/portfolio-azki.html'
+
+
+class PortfolioMonjiDetail(TemplateView):
+    template_name = 'index/portfolio-monji.html'
+
+
+class PortfolioKanirushDetail(TemplateView):
+    template_name = 'index/portfolio-kanirush.html'
+
+
+class PortfolioCheraghBarghDetail(TemplateView):
+    template_name = 'index/portfolio-cheraghbargh.html'
+
+
+class PortfolioMammutVIPTourDetail(TemplateView):
+    template_name = 'index/portfolio-mammut-vip-tour.html'
