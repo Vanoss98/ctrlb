@@ -6,6 +6,11 @@
                 background: none !important;
             }
 
+            .light-image{
+                width: 200px;
+                margin-top: 250px;
+            }
+
             .light-title{
                 font-size: 25px !important;
                 text-align: center;
@@ -101,8 +106,8 @@
 {#                                        style="color: #c4161c; font-size: calc(3vw + 1vw)">Your Partner In#}
 {#                                        <br>Crime/Prime#}
 {#                                    </h3>#}
-                                    <img src="/static/images/crime-01.png" width="400px">
-                                    <p class="PeydaRegula light-text" rel="noreferrer" style="color:#c4161c;text-align:center">
+                                    <img class="light-image" src="/static/images/crime-01.png" width="400px">
+                                    <p class="PeydaRegula light-text" rel="noreferrer" style="color:black;text-align:center">
                                         هر برند داستانی دارد، کنترل‌بی هم‌مسیر داستان شما می‌شود <br>تا در کنار شما
                                         روایتی ماندگار خلق کند.
                                         <span></span>
@@ -398,11 +403,19 @@
                     <div class="slide-image" style="background-color: #c62329">
                         <video class="background-video" style="position: absolute;
                             top: 0;
-                            left: 1.7%;
+                            left: -40px;
                             height: 100%;
                             object-fit: contain;
                         " autoplay loop muted playsinline>
                             <source src="/static/images/homepage-gifs/2.mp4" type="video/mp4">
+                        </video>
+                        <video class="background-image" style="position: absolute;
+                            top: 0;
+                            left: 60px;
+                            height: 100%;
+                            object-fit: contain;
+                        " autoplay loop muted playsinline>
+                            <source src="/static/images/homepage-gifs/campaign-gif-mobile.mp4" type="video/mp4">
                         </video>
                         <div class="logo-slider-dark">
                             <a href="{% url 'index' %}">

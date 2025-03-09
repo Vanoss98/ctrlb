@@ -139,3 +139,19 @@ class PortfolioCheraghBarghDetail(TemplateView):
 
 class PortfolioMammutVIPTourDetail(TemplateView):
     template_name = 'index/portfolio-mammut-vip-tour.html'
+
+
+class PortfolioView(TemplateView):
+    template_name = 'index/portfolio.html'
+
+
+class PortfolioVitaView(TemplateView):
+    template_name = 'index/portfolio-vita.html'
+
+
+class PortfolioVestaView(TemplateView):
+    template_name = 'index/portfolio-vesta.html'
+
+
+class PortfolioHapitooView(TemplateView):
+    template_name = 'index/portfolio-hapitoo.html'
