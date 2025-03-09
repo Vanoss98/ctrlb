@@ -791,7 +791,7 @@
 
 </style>
 </head>
-<body class="home page-template page-template-slider-full-page page-template-slider-full-page-php page page-id-198 wp-embed-responsive"
+<body class="home page-template page-template-slider-full-page page-template-slider-full-page-php page page-id-198 wp-embed-responsive {% if request.path == '/about/' %}page-about{% endif %}"
       data-theme="light" data-transition="on">
 <!-- Loading Screen -->
 <div id="loading-screen">
@@ -810,16 +810,16 @@ window.addEventListener('load', function () {
         <div class="main-header__logo" {% if request.path == '/' %}style="display:none;"{% endif %}>
             <div class="logo-dark">
                 <a href="{% url 'index' %}">
-                    <img src="/static/wp-content/themes/jackryan/assets/img/logo.png" alt="CtrlB">
+                    <img class="responsive-logo"
+                         src="{% if request.path == '/contact/' %}/static/images/logo-untrans.png{% else %}/static/wp-content/themes/jackryan/assets/img/logo.png{% endif %}"
+                         alt="CtrlB">
                 </a>
             </div>
             <div class="logo-light">
                 <a href="{% url 'index' %}">
-
-{#                    <img src="/static/images/logo-white.png" alt="CtrlB">#}
-
-                    <img src="/static/wp-content/themes/jackryan/assets/img/logo.png" alt="CtrlB">
-
+                    <img class="responsive-logo"
+                         src="{% if request.path == '/contact/' %}/static/images/logo-untrans.png{% else %}/static/wp-content/themes/jackryan/assets/img/logo.png{% endif %}"
+                         alt="CtrlB">
                 </a>
             </div>
         </div>
@@ -832,14 +832,14 @@ window.addEventListener('load', function () {
             <ul id="primary-menu" class="dropdown__wrapper dropdown__trigger">
                 <li id="menu-item-25"
                     class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-25">
-                    <a href="/" {% if request.path != '/' and request.path != '/contact/' %}style="color:#c72127;"{% endif %}>خانه</a>
+                    <a href="/" {% if request.path != '/' and request.path != '/contact/' and request.path != '/about/' %}style="color:#c72127;"{% endif %}>خانه</a>
                 </li>
 
                 <li id="menu-item-350" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-350"><a
-                        href="/about/"  {% if request.path != '/' and request.path != '/contact/' %}style="color:#c72127;"{% endif %}>داستان‌ما</a></li>
+                        href="/about/"  {% if request.path != '/' and request.path != '/contact/' and request.path != '/about/' %}style="color:#c72127;"{% endif %}>داستان‌ما</a></li>
                 <li id="menu-item-346"
                     class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-346">
-                    <a {% if request.path != '/' and request.path != '/contact/' %}style="color:#c72127;"{% endif %}>خدمات</a>
+                    <a {% if request.path != '/' and request.path != '/contact/' and request.path != '/about/' %}style="color:#c72127;"{% endif %}>خدمات</a>
                     <ul class="sub-menu" style="text-align: right">
                         <li id="menu-item-242" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-242">
                             <a href="{% url 'logo-design-archive' %}">هویت بصری برند</a>
@@ -865,7 +865,7 @@ window.addEventListener('load', function () {
                     </ul>
                 </li>
                 <li id="menu-item-138" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-138"><a
-                        href="/contact/"  {% if request.path != '/' and request.path != '/contact/' %}style="color:#c72127;"{% endif %}>تماس</a></li>
+                        href="/contact/"  {% if request.path != '/' and request.path != '/contact/' and request.path != '/about/' %}style="color:#c72127;"{% endif %}>تماس</a></li>
             </ul>
         </nav>
     </div>

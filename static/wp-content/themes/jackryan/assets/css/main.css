@@ -15448,3 +15448,8 @@ html:not(.js) .filter-nav__nav {
   }
 }
 
+@media (min-width: 992px) {
+  .page-about .responsive-logo {
+      content: url('/static/images/logo-untrans.png');
+  }
+}
