@@ -1,94 +1,837 @@
 {% extends 'index/base.html' %}
 {% block content %}
 
-    <div class="margin-top-lg"></div>
-    <section class="hero hero--overlay-layer hero-default text-right" dir="rtl">
-        <div class="container">
-            <div class="hero__content">
-                <h2 class="portfolio-title PeydaBlack" style="text-align: center; font-size: 50px">نگهبان ماموت</h2>
+    <section style="position:relative;">
+        <div class="container-fluid px-0 mx-0">
+            <div class="hero">
+                <video
+                        src="/static/portfolio/mamoot-guardian/title.mp4"
+                        alt="Hero animation"
+                        class="hero-gif"
+                        autoplay
+                        muted
+
+                        playsinline
+                        style="position:absolute; left:60%; top:35%; transform: translate(-50%, -50%); width: 30%"
+                ></video>
             </div>
         </div>
     </section>
 
-    <div class="content-container ms-content text-right mx-auto p-4" dir="rtl" style="background-color:#fafafa;">
-        <div class="row p-3 mb-4">
-            <div class="col-12 col-md-12">
-                <p style="margin: 20px; font-size: 16px; text-align: justify; max-width: none !important;">خانواده فردوس
-                    در روز پدر، به منظور رونمایی از کتاب نگهبان ماموت و بزرگداشت بهروز فردوس در صدد ساخت یک ویدئو برای
-                    نمایش در رویداد بودند . تیم "کنترل بی" پیشنهاد جایگزینی انیمیشن به جای ویدئو را در پروپوزال ارائه
-                    کرد که با استقبال خانواده همراه شد. </p>
-                <p style="margin: 20px; font-size: 16px; text-align: justify; max-width: none !important;">با توجه به
-                    زندگینامه بهروز فردوس که اتفاقات در زمان ها و مکان های زیاد و مختلفی میافتاد ایده ی ساخت انیمیشنی به
-                    سبک کلاژ تایید و اجرا شد. برای ساخت این انیمیشن از تکنیک‌هایی نظیر انیمیشن فریم به فریم، استاپ موشن،
-                    کات اوت و فوتو موشن استفاده شد.</p>
+    <section class="section-2" style="position:relative; overflow:hidden;">
+        <!-- BACKGROUND VIDEO (sticks to bottom, spans full section width) -->
+        <video
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="auto"
+                style="
+    position:absolute;
+
+    /* move it right + a bit up */
+    left: 14vw;
+    bottom: 2vw;
+
+    width:45%;
+    height:auto;
+    z-index:0;
+    object-fit:cover;
+    pointer-events:none;
+
+    transform: scaleX(-1);
+  "
+        >
+            <!-- remove the mov type (it’s mp4) -->
+            <source src="/static/portfolio/mamoot-guardian/soldiers.mp4" type="video/mp4"/>
+        </video>
+
+        <div class="container-fluid px-0 mx-0 section-2-inner" style="position:relative; z-index:1;">
+            <!-- content overlays video -->
+            <div class="section-2-content" dir="rtl" style="position:relative;">
+                <p class="mg-blue-tag">کارفرما</p>
+                <p class="mg-p">هلدینگ ماموت - خانواده فردوس</p>
+
+                <p class="mg-blue-tag">سال</p>
+                <p class="mg-p">۱۴۰۲</p>
+
+                <p class="mg-blue-tag">خدمات ارائه شده</p>
+                <p class="mg-p">مشاوره و طراحی <span dir="ltr">Core concept</span> رویداد</p>
+                <p class="mg-p">ایده‌پردازی خلاقانه</p>
+                <p class="mg-p">ساخت انیمیشن</p>
+
+                <p class="mg-p-long">
+                    روز پدر ۱۴۰۲، فرصتی برای گرامیداشت مهندس بهروز فردوس فقید، بنیان‌گذار گروه صنعتی ماموت،
+                    و رونمایی از کتاب خودزندگینامه ایشان بود. خانواده فردوس قصد داشتند با استفاده از تصاویر و
+                    خاطرات آرشیوی، یک ویدیوی یادبود برای مراسم تهیه کنند. استودیو باروت با هدف خلق تجربه‌ای
+                    اثرگذار، پیشنهادی یک محور مفهومی قدرتمند برای رویداد مطرح کرده و این محور را در قالب یک
+                    انیمیشن روایی توسعه یافت.
+                    <br/><br/>
+                    با توجه به تنوع زمانی و مکانی رویدادهای زندگی ایشان، سبک کلاژ به‌عنوان زبان بصری پروژه انتخاب شد تا
+                    روایت بتواند بدون محدودیت میان دوره‌های مختلف حرکت کند.
+                </p>
             </div>
         </div>
-        <div class="row p-3 mb-4">
-            <div class="col-12 col-md-6">
-                <img src="/static/images/portfolio-detail/negahban1.jpeg" class="w-100"/>
-            </div>
-            <div class="col-12 col-md-6">
-                <img src="/static/images/portfolio-detail/negahban2.jpeg" class="w-100"/>
+    </section>
+
+
+    <section
+            class="position-relative"
+            style="
+    overflow:hidden;
+    background:#fff;
+    padding: 110px 0;
+  "
+    >
+        <!-- Beige band (shorter height so images break through) -->
+        <div
+                style="
+      position:absolute;
+      left:0;
+      right:0;
+      top:20%;
+      bottom:20%;
+      background-color:#fcedde;
+      z-index:0;
+    "
+        ></div>
+
+        <!-- Side rectangles (center-anchored like before) -->
+        <div
+                style="
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform: translate(-50%, -50%) translateX(-50vw);
+      width:160px;
+      height:40px;
+      background-color:#005675;
+      z-index:2;
+    "
+        ></div>
+
+        <div
+                style="
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform: translate(-50%, -50%) translateX(50vw);
+      width:160px;
+      height:40px;
+      background-color:#005675;
+      z-index:2;
+    "
+        ></div>
+
+        <!-- Content -->
+        <div class="container-fluid position-relative" style="z-index:1;">
+            <div class="row gx-4 gy-5 justify-content-center" style="padding: 0 6vw;">
+
+
+                <!-- Top-left -->
+                <div class="col-12 col-lg-6 d-flex justify-content-center">
+                    <img
+                            src="/static/portfolio/mamoot-guardian/section3-img1.jpg"
+                            class="img-fluid"
+                            style="width: 80%; max-width: 720px; display:block;"
+                            alt=""
+                    >
+                </div>
+
+                <!-- Top-right -->
+                <div class="col-12 col-lg-6 d-flex justify-content-center">
+                    <img
+                            src="/static/portfolio/mamoot-guardian/section3-img2.jpg"
+                            class="img-fluid"
+                            style="width: 80%; max-width: 720px; display:block;"
+                            alt=""
+                    >
+                </div>
+
+                <!-- Bottom-left -->
+                <div class="col-12 col-lg-6 d-flex justify-content-center" style="margin-top: 50px;">
+                    <img
+                            src="/static/portfolio/mamoot-guardian/section3-img3.jpg"
+                            class="img-fluid"
+                            style="width: 80%; max-width: 720px; display:block;"
+                            alt=""
+                    >
+                </div>
+
+                <!-- Bottom-right -->
+                <div class="col-12 col-lg-6 d-flex justify-content-center" style="margin-top: 50px;">
+                    <img
+                            src="/static/portfolio/mamoot-guardian/section3-img4.jpg"
+                            class="img-fluid"
+                            style="width: 80%; max-width: 720px; display:block;"
+                            alt=""
+                    >
+                </div>
+
             </div>
         </div>
-        <div class="row p-3 mb-4">
-            <div class="col-12 col-md-6">
-                <img src="/static/images/portfolio-detail/negahban3.jpeg" class="w-100"/>
-            </div>
-            <div class="col-12 col-md-6">
-                <img src="/static/images/portfolio-detail/negahban4.jpeg" class="w-100"/>
-            </div>
-        </div>
-        <div class="row p-3 mb-4">
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban5.png" class="w-100"/>
-            </div>
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban6.png" class="w-100"/>
-            </div>
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban7.png" class="w-100"/>
-            </div>
-        </div>
-        <div class="row p-3 mb-4">
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban8.png" class="w-100"/>
-            </div>
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban9.png" class="w-100"/>
-            </div>
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban10.png" class="w-100"/>
-            </div>
-        </div>
-        <div class="row p-3 mb-4">
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban11.png" class="w-100"/>
-            </div>
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban12.png" class="w-100"/>
-            </div>
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban13.png" class="w-100"/>
-            </div>
-        </div>
-        <div class="row p-3 mb-4">
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban14.png" class="w-100"/>
-            </div>
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban15.png" class="w-100"/>
-            </div>
-            <div class="col-12 col-md-4">
-                <img src="/static/images/portfolio-detail/negahban16.png" class="w-100"/>
-            </div>
-        </div>
-        <div class="row p-3 mb-4">
-            <div class="col-12 col-md-12">
-                <img src="/static/images/portfolio-detail/negahban17.png" class="w-100"/>
+    </section>
+
+
+    <section
+  style="
+    width:100%;
+    overflow:hidden;
+    position:relative;
+    user-select:none;
+    -webkit-user-select:none;
+    margin-bottom: 100px;
+  "
+>
+  <style>
+    .rd-film-viewport { cursor: grab; }
+    .rd-film-viewport:active { cursor: grabbing; }
+    .rd-film-track { will-change: transform; }
+    .rd-film-img {
+      -webkit-user-drag: none;
+      user-drag: none;
+      pointer-events: none;
+      display: block;
+      width: calc((100% - (18px * 3)) / 4); /* exactly 4 images visible */
+      height: auto;
+      flex: 0 0 auto;
+    }
+  </style>
+
+  <div
+    class="rd-film-viewport"
+    id="rdFilmViewport"
+    style="
+      width: 100%;
+      overflow: hidden;
+      touch-action: pan-y;
+      padding: 50px 0; /* reveals background above & below */
+      background-image: url('/static/portfolio/mamoot-guardian/back-role.png');
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-color: black;
+    "
+  >
+    <div
+      class="rd-film-track"
+      id="rdFilmTrack"
+      style="
+        display: flex;
+        gap: 18px;
+        align-items: center;
+        transform: translate3d(0px,0,0);
+        padding: 0 0; /* keep background visible only via viewport padding */
+      "
+    >
+      <!-- Original set (4) -->
+      <img class="rd-film-img" src="/static/portfolio/mamoot-guardian/role1.png" style="" />
+      <img class="rd-film-img" src="/static/portfolio/mamoot-guardian/role2.png" style="" />
+      <img class="rd-film-img" src="/static/portfolio/mamoot-guardian/role3.png" style="" />
+      <img class="rd-film-img" src="/static/portfolio/mamoot-guardian/role4.png" style="" />
+
+      <!-- Duplicate set (4) for seamless loop -->
+      <img class="rd-film-img" src="/static/portfolio/mamoot-guardian/role1.png" style="" />
+      <img class="rd-film-img" src="/static/portfolio/mamoot-guardian/role2.png" style="" />
+      <img class="rd-film-img" src="/static/portfolio/mamoot-guardian/role3.png" style="" />
+      <img class="rd-film-img" src="/static/portfolio/mamoot-guardian/role4.png" style="" />
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const viewport = document.getElementById("rdFilmViewport");
+      const track = document.getElementById("rdFilmTrack");
+      if (!viewport || !track) return;
+
+      let isDown = false;
+      let startX = 0;
+      let startOffset = 0;
+      let offset = 0;
+
+      function getHalfWidth() {
+        return track.scrollWidth / 2;
+      }
+
+      function setOffset(x) {
+        const half = getHalfWidth();
+        offset = x;
+
+        while (offset <= -half) offset += half;
+        while (offset > 0) offset -= half;
+
+        track.style.transform = `translate3d(${offset}px,0,0)`;
+      }
+
+      function clientXFromEvent(e) {
+        return e.touches ? e.touches[0].clientX : e.clientX;
+      }
+
+      function onDown(e) {
+        isDown = true;
+        startX = clientXFromEvent(e);
+        startOffset = offset;
+        viewport.style.cursor = "grabbing";
+      }
+
+      function onMove(e) {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = clientXFromEvent(e);
+        const dx = x - startX;
+        setOffset(startOffset + dx);
+      }
+
+      function onUp() {
+        isDown = false;
+        viewport.style.cursor = "grab";
+      }
+
+      viewport.addEventListener("mousedown", onDown);
+      window.addEventListener("mousemove", onMove);
+      window.addEventListener("mouseup", onUp);
+
+      viewport.addEventListener("touchstart", onDown, { passive: true });
+      viewport.addEventListener("touchmove", onMove, { passive: false });
+      viewport.addEventListener("touchend", onUp);
+
+      viewport.addEventListener("dragstart", (e) => e.preventDefault());
+
+      setOffset(0);
+      window.addEventListener("resize", () => setOffset(offset));
+    })();
+  </script>
+</section>
+
+
+
+    <section class="position-relative" style="overflow:hidden;">
+
+        <!-- Left blue rectangle -->
+        <div
+                style="
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform: translate(-50%, -50%) translateX(-50vw);
+      width:145px;
+      height:35px;
+      background-color:#005675;
+      z-index:2;
+    "
+        ></div>
+
+        <!-- Right blue rectangle -->
+        <div
+                style="
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform: translate(-50%, -50%) translateX(50vw);
+      width:145px;
+      height:35px;
+      background-color:#005675;
+      z-index:2;
+    "
+        ></div>
+
+        <!-- Main content -->
+        <div
+                class="container-fluid position-relative"
+                style="background-color:#fcedde; width:85%; padding:0; z-index:1;"
+        >
+            <div class="row p-5">
+                <div class="col pt-3 px-4 d-flex justify-content-center">
+                    <video
+  src="/static/portfolio/mamoot-guardian/snow-man.mp4"
+  autoplay
+  loop
+  muted
+  playsinline
+  preload="auto"
+  style="max-width:100%; height:auto;"
+></video>
+
+                </div>
             </div>
         </div>
 
+    </section>
+
+
+    <section
+            class="position-relative"
+            style="
+    overflow:hidden;
+    background:#fff;
+    padding: 120px 0;
+  "
+    >
+        <!-- Beige band (NOT full height) -->
+        <div
+                style="
+    position:absolute;
+    left:0;
+    right:0;
+    top:25%;
+    bottom:25%;
+    background-color:#fcedde;
+    z-index:0;
+  "
+        ></div>
+
+        <div class="container-fluid px-0 position-relative" style="z-index:1;">
+            <div class="row g-0 align-items-center">
+
+                <!-- LEFT: images -->
+                <div
+                        class="col-lg-7 d-flex flex-column align-items-center"
+                        style="padding: 0 3vw; gap: 48px;"
+                >
+                    <img
+                            src="/static/portfolio/mamoot-guardian/nasrolah-medghalchi.png"
+                            class="img-fluid"
+                            style="width:65%; max-width:720px;"
+                            alt=""
+                    >
+                    <img
+                            src="/static/portfolio/mamoot-guardian/707.jpg"
+                            class="img-fluid"
+                            style="width:65%; max-width:720px;"
+                            alt=""
+                    >
+
+                </div>
+
+                <!-- RIGHT: text -->
+                <div class="col-lg-5">
+                    <div
+                            class="position-relative"
+                            style="direction:rtl; padding: 0 13vw 0 0;"
+                    >
+                        <!-- Title row (bar aligns to title center) -->
+                        <div class="position-relative mb-4" style="display:flex; justify-content:flex-start;">
+                            <h3
+                                    class="m-0"
+                                    style="color:#005675; font-weight:700; white-space:nowrap;"
+                            >
+                                طراحی صدا و موسیقی
+                            </h3>
+
+                            <!-- Blue bar: flush to viewport right, vertically centered to title -->
+                            <div
+                                    style="
+                                            position: absolute;
+                                            right: -13vw;
+                                            top: 50%;
+                                            transform: translateY(-50%);
+                                            width: 90px;
+                                            height: 40px;
+                                            background-color: #005675;
+                                      "
+                            ></div>
+                        </div>
+
+                        <p style="font-size:20px; line-height:24px; text-align:justify; max-width:620px; margin-right:auto;">
+                            موسیقی با توجه به دوره‌های زمانی و جغرافیاهای مختلف زندگی مهندس فردوس انتخاب و طراحی شد تا
+                            تغییر زمان، فضا و حس روایت را به مخاطب منتقل کرده و همراه تصویر، ریتم زندگی ایشان را
+                            بازآفرینی کند. از آنجا که روایت انیمیشن به‌صورت اول‌شخص و از زبان خود مهندس فردوس شکل گرفته
+                            بود، انتخاب نریشن اهمیت ویژه‌ای داشت؛ به همین دلیل صدای نصرالله مدقالچی به‌دلیل وقار، عمق و
+                            حس خاطره‌انگیز به‌عنوان راوی برگزیده شد تا روایت با صدایی باورپذیر و گرم شنیده شود.
+                        </p>
+
+                        <p style="font-size:20px; line-height:24px; text-align:justify; max-width:620px; margin-right:auto;">
+                            صداگذاری، نریشن و موسیقی در هماهنگی کامل با تصویر و ریتم انیمیشن طراحی شدند و اجرای زنده
+                            ارکستر در مراسم، به تقویت پویایی و تعامل روی صحنه کمک کرد.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+<section
+  style="
+    position: relative;
+    width: 100%;
+    margin-bottom: -180px;
+    overflow: hidden;
+  "
+>
+  <style>
+    @keyframes jiggle-left {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(-0.6vw, 0); }
+      100% { transform: translate(0, 0); }
+    }
+
+    @keyframes jiggle-right {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(0.6vw, 0); }
+      100% { transform: translate(0, 0); }
+    }
+  </style>
+
+  <!-- Base image defines section height -->
+  <img
+    src="/static/portfolio/mamoot-guardian/14.png"
+    style="
+      width: 100%;
+      height: auto;
+      display: block;
+    "
+  />
+
+  <!-- Overlay layer -->
+  <div
+    style="
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    "
+  >
+    <!-- Center anchor -->
+    <div
+      style="
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+      "
+    >
+      <!-- 16 -->
+      <div style="transform: translate(-4.5vw, 4vh);">
+        <img
+          src="/static/portfolio/mamoot-guardian/16.png"
+          style="
+            width: 4vw;
+            height: auto;
+            animation: jiggle-left 2.8s ease-in-out infinite;
+          "
+        />
+      </div>
+
+      <!-- 15 -->
+      <div style="transform: translate(2vw, -3vh);">
+        <img
+          src="/static/portfolio/mamoot-guardian/15.png"
+          style="
+            width: 5.5vw;
+            height: auto;
+            animation: jiggle-right 2.8s ease-in-out infinite;
+          "
+        />
+      </div>
+
+      <!-- 16 repeat -->
+      <div style="transform: translate(11vw, 3vh);">
+        <img
+          src="/static/portfolio/mamoot-guardian/16.png"
+          style="
+            width: 7vw;
+            height: auto;
+            animation: jiggle-left 3.2s ease-in-out infinite;
+          "
+        />
+      </div>
+
+      <!-- 15 far right -->
+      <div style="transform: translate(34vw, 10vh);">
+        <img
+          src="/static/portfolio/mamoot-guardian/15.png"
+          style="
+            width: 4vw;
+            height: auto;
+            animation: jiggle-right 3.2s ease-in-out infinite;
+          "
+        />
+      </div>
     </div>
+  </div>
+</section>
+
+
+
+
+
+
+    <section>
+        <div class="container-fluid" style="width: 80%;">
+            <div class="row">
+                <!-- Text column -->
+                <div
+                        class="col-lg-7 d-flex flex-column justify-content-center align-items-center"
+                        style="direction: rtl;"
+                >
+                    <div style="max-width: 88%; padding-top: 200px">
+                        <h4
+                                class="pb-4"
+                                style="font-size:26px; color:#005675; text-align:right;"
+                        >
+                            موشن‌دیزاین به‌صورت یک اجرای چندلایه طراحی شد:
+                        </h4>
+
+                        <p style="font-size:21px; text-align:justify; line-height: 27px">
+                            استفاده از تکنیک‌های فریم‌به‌فریم، استاپ‌موشن، کات‌اوت و فوتوموشن،
+                            ترکیب ژانر پرفورمنس برای نمایش بخش‌هایی از مسیر زندگی.
+                            <br>
+                            همراهی زندهٔ گروه ارکستر برای تقویت تعامل روی صحنه و حس پویایی نمایش،
+                            هماهنگ موشن‌دیزاین در سالن مراسم.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Image column -->
+                <div
+                        class="col-lg-5 d-flex justify-content-center align-items-center"
+                >
+                    <img
+                            src="/static/portfolio/mamoot-guardian/navazande.png"
+                            style="width:30vw;"
+                            alt="Navazande"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section
+            class="py-5 position-relative"
+            style="overflow: hidden;"
+    >
+        <!-- Left cream block -->
+        <div
+                style="
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) translateX(-50vw);
+      top: 50%;
+      width: 140px;
+      height: 32px;
+      background-color: #f6e7d6;
+    "
+        ></div>
+
+        <!-- Right cream block -->
+        <div
+                style="
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) translateX(50vw);
+      top: 50%;
+      width: 140px;
+      height: 32px;
+      background-color: #f6e7d6;
+    "
+        ></div>
+
+        <!-- Main blue container -->
+        <div
+                class="container-fluid py-5"
+                style="background-color:#005675; width:85%;"
+        >
+            <div class="row py-4">
+                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                    <img
+                            src="/static/portfolio/mamoot-guardian/10.jpg"
+                            class="img-fluid"
+                            style="width:80%;"
+                            alt="Baroot Image 1"
+                    >
+                </div>
+
+                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                    <img
+                            src="/static/portfolio/mamoot-guardian/9.jpg"
+                            class="img-fluid"
+                            style="width:80%;"
+                            alt="Baroot Image 2"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section
+            style="
+                background-image: url('/static/portfolio/mamoot-guardian/back1.png');
+                background-repeat: no-repeat;
+                background-position: center bottom;
+                background-size: 100%;
+                width: 100%;
+                height: 110vh;
+              "
+    >
+        <div class="container-fluid">
+            <div class="row">
+                <div
+                        class="col-lg-6 ms-auto"
+                        style="direction: rtl; text-align: justify; padding: 4rem 6.5rem; margin-top: 125px"
+                >
+                    <h4 style="font-size: 26px; color: #005675" class="pb-4">تجربه رویداد</h4>
+                    <p style="font-size: 21px">
+                        در روز رویداد، مسیر تجربه میهمانان با هدف هم‌راستا شدن با روایت انیمیشن
+                        طراحی شد؛ روایتی که سیر زندگی مهندس فردوس را از تجربه‌های فردی تا
+                        شکل‌گیری نگاهی صنعتی و اثرگذار در مقیاس ملی دنبال می‌کرد.
+                    </p>
+                    <br>
+                    <p style="font-size: 21px">
+                        میهمانان ابتدا با دستاوردها و نقاط مهم زندگی ایشان آشنا می‌شدند و سپس به
+                        دو بخش اصلی رویداد هدایت می‌شدند: اجرای انیمیشن همراه با پرفورمنس موسیقی
+                        زنده که این مسیر را به شکلی پویا بازگو می‌کرد، و رونمایی از کتاب «نگهبان
+                        ماموت» که به‌عنوان جمع‌بندی مکتوب این روایت، میراث فکری و حرفه‌ای مهندس
+                        فردوس را ثبت کرده بود.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section
+            class="py-5"
+            style="
+                background-image: url('/static/portfolio/mamoot-guardian/final-section-back.png');
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+              ">
+        <div class="container-fluid w-75 py-5">
+            <div class="row">
+                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                    <img
+                            src="/static/portfolio/mamoot-guardian/9R5A3403.JPG"
+                            class="img-fluid"
+                            style="width:90%;"
+                            alt="Baroot Image 1"
+                    >
+                </div>
+
+                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                    <img
+                            src="/static/portfolio/mamoot-guardian/IMG_9269.jpg"
+                            class="img-fluid"
+                            style="width:90%;"
+                            alt="Baroot Image 2"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="d-flex justify-content-center align-items-center"
+             style="background-color:#005675; height:80vh;">
+            <img
+                    src="/static/portfolio/mamoot-guardian/baroot-logo.png"
+                    class="img-fluid"
+                    alt="Baroot Logo" width="250vw"
+            >
+        </div>
+    </section>
+
+    <style>
+        @media (min-width: 992px) {
+            .section-2 {
+                position: relative;
+                background-image: url("/static/portfolio/mamoot-guardian/section2-big.png");
+                background-repeat: no-repeat;
+                background-position: bottom center;
+                min-height: 113vw; /* controls full background visibility */
+                background-size: 100% auto;
+            }
+
+            .section-2-content {
+                position: relative; /* NEW: makes the square anchor stable */
+                margin-top: 10vw;
+                width: 90%;
+            }
+
+            .section-2-content::after {
+                content: "";
+                position: absolute;
+                right: -10vw;
+                top: calc(10vw + 41vw);
+                width: 5vw;
+                height: 2.5vw;
+                background-color: #005775;
+            }
+
+            .mg-blue-tag {
+                display: inline-block;
+                color: white;
+                background-color: #005775;
+                padding: 0 5px;
+                font-size: 2vw;
+            }
+
+            .mg-p-long {
+                padding-top: 25vw;
+                padding-bottom: 28vw;
+                width: 33%;
+                font-size: 1.2vw;
+                color: black;
+                position: relative;
+                text-align: justify;
+            }
+
+            .mg-p-long::before {
+                content: none;
+            }
+
+            .mg-p {
+                font-size: 2vw;
+                padding-right: 10px;
+                color: black;
+            }
+        }
+
+
+        /* ================= HERO ================= */
+        .hero {
+            height: 95vh;
+            position: relative;
+            overflow: hidden;
+            background-image: url("/static/portfolio/mamoot-guardian/1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-gif {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translate(-50%, -50%);
+            width: min(130px, 70vw);
+            height: auto;
+            filter: drop-shadow(0 10px 28px rgba(0, 0, 0, .45));
+            pointer-events: none;
+            user-select: none;
+        }
+
+        @media (max-width: 576px) {
+            .hero-gif {
+                width: min(360px, 78vw);
+                top: 38%;
+            }
+        }
+
+
+        .meta-item .meta-value {
+            margin-top: 10px;
+            font-size: 18px;
+            line-height: 1;
+            padding-right: 7px;
+        }
+
+
+    </style>
 
 {% endblock %}

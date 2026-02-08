@@ -1,0 +1,595 @@
+{% extends "index/base.html" %}
+{% block content %}
+
+<section class="portfolio-page" dir="rtl" style="padding-top: 120px">
+  <style>
+    .portfolio-page {
+      position: relative;
+      --ms-accent: #6a5df6;
+      --ms-accent-2: #22c1c3;
+      --chip-border: rgba(0, 0, 0, .08);
+      --surface: rgba(255, 255, 255, .72);
+      --surface-dark: rgba(22,22,27,.45);
+    }
+    .portfolio-page * { box-sizing: border-box; }
+
+    .pg-hero { padding: 24px 0 8px; text-align: center; }
+    .pg-title { font-size: clamp(28px, 4vw, 48px); margin: 0; }
+
+    /* Controls */
+    .pg-controls { margin: 8px auto 16px; max-width: 1100px; padding-inline: 8px; }
+    .pg-rail {
+      position: relative;
+      border-radius: 16px;
+      background: var(--surface);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--chip-border);
+      padding: 6px 42px; /* space for arrows */
+    }
+    .pg-rail::before, .pg-rail::after { content: none !important; display: none !important; }
+
+    .pg-filters {
+      position: relative;
+      display: flex; gap: 8px; align-items: center;
+      overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none;
+      direction: rtl; scroll-snap-type: x proximity;
+    }
+    .pg-filters::-webkit-scrollbar { display: none; }
+
+    .pg-chip {
+      position: relative;
+      border: 0; background: transparent; color: white;
+      padding: 10px 14px; border-radius: 999px; cursor: pointer; white-space: nowrap; font: inherit;
+      scroll-snap-align: center;
+      transition: color .2s ease, transform .12s ease, background-color .2s ease;
+    }
+    .pg-chip:active { transform: scale(.98); }
+    .pg-chip:not(.is-active):hover { background: rgba(0,0,0,.04); }
+
+    .pg-indicator {
+      position: absolute; top: 4px; height: calc(100% - 8px); width: 0;
+      border-radius: 999px; background: #ffc609; box-shadow: 0 8px 24px rgba(0,0,0,.18);
+      transition: transform .30s cubic-bezier(.2,.7,.3,1), width .30s cubic-bezier(.2,.7,.3,1);
+      pointer-events: none;
+    }
+    .pg-chip.is-active { color: #ffc609; }
+
+    /* Nav arrows */
+    .pg-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      padding: 0; border: 0; background: transparent;
+      cursor: pointer; z-index: 2; line-height: 0; transition: transform .15s ease, opacity .2s ease;
+    }
+    .pg-nav:active { transform: translateY(-50%) scale(.96); }
+    .pg-nav[disabled] { opacity: .35; pointer-events: none; }
+    .pg-nav.is-left  { inset-inline-start: 8px; }
+    .pg-nav.is-right { inset-inline-end: 8px; }
+    .pg-nav svg { width: 32px; height: 32px; stroke: #ffc609; }
+
+    /* Grid + Cards */
+    .pg-grid-wrap { max-width: 1100px; margin: 0 auto; padding: 0 8px 24px; }
+    .pg-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      grid-auto-flow: dense;
+    }
+    .pg-card[hidden] { display: none !important; }
+
+    .pg-card {
+      position: relative;
+      border-radius: 14px; overflow: hidden;
+      background: rgba(255,255,255,.8);
+      border: 1px solid rgba(0,0,0,.06);
+      box-shadow: 0 6px 14px rgba(0,0,0,.06);
+      transition: transform .24s cubic-bezier(.2,.7,.3,1), box-shadow .24s ease;
+      will-change: transform, opacity;
+    }
+    .pg-card:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 16px 36px rgba(0,0,0,.12);
+    }
+
+    .pg-media { position: relative; aspect-ratio: 4/3; overflow: hidden; background: #f6f7f8; }
+    .pg-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Darkener */
+    .pg-media::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,.18);
+      transition: opacity .22s ease;
+      pointer-events: none;
+    }
+    .pg-card:hover .pg-media::after { opacity: .28; }
+
+    .pg-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,0));
+      opacity: 0; transition: opacity .22s ease;
+    }
+    .pg-card:hover .pg-overlay { opacity: 1; }
+
+    .pg-content {
+      position: absolute; inset-inline: 10px; bottom: 10px;
+      display: flex; flex-direction: column; align-items: flex-start; gap: 2px; color: #fff;
+    }
+    .pg-title-sm {
+      margin: 0;
+      font-size: clamp(22px, 2.6vw, 28px);
+      line-height: 1.12; letter-spacing: -.01em;
+      transform-origin: left bottom;
+      transition: transform .22s cubic-bezier(.2,.7,.3,1);
+    }
+    .pg-card:hover .pg-title-sm { transform: scale(1.06); }
+
+    .pg-link {
+      display: inline-block;
+      margin-top: 2px; padding: 0; border: 0; background: transparent;
+      color: rgba(255,255,255,.92);
+      font-size: 15px; text-decoration: none;
+      opacity: 0; transform: translateY(6px) scale(.96);
+      transition: opacity .22s ease, transform .22s ease, color .22s ease;
+      pointer-events: none;
+    }
+    .pg-card:hover .pg-link {
+      opacity: 1; transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .pg-link:hover { text-decoration: underline; color: #fff; }
+    .pg-link .icon { display: none !important; }
+
+    @media (prefers-color-scheme: dark) {
+      .pg-rail { background: var(--surface-dark); border-color: rgba(255,255,255,.08); }
+      .pg-card { background: rgba(22,22,27,.65); border-color: rgba(255,255,255,.06); }
+    }
+    @media (max-width: 560px) {
+      .pg-rail { padding-inline: 36px; }
+      .pg-chip { padding: 8px 12px; }
+    }
+  </style>
+
+  <header class="pg-hero">
+    <h2 class="pg-title">کارها</h2>
+  </header>
+
+  <div class="pg-controls">
+    <div class="pg-rail at-start at-end" style="background-color: #005776 !important;">
+      <!-- indicator -->
+
+
+      <!-- left arrow -->
+      <button class="pg-nav is-left" aria-label="اسکرول به راست">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+
+      <!-- scrollable track -->
+      <nav class="pg-filters" role="tablist" aria-label="فیلتر پروژه‌ها">
+        <button class="pg-chip is-active" role="tab" aria-selected="true" aria-pressed="true" data-filter="all">همه</button>
+        <button class="pg-chip" role="tab" aria-selected="false" aria-pressed="false" data-filter="brand-design">طراحی برند</button>
+        <button class="pg-chip" role="tab" aria-selected="false" aria-pressed="false" data-filter="campaign-design">طراحی کمپین</button>
+        <button class="pg-chip" role="tab" aria-selected="false" aria-pressed="false" data-filter="photography-and-videography">عکاسی و فیلم‌برداری تبلیغاتی</button>
+        <button class="pg-chip" role="tab" aria-selected="false" aria-pressed="false" data-filter="visual-identity">هویت بصری برند</button>
+        <button class="pg-chip" role="tab" aria-selected="false" aria-pressed="false" data-filter="content-creation">طراحی و تولید محتوا</button>
+      </nav>
+
+      <!-- right arrow -->
+      <button class="pg-nav is-right" aria-label="اسکرول به چپ">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="pg-grid-wrap">
+    <div id="pg-grid" class="pg-grid" aria-live="polite">
+
+      <!-- Existing cards -->
+      <article class="pg-card" data-tags="tabligati branding social">
+        <a href="{% url 'jeanwest' %}" class="pg-media" aria-label="Jeanwest">
+          <img src="/static/portfolio/jeanwest/image1.png" alt="Jeanwest"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm RaySemiBold">Jeanwest</h3>
+          <a class="pg-link" href="{% url 'jeanwest' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="tabligati social product">
+        <a href="{% url 'portfolio-bunny-mode' %}" class="pg-media" aria-label="Avakatan">
+          <img src="/static/images/avakatan.jpg" alt="Avakatan"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm RaySemiBold">Avakatan</h3>
+          <a class="pg-link" href="{% url 'portfolio-bunny-mode' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="sanati explainer">
+        <a href="{% url 'portfolio-negahban-mammut' %}" class="pg-media" aria-label="Negahban Mammut">
+          <img src="/static/images/negahban.jpg" alt="Negahban Mammut"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Negahban Mammut</h3>
+          <a class="pg-link" href="{% url 'portfolio-negahban-mammut' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="explainer app">
+        <a href="{% url 'portfolio-azki' %}" class="pg-media" aria-label="Azki">
+          <img src="/static/images/azki.jpeg" alt="Azki"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Azki</h3>
+          <a class="pg-link" href="{% url 'portfolio-azki' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="branding tabligati">
+        <a href="{% url 'portfolio-monji' %}" class="pg-media" aria-label="Monji">
+          <img src="/static/images/monji.jpeg" alt="Monji"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Monji</h3>
+          <a class="pg-link" href="{% url 'portfolio-monji' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="explainer product">
+        <a href="{% url 'portfolio-kanirush' %}" class="pg-media" aria-label="Kanirush">
+          <img src="/static/images/kanirush.jpeg" alt="Kanirush"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Kanirush</h3>
+          <a class="pg-link" href="{% url 'portfolio-kanirush' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="sanati branding">
+        <a href="{% url 'portfolio-cheraghbargh' %}" class="pg-media" aria-label="چراغ برق">
+          <img src="/static/images/cheragh.jpg" alt="چراغ برق"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">چراغ برق</h3>
+          <a class="pg-link" href="{% url 'portfolio-cheraghbargh' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="explainer product">
+        <a href="{% url 'portfolio-negah' %}" class="pg-media" aria-label="Negah Holding">
+          <img src="/static/images/portfolio-detail/negah1.jpg" alt="Negah Holding"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm RaySemiBold">Negah Holding</h3>
+          <a class="pg-link" href="{% url 'portfolio-negah' %}">See Project</a>
+        </div>
+      </article>
+
+      <!-- New cards -->
+      <article class="pg-card" data-tags="branding product">
+        <a href="{% url 'portfolio-zelmond' %}" class="pg-media" aria-label="Zelmond">
+          <img src="/static/images/zelmond.jpg" alt="Zelmond"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm RaySemiBold">Zelmond</h3>
+            <a class="pg-link" href="{% url 'portfolio-zelmond' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="explainer product">
+        <a href="{% url 'portfolio-detail' %}" class="pg-media" aria-label="Ghoghnoos NGO">
+          <img src="/static/images/ghoghnoos.jpg" alt="Ghoghnoos NGO"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Ghoghnoos NGO</h3>
+          <a class="pg-link" href="{% url 'portfolio-detail' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="explainer branding">
+        <a href="{% url 'portfolio-lucano' %}" class="pg-media" aria-label="Lucano">
+          <img src="/static/images/lucano.jpg" alt="Lucano"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm RaySemiBold">Lucano</h3>
+          <a class="pg-link" href="{% url 'portfolio-lucano' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="explainer branding">
+        <a href="{% url 'portfolio-mammut-vip-tour' %}" class="pg-media" aria-label="Mammut VIP Tour">
+          <img src="/static/images/mammut-vip.jpeg" alt="Mammut VIP Tour"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Mammut VIP Tour</h3>
+          <a class="pg-link" href="{% url 'portfolio-mammut-vip-tour' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="branding product">
+        <a href="{% url 'portfolio-vesta' %}" class="pg-media" aria-label="Vesta">
+          <img src="/static/images/vesta.jpeg" alt="Vesta"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm RaySemiBold">Vesta</h3>
+          <a class="pg-link" href="{% url 'portfolio-vesta' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="branding product">
+        <a href="{% url 'portfolio-vita' %}" class="pg-media" aria-label="Vita heal">
+          <img src="/static/images/vita.jpg" alt="Vita heal"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Vita heal</h3>
+          <a class="pg-link" href="{% url 'portfolio-vita' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="explainer branding">
+        <a href="{% url 'portfolio-viana' %}" class="pg-media" aria-label="Viana">
+          <img src="/static/images/viana.png" alt="Viana"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Viana</h3>
+          <a class="pg-link" href="{% url 'portfolio-viana' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="explainer branding">
+        <a href="{% url 'portfolio-hapitoo' %}" class="pg-media" aria-label="HapiToo">
+          <img src="/static/images/hapitoo.png" alt="HapiToo"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">HapiToo</h3>
+          <a class="pg-link" href="{% url 'portfolio-hapitoo' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="explainer branding">
+        <a href="{% url 'portfolio-talashim' %}" class="pg-media" aria-label="Talashim">
+          <img src="/static/images/talashim.jpg" alt="Talashim"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Talashim</h3>
+          <a class="pg-link" href="{% url 'portfolio-talashim' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="product branding">
+        <a href="{% url 'portfolio-dyarino' %}" class="pg-media" aria-label="Dyarino">
+          <img src="/static/images/dyarino.jpg" alt="Dyarino"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Dyarino</h3>
+          <a class="pg-link" href="{% url 'portfolio-dyarino' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="branding product">
+        <a href="{% url 'portfolio-sbt' %}" class="pg-media" aria-label="SBT">
+          <img src="/static/images/sbt-logo.jpg" alt="SBT"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">SBT</h3>
+          <a class="pg-link" href="{% url 'portfolio-sbt' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="branding product">
+        <a href="{% url 'portfolio-breaking-muscle' %}" class="pg-media" aria-label="Breaking Muscle">
+          <img src="/static/images/breaking-muscle.jpg" alt="Breaking Muscle"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm RaySemiBold">Breaking Muscle</h3>
+          <a class="pg-link" href="{% url 'portfolio-breaking-muscle' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="branding product">
+        <a href="{% url 'portfolio-netentpoker' %}" class="pg-media" aria-label="Netent Poker">
+          <img src="/static/images/netentpoker.jpg" alt="Netent Poker"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Netent Poker</h3>
+          <a class="pg-link" href="{% url 'portfolio-netentpoker' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="branding product">
+        <a href="{% url 'portfolio-kunzite' %}" class="pg-media" aria-label="Kunzite">
+          <img src="/static/images/kunzite.jpg" alt="Kunzite"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">Kunzite</h3>
+          <a class="pg-link" href="{% url 'portfolio-kunzite' %}">See Project</a>
+        </div>
+      </article>
+
+      <article class="pg-card" data-tags="branding product">
+        <a href="{% url 'portfolio-regenbogen' %}" class="pg-media" aria-label="regenbogen">
+          <img src="/static/images/regenbogen.jpg" alt="regenbogen"><span class="pg-overlay"></span>
+        </a>
+        <div class="pg-content">
+          <h3 class="pg-title-sm">regenbogen</h3>
+          <a class="pg-link" href="{% url 'portfolio-regenbogen' %}">See Project</a>
+        </div>
+      </article>
+      <!-- /new cards -->
+
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      const EASE = 'cubic-bezier(.2,.7,.3,1)';
+      const root = document.querySelector('.portfolio-page');
+      const $ = (sel, r = root) => r.querySelector(sel);
+      const $$ = (sel, r = root) => Array.from(r.querySelectorAll(sel));
+
+      const grid = $('#pg-grid');
+      const items = $$('.pg-card', grid);
+      const chips = $$('.pg-chip');
+      const indicator = $('.pg-indicator');
+      const rail = $('.pg-rail');
+      const track = $('.pg-filters');
+      const navLeft = $('.pg-nav.is-left');
+      const navRight = $('.pg-nav.is-right');
+
+      let activeFilter = 'all';
+      const WORKS_BASE = '/works';
+
+      const isRTL = (el) => getComputedStyle(el).direction === 'rtl';
+
+      function setActiveChipByFilter(filter) {
+        const targetBtn = track.querySelector(`.pg-chip[data-filter="${CSS.escape(filter)}"]`) || track.querySelector('.pg-chip[data-filter="all"]');
+        chips.forEach(b => { b.classList.remove('is-active'); b.setAttribute('aria-selected','false'); b.setAttribute('aria-pressed','false'); });
+        targetBtn.classList.add('is-active');
+        targetBtn.setAttribute('aria-selected','true');
+        targetBtn.setAttribute('aria-pressed','true');
+        activeFilter = targetBtn.dataset.filter;
+        moveIndicator(targetBtn);
+      }
+
+      function moveIndicator(btn) {
+        if (!indicator || !btn) return;
+        const rect = btn.getBoundingClientRect();
+        const parentRect = track.getBoundingClientRect();
+        const x = rect.left - parentRect.left + track.scrollLeft;
+        indicator.style.width = rect.width + 'px';
+        indicator.style.transform = 'translateX(' + x + 'px)';
+      }
+
+      function matches(item) {
+        const tags = (item.dataset.tags || '').trim().split(/\s+/);
+        return (activeFilter === 'all') || tags.includes(activeFilter);
+      }
+
+      function applyFilter(pushState = true) {
+        const first = new Map();
+        items.filter(i => !i.hasAttribute('hidden')).forEach(i => first.set(i, i.getBoundingClientRect()));
+
+        const toShow = [], toHide = [], stay = [];
+        for (const item of items) {
+          const m = matches(item);
+          const hidden = item.hasAttribute('hidden');
+          if (m && hidden) toShow.push(item);
+          else if (!m && !hidden) toHide.push(item);
+          else if (m && !hidden) stay.push(item);
+        }
+
+        const rootBox = root.getBoundingClientRect();
+        for (const item of toHide) {
+          const rect = first.get(item);
+          if (rect) {
+            const ghost = item.cloneNode(true);
+            Object.assign(ghost.style, {
+              position: 'absolute',
+              left: (rect.left - rootBox.left + root.scrollLeft) + 'px',
+              top:  (rect.top  - rootBox.top  + root.scrollTop)  + 'px',
+              width: rect.width + 'px',
+              height: rect.height + 'px',
+              margin: '0',
+              zIndex: '50',
+              pointerEvents: 'none',
+              willChange: 'transform, opacity'
+            });
+            root.appendChild(ghost);
+            item.setAttribute('hidden', '');
+            ghost.animate(
+              [{ opacity: 1, transform: 'scale(1) translateY(0)' },
+               { opacity: 0, transform: 'scale(.90) translateY(8px)' }],
+              { duration: 280, easing: EASE }
+            ).addEventListener('finish', () => ghost.remove());
+          } else {
+            item.setAttribute('hidden', '');
+          }
+        }
+
+        for (const item of toShow) {
+          item.removeAttribute('hidden');
+          item.animate(
+            [{ opacity: 0, transform: 'scale(.92) translateY(8px)' },
+             { opacity: 1, transform: 'scale(1) translateY(0)' }],
+            { duration: 260, easing: EASE }
+          );
+        }
+
+        const last = new Map();
+        items.filter(i => !i.hasAttribute('hidden')).forEach(i => last.set(i, i.getBoundingClientRect()));
+
+        for (const item of stay) {
+          const a = first.get(item), b = last.get(item);
+          if (!a || !b) continue;
+          const dx = a.left - b.left, dy = a.top - b.top;
+          if (dx || dy) {
+            item.animate(
+              [{ transform: `translate(${dx}px, ${dy}px)` }, { transform: 'translate(0, 0)' }],
+              { duration: 320, easing: EASE }
+            );
+          }
+        }
+
+        if (pushState) {
+          const newPath = activeFilter === 'all' ? WORKS_BASE : `${WORKS_BASE}/${encodeURIComponent(activeFilter)}`;
+          // keep no querystring version canonical
+          window.history.replaceState({}, '', newPath);
+        }
+      }
+
+      function updateOverflowState() {
+        const max = Math.max(0, track.scrollWidth - track.clientWidth);
+        const atStart = Math.round(Math.abs(track.scrollLeft)) <= 1;
+        const atEnd = Math.round(Math.abs(track.scrollLeft)) >= Math.round(max - 1);
+        rail.classList.toggle('has-overflow', track.scrollWidth > track.clientWidth + 2);
+        rail.classList.toggle('at-start', atStart);
+        rail.classList.toggle('at-end', atEnd);
+        navLeft.disabled = atStart;
+        navRight.disabled = atEnd;
+      }
+      function scrollByStep(dir) {
+        const rtl = isRTL(track);
+        const step = Math.round(track.clientWidth * 0.8);
+        const delta = (rtl ? -dir : dir) * step;
+        track.scrollBy({ left: delta, behavior: 'smooth' });
+      }
+
+      navLeft.addEventListener('click', () => scrollByStep(-1));
+      navRight.addEventListener('click', () => scrollByStep( 1));
+      track.addEventListener('scroll', () => updateOverflowState(), { passive: true });
+      window.addEventListener('resize', () => { moveIndicator(track.querySelector('.pg-chip.is-active')); updateOverflowState(); });
+
+      chips.forEach(btn => {
+        btn.addEventListener('click', () => {
+          setActiveChipByFilter(btn.dataset.filter);
+          applyFilter(true);
+          const r = btn.getBoundingClientRect(), pr = track.getBoundingClientRect();
+          if (r.left < pr.left || r.right > pr.right) btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        });
+      });
+
+      // Init: support /works?f=slug and pretty URLs /works/slug
+      (function initFromURL() {
+        const url = new URL(window.location);
+        const qpFilter = url.searchParams.get('f');
+
+        const pathParts = window.location.pathname.replace(/\/+$/,'').split('/').filter(Boolean);
+        // assuming route is /works or /works/<slug>
+        const pathFilter = pathParts.length >= 2 && pathParts[0] === 'works' ? decodeURIComponent(pathParts[1]) : null;
+
+        const initial = pathFilter || qpFilter || 'all';
+        setActiveChipByFilter(initial);
+
+        // normalize URL to pretty path form
+        const canonical = initial === 'all' ? WORKS_BASE : `${WORKS_BASE}/${encodeURIComponent(activeFilter)}`;
+        if (window.location.pathname + window.location.search !== canonical) {
+          window.history.replaceState({}, '', canonical);
+        }
+
+        applyFilter(false);
+        updateOverflowState();
+      })();
+    })();
+  </script>
+</section>
+
+{% endblock %}

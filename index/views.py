@@ -14,32 +14,24 @@ class ContactView(TemplateView):
     template_name = 'index/contact.html'
 
 
-class LogoArchive(TemplateView):
-    template_name = 'index/logo-archive.html'
+class BrandDesignService(TemplateView):
+    template_name = 'index/brand-design.html'
 
 
-class DigitalArchive(TemplateView):
-    template_name = 'index/digital-branding-archive.html'
+class CampaignDesignService(TemplateView):
+    template_name = 'index/campaign-design.html'
 
 
-class MotionDesignArchive(TemplateView):
-    template_name = 'index/motion-design-archive.html'
+class VisualIdentityService(TemplateView):
+    template_name = 'index/visual-identity.html'
 
 
-class AdvertisingPhotoArchive(TemplateView):
-    template_name = 'index/ad-photo-archive.html'
+class PhotographyAndVideographyService(TemplateView):
+    template_name = 'index/video-photography.html'
 
 
-class IllustrationArchive(TemplateView):
-    template_name = 'index/illustration-archive.html'
-
-
-class GameDesignArchive(TemplateView):
-    template_name = 'index/game-design-archive.html'
-
-
-class VideoMakingArchive(TemplateView):
-    template_name = 'index/video-making-archive.html'
+class ContentCreationService(TemplateView):
+    template_name = 'index/content-creation-service.html'
 
 
 class PortfolioDetailSample(TemplateView):
@@ -73,20 +65,8 @@ class PortfolioDyarinoDetail(TemplateView):
     template_name = 'index/portfolio-dyarino.html'
 
 
-class PortfolioGhabileDetail(TemplateView):
-    template_name = 'index/portfolio-ghabile.html'
-
-
-class PortfolioHaylooDetail(TemplateView):
-    template_name = 'index/portfolio-hayloo.html'
-
-
 class PortfolioSBTDetail(TemplateView):
     template_name = 'index/portfolio-sbt.html'
-
-
-class PortfolioAriobarzanDetail(TemplateView):
-    template_name = 'index/portfolio-ariobarzan.html'
 
 
 class PortfolioTalashimDetail(TemplateView):
@@ -99,14 +79,6 @@ class PortfolioKunziteDetail(TemplateView):
 
 class PortfolioRegenbogenDetail(TemplateView):
     template_name = 'index/portfolio-regenbogen.html'
-
-
-class PortfolioModernKeyDetail(TemplateView):
-    template_name = 'index/portfolio-modernkey.html'
-
-
-class PortfolioInanlooDetail(TemplateView):
-    template_name = 'index/portfolio-inanloo.html'
 
 
 class PortfolioNegahDetail(TemplateView):
@@ -155,3 +127,7 @@ class PortfolioVestaView(TemplateView):
 
 class PortfolioHapitooView(TemplateView):
     template_name = 'index/portfolio-hapitoo.html'
+
+
+class WorksView(TemplateView):
+    template_name = 'index/works.html'

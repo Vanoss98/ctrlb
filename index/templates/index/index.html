@@ -6,60 +6,16 @@
                 background: none !important;
             }
 
-            .light-image{
-                width: 200px;
-                margin-top: 250px;
-            }
-
-            .light-title{
-                font-size: 25px !important;
-                text-align: center;
-                margin-top: 220px;
-                color: #303030 !important;
-
-            }
-
-            .light-title2{
-                font-size: 25px !important;
-                text-align: center;
-                margin-top: 220px;
-                color: #303030 !important;
-                margin-right: 19vw !important;
-            }
-
-            .light-title3{
-                font-size: 25px !important;
-                text-align: center;
-                margin-top: 220px;
-                color: #303030 !important;
-                margin-right: 21vw !important;
-            }
-
-
-            .light-text{
-                font-size: 14px !important;
-                text-align: center !important;
-                margin-top: 15px !important;
-                color: #303030 !important;
-            }
-
-            .red-title{
-                font-size: 25px !important;
-                text-align: center !important;
-                margin-top: 220px;
-                left: 0;
-                margin-right: 28vw !important;
-            }
-
-            .dark-title{
+            .dark-title {
                 font-size: 25px !important;
                 text-align: center !important;
                 margin-top: 220px;
                 left: 0;
                 margin-right: 21vw !important;
             }
-            @media screen and (max-width:768px){
-                .dark-title , .light-title , .light-title2 , .light-title3 , .red-title{
+
+            @media screen and (max-width: 768px) {
+                .dark-title {
                     margin-right: 0 !important;
                 }
             }
@@ -68,31 +24,25 @@
     </style>
     <div class="swiper-container swiper-full-page">
         <div class="swiper-wrapper">
+            <!-- Slide 1 -->
             <div class="swiper-slide" data-swiper-autoplay="10000" data-autoplay="true">
                 <div class="swiper-slide__inner">
-                    <div class="slide-image" style="background-color: white">
-                        <video class="background-video" style="position: absolute;
-                            top: 0;
-                            left: -40px;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/11.mp4" type="video/mp4">
+                    <div class="slide-image">
+                        <!-- ویدیو پس‌زمینه (Blurred) -->
+                        <video class="background-video blurred" autoplay loop muted playsinline>
+                            <source src="/static/images/homepage-gifs/baroot-home-gif1-mobile.mp4"
+                                    media="(max-width: 768px)" type="video/mp4">
+                            <source src="/static/images/homepage-gifs/baroot-home-gif1.mp4" media="(min-width: 769px)"
+                                    type="video/mp4">
                         </video>
-                        <video class="background-image" style="position: absolute;
-                            top: 0;
-                            left: 60px;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/landing%20page%201080.mp4" type="video/mp4">
-                        </video>
+
                         <div class="logo-slider-dark">
                             <a href="{% url 'index' %}">
-                                <img src="/static/images/logo.png" alt="CtrlB">
+                                <img src="/static/images/logo-white-white.svg" alt="Baroot">
                             </a>
                         </div>
                     </div>
+
                     <div class="slide-title-container row">
                         <div class="slide-title--inner">
                             <div class="slide-info__left">
@@ -100,20 +50,12 @@
                                     <span>01</span>
                                     <span class="total-count"></span>
                                 </div>
-
                                 <div class="slide-title">
-{#                                    <h3 class="PeydaBlack light-title"#}
-{#                                        style="color: #c4161c; font-size: calc(3vw + 1vw)">Your Partner In#}
-{#                                        <br>Crime/Prime#}
-{#                                    </h3>#}
-                                    <img class="light-image" src="/static/images/crime-01.png" width="400px">
-                                    <p class="PeydaRegula light-text" rel="noreferrer" style="color:black;text-align:center">
-                                        هر برند داستانی دارد، کنترل‌بی هم‌مسیر داستان شما می‌شود <br>تا در کنار شما
-                                        روایتی ماندگار خلق کند.
-                                        <span></span>
-                                    </p>
-                                    <a href="{% url 'about' %}" target=""
-                                       style="color: #c4161c; margin-top: 30px"
+                                    <h3 class="RayBlack dark-title"
+                                        style="font-size: calc(3vw + 1vw); color: white">
+                                        طراحی برند
+                                    </h3>
+                                    <a href="/works/?f=brand-design" style="margin-top: 30px" target=""
                                        class="slide-link PeydaRegular" rel="noreferrer">
                                         See More <span></span>
                                     </a>
@@ -121,49 +63,100 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="swiper-button-prev">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <polyline class="st0" points="11,18 16,13 21,18 "></polyline>
+                        <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polyline class="st0" points="11,18 16,13 21,18 "></polyline>
                             <path class="st0"
                                   d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-            </svg>
+                </svg>
                     </div>
+
                     <div class="swiper-button-next">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <polyline class="st0" points="21,14 16,19 11,14 "></polyline>
+                        <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polyline class="st0" points="21,14 16,19 11,14 "></polyline>
                             <path class="st0"
                                   d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-            </svg>
+                </svg>
                     </div>
                 </div>
             </div>
 
+            <!-- Slide 2 -->
             <div class="swiper-slide" data-swiper-autoplay="10000" data-autoplay="true">
                 <div class="swiper-slide__inner">
-                    <div class="slide-image" style="background-color: #060403">
-                        <video class="background-video" style="position: absolute;
-                            top: 0;
-                            left: 1.7%;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/5.mp4" type="video/mp4">
+                    <div class="slide-image baroot-slide3">
+                        <video class="background-video blurred" autoplay loop muted playsinline>
+                            <source src="/static/images/homepage-gifs/baroot-home-gif4-mobile.mp4"
+                                    media="(max-width: 768px)" type="video/mp4">
+                            <source src="/static/images/homepage-gifs/baroot-home-gif4.mp4" media="(min-width: 769px)"
+                                    type="video/mp4">
                         </video>
-                        <video class="background-image" style="position: absolute;
-                            top: 0;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/branding%201080.mp4" type="video/mp4">
-                        </video>
+
                         <div class="logo-slider-dark">
                             <a href="{% url 'index' %}">
-                                <img src="/static/images/logo-white.png" alt="CtrlB">
+                                <img src="/static/images/logo-white-white.svg" alt="Baroot">
                             </a>
                         </div>
                     </div>
+
+                    <div class="slide-title-container row">
+                        <div class="slide-title--inner">
+                            <div class="slide-info__left">
+                                <div class="ms-slide-count">
+                                    <span>04</span>
+                                    <span class="total-count"></span>
+                                </div>
+                                <div class="slide-title">
+                                    <h3 class="RayBlack dark-title" style="font-size: calc(3vw + 1vw); color: white">
+                                        طراحی و تولید محتوا
+                                    </h3>
+                                    <a href="/works/?f=content-creation" style="margin-top: 30px" target=""
+                                       class="slide-link PeydaRegular" rel="noreferrer">
+                                        See More <span></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-button-prev">
+                        <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polyline class="st0" points="11,18 16,13 21,18 "></polyline>
+                            <path class="st0"
+                                  d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
+                </svg>
+                    </div>
+
+                    <div class="swiper-button-next">
+                        <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polyline class="st0" points="21,14 16,19 11,14 "></polyline>
+                            <path class="st0"
+                                  d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
+                </svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide" data-swiper-autoplay="10000" data-autoplay="true">
+                <div class="swiper-slide__inner">
+                    <div class="slide-image baroot-slide2">
+                        <!-- ویدیو پس‌زمینه (Blurred) -->
+                        <video class="background-video blurred" autoplay loop muted playsinline>
+                            <source src="/static/images/homepage-gifs/baroot-home-gif2-mobile.mp4"
+                                    media="(max-width: 768px)" type="video/mp4">
+                            <source src="/static/images/homepage-gifs/baroot-home-gif2.mp4" media="(min-width: 769px)"
+                                    type="video/mp4">
+                        </video>
+
+                        <div class="logo-slider-dark">
+                            <a href="{% url 'index' %}">
+                                <img src="/static/images/logo-white.svg" alt="Baroot">
+                            </a>
+                        </div>
+                    </div>
+
                     <div class="slide-title-container row">
                         <div class="slide-title--inner">
                             <div class="slide-info__left">
@@ -172,14 +165,10 @@
                                     <span class="total-count"></span>
                                 </div>
                                 <div class="slide-title">
-                                    {#                                <div class="slide-cat PeydaBlack">Trend</div>#}
-                                    <h3 class="PeydaBlack dark-title" style="font-size: calc(3vw + 1vw)"><span
-                                            class="beausite">&</span> Business <br>Brand
-                                        Identity</h3>
-                                    {#                                <p class="PeydaRegular" rel="noreferrer" style="color:#fff;text-align:right">هر برند داستانی دارد، کنترل بی در مسیر کشف این داستان همراه شما می شود <br> تا این ماجراجویی را به روایتی ماندگار تبدیل کند.#}
-                                    {#                                    <span></span>#}
-                                    {#                                </p>#}
-                                    <a href="{% url 'digital-branding' %}" target="" style="margin-top: 30px"
+                                    <h3 class="RayBlack dark-title" style="font-size: calc(3vw + 1vw); color: #005778">
+                                        هویت بصری برند
+                                    </h3>
+                                    <a href="/works/?f=visual-identity" style="margin-top: 30px; color: #005778 !important;" target=""
                                        class="slide-link PeydaRegular" rel="noreferrer">
                                         See More <span></span>
                                     </a>
@@ -187,50 +176,44 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="swiper-button-prev">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <polyline class="st0" points="11,18 16,13 21,18 "></polyline>
+                        <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polyline class="st0" points="11,18 16,13 21,18 "></polyline>
                             <path class="st0"
                                   d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-                        </svg>
+                </svg>
                     </div>
+
                     <div class="swiper-button-next">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <polyline class="st0" points="21,14 16,19 11,14 "></polyline>
+                        <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polyline class="st0" points="21,14 16,19 11,14 "></polyline>
                             <path class="st0"
                                   d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-                        </svg>
+                </svg>
                     </div>
                 </div>
-
             </div>
 
+            <!-- Slide 4 -->
             <div class="swiper-slide" data-swiper-autoplay="10000" data-autoplay="true">
                 <div class="swiper-slide__inner">
-                    <div class="slide-image" style="background-color: white">
-                        <video class="background-video" style="position: absolute;
-                            top: 0;
-                            left: 1.7%;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/3.mp4" type="video/mp4">
+                    <div class="slide-image baroot-slide3">
+                        <!-- ویدیو پس‌زمینه (Blurred) -->
+                        <video class="background-video blurred" autoplay loop muted playsinline>
+                            <source src="/static/images/homepage-gifs/baroot-home-gif3-mobile.mp4"
+                                    media="(max-width: 768px)" type="video/mp4">
+                            <source src="/static/images/homepage-gifs/baroot-home-gif3.mp4" media="(min-width: 769px)"
+                                    type="video/mp4">
                         </video>
-                        <video class="background-image" style="position: absolute;
-                            top: 0;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/graphic%201080.mp4" type="video/mp4">
-                        </video>
+
                         <div class="logo-slider-dark">
                             <a href="{% url 'index' %}">
-                                <img src="/static/images/logo.png" alt="CtrlB">
+                                <img src="/static/images/logo-white-white.svg" alt="Baroot">
                             </a>
                         </div>
                     </div>
+
                     <div class="slide-title-container row">
                         <div class="slide-title--inner">
                             <div class="slide-info__left">
@@ -239,12 +222,10 @@
                                     <span class="total-count"></span>
                                 </div>
                                 <div class="slide-title">
-                                    {#                                <div class="slide-cat">Graphic Design</div>#}
-                                    <h3 class="PeydaBlack light-title2" style="color: #c4161c !important;font-size: calc(3vw + 1vw)">
-                                        <span class="beausite">&</span> Visual Identity <br> Graphic Design
+                                    <h3 class="RayBlack dark-title" style="font-size: calc(3vw + 1vw); color: white">
+                                        عکاسی و فیلم‌برداری تبلیغاتی
                                     </h3>
-                                    <a href="{% url 'logo-design-archive' %}" target=""
-                                       style="color: #c4161c; margin-top: 30px"
+                                    <a href="/works/?f=photography-and-videography" style="margin-top: 30px" target=""
                                        class="slide-link PeydaRegular" rel="noreferrer">
                                         See More <span></span>
                                     </a>
@@ -252,190 +233,56 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="swiper-button-prev">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <polyline class="st0" points="11,18 16,13 21,18 "></polyline>
+                        <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polyline class="st0" points="11,18 16,13 21,18 "></polyline>
                             <path class="st0"
                                   d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-                        </svg>
+                </svg>
                     </div>
+
                     <div class="swiper-button-next">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <polyline class="st0" points="21,14 16,19 11,14 "></polyline>
+                        <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polyline class="st0" points="21,14 16,19 11,14 "></polyline>
                             <path class="st0"
                                   d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-                        </svg>
+                </svg>
                     </div>
                 </div>
-
             </div>
 
+            <!-- Slide 5 -->
             <div class="swiper-slide" data-swiper-autoplay="10000" data-autoplay="true">
                 <div class="swiper-slide__inner">
-                    <div class="slide-image" style="background-color: #060403">
-                        <video class="background-video" style="position: absolute;
-                            top: 0;
-                            left: 1.7%;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/4.mp4" type="video/mp4">
+                    <div class="slide-image baroot-slide3">
+                        <!-- ویدیو پس‌زمینه (Blurred) -->
+                        <video class="background-video blurred" autoplay loop muted playsinline>
+                            <source src="/static/images/homepage-gifs/baroot-home-gif5-mobile.mp4"
+                                    media="(max-width: 768px)" type="video/mp4">
+                            <source src="/static/images/homepage-gifs/baroot-home-gif5.mp4" media="(min-width: 769px)"
+                                    type="video/mp4">
                         </video>
-                        <video class="background-image" style="position: absolute;
-                            top: 0;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/camera%201080.mp4" type="video/mp4">
-                        </video>
+
                         <div class="logo-slider-dark">
                             <a href="{% url 'index' %}">
-                                <img src="/static/images/logo-white.png" alt="CtrlB">
+                                <img src="/static/images/logo-white.svg" alt="Baroot">
                             </a>
                         </div>
                     </div>
+
                     <div class="slide-title-container row">
                         <div class="slide-title--inner">
                             <div class="slide-info__left">
-                                <div class="ms-slide-count">
-                                    <span>04</span>
-                                    <span class="total-count"></span>
-                                </div>
-                                <div class="slide-title">
-                                    {#                                <div class="slide-cat">Trend</div>#}
-                                    <h3 class="PeydaBlack dark-title" style="color: white !important;font-size: calc(3vw + 1vw)">
-                                        <span class="beausite">&</span> Photography <br> Videography</h3>
-                                    <a href="{% url 'photgraphy-and-videography' %}" target="" style="margin-top: 30px"
-                                       class="slide-link PeydaRegular" rel="noreferrer">
-                                        See More <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-button-prev">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <polyline class="st0" points="11,18 16,13 21,18 "></polyline>
-                            <path class="st0"
-                                  d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-                        </svg>
-                    </div>
-                    <div class="swiper-button-next">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <polyline class="st0" points="21,14 16,19 11,14 "></polyline>
-                            <path class="st0"
-                                  d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-                        </svg>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="swiper-slide" data-swiper-autoplay="10000" data-autoplay="true">
-                <div class="swiper-slide__inner">
-                    <div class="slide-image" style="background-color: white">
-                        <video class="background-video" style="position: absolute;
-                            top: 0;
-                            left: 1.7%;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/6.mp4" type="video/mp4">
-                        </video>
-                        <video class="background-image" style="position: absolute;
-                            top: 0;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/motion%201080.mp4" type="video/mp4">
-                        </video>
-                        <div class="logo-slider-dark">
-                            <a href="{% url 'index' %}">
-                                <img src="/static/images/logo.png" alt="CtrlB">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slide-title-container row">
-                        <div class="slide-title--inner">
-                            <div class="slide-info__left">
-                                <div class="ms-slide-count">
-                                    <span>04</span>
-                                    <span class="total-count"></span>
-                                </div>
-                                <div class="slide-title">
-                                    {#                                <div class="slide-cat">Trend</div>#}
-                                    <h3 class="PeydaBlack light-title3" style="color: #c4161c ;font-size: calc(3vw + 1vw)">
-                                        Motion Design</h3>
-                                    <a href="{% url 'motion-design' %}" style="margin-top: 30px; color: #c4161c"
-                                       target="" class="slide-link PeydaRegular" rel="noreferrer">
-                                        See More <span></span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-button-prev">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <polyline class="st0" points="11,18 16,13 21,18 "></polyline>
-                            <path class="st0"
-                                  d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-                        </svg>
-                    </div>
-                    <div class="swiper-button-next">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <polyline class="st0" points="21,14 16,19 11,14 "></polyline>
-                            <path class="st0"
-                                  d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-                        </svg>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="swiper-slide" data-swiper-autoplay="10000" data-autoplay="true">
-                <div class="swiper-slide__inner">
-                    <div class="slide-image" style="background-color: #c62329">
-                        <video class="background-video" style="position: absolute;
-                            top: 0;
-                            left: -40px;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/2.mp4" type="video/mp4">
-                        </video>
-                        <video class="background-image" style="position: absolute;
-                            top: 0;
-                            left: 60px;
-                            height: 100%;
-                            object-fit: contain;
-                        " autoplay loop muted playsinline>
-                            <source src="/static/images/homepage-gifs/campaign-gif-mobile.mp4" type="video/mp4">
-                        </video>
-                        <div class="logo-slider-dark">
-                            <a href="{% url 'index' %}">
-                                <img src="/static/images/logo-white-white.png" alt="CtrlB">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="slide-title-container row">
-                        <div class="slide-title--inner">
-                            <div class="slide-info__left">
-                                <div class="ms-slide-count">
+                                   <div class="ms-slide-count">
                                     <span>05</span>
                                     <span class="total-count"></span>
                                 </div>
                                 <div class="slide-title">
-                                    {#                                <div class="slide-cat">Trend</div>#}
-                                    <h3 class="PeydaBlack red-title" style="font-size: calc(5vw + 1vw)">
-                                        Campaign
+                                    <h3 class="RayBlack dark-title" style="font-size: calc(3vw + 1vw); color: #005778">
+                                        طراحی کمپین
                                     </h3>
-                                    <a href="{% url 'campaign' %}" style="margin-top: 30px" target=""
+                                    <a href="/works/?f=campaign-design" style="margin-top: 30px; color: #005778 !important   " target=""
                                        class="slide-link PeydaRegular" rel="noreferrer">
                                         See More <span></span>
                                     </a>
@@ -443,60 +290,39 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="swiper-button-prev">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <polyline class="st0" points="11,18 16,13 21,18 "></polyline>
+                        <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polyline class="st0" points="11,18 16,13 21,18 "></polyline>
                             <path class="st0"
                                   d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-                        </svg>
+                </svg>
                     </div>
+
                     <div class="swiper-button-next">
-                        <svg version="1.1" viewbox="0 0 32 32" xml:space="preserve"
-                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                            <polyline class="st0" points="21,14 16,19 11,14 "></polyline>
+                        <svg version="1.1" viewBox="0 0 32 32" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+                    <polyline class="st0" points="21,14 16,19 11,14 "></polyline>
                             <path class="st0"
                                   d="M21,29H11c-4.4,0-8-3.6-8-8V11c0-4.4,3.6-8,8-8h10c4.4,0,8,3.6,8,8v10C29,25.4,25.4,29,21,29z"></path>
-                        </svg>
+                </svg>
                     </div>
                 </div>
-
             </div>
-
+        </div>
 
         </div>
-        <ul class="socials">
-            <li class="ms-btn"><a class="socicon-linkedin" title="Linkedin" target="_blank"
-                                  href="https://www.linkedin.com/company/thectrlbstudio/"></a></li>
-            <li class="ms-btn"><a class="socicon-instagram" title="Instagram" target="_blank"
-                                  href="https://www.instagram.com/ctrlb.studio?igsh=MWExMTZnMm5maDkxag=="></a></li>
-        </ul>
-        <div class="slider footer-copyright PeydaLight">
-            <p>Copyright &copy; 2024. Developed by CTRLB</p>
+
+{#        <ul class="socials">#}
+{#            <li class="ms-btn"><a class="socicon-linkedin" title="Linkedin" target="_blank"#}
+{#                                  href="https://www.linkedin.com/company/thebarootdesign/"></a></li>#}
+{#            <li class="ms-btn"><a class="socicon-instagram" title="Instagram" target="_blank"#}
+{#                                  href="https://www.instagram.com/baroot.design/"></a></li>#}
+{#        </ul>#}
+        <div class="slider footer-copyright RayLight">
+            <p>Copyright &copy; 2025. Developed by Baroot</p>
         </div>
     </div>
     <div class="swiper-counter" data-counter="/ 04">
     </div>
-    <script>
-        function handleResize() {
-            const slides = document.querySelectorAll('.slide-image'); // Select all slide-image elements
-            slides.forEach(slide => {
-                const video = slide.querySelector('.background-video');
-                const image = slide.querySelector('.background-image');
-                if (window.innerWidth < 720) {
-                    video.style.display = 'none';
-                    image.style.display = 'block';
-                } else {
-                    video.style.display = 'block';
-                    image.style.display = 'none';
-                }
-            });
-        }
-
-        // Initial check
-        handleResize();
-        // Add event listener for resizing the window
-        window.addEventListener('resize', handleResize);
-    </script>
 
 {% endblock %}

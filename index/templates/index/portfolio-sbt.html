@@ -1,37 +1,350 @@
 {% extends 'index/base.html' %}
 {% block content %}
 
-<div class="margin-top-lg"></div>
-<section class="hero hero--overlay-layer hero-default text-right" dir="rtl">
-    <div class="container">
-        <div class="hero__content">
-            <h2 class="portfolio-title PeydaBlack" style="text-align: center; font-size: 50px">
-                SBT
-                <br>
-                [طراحی لوگو]
-                </h2>
-        </div>
-    </div>
-</section>
+    <style>
+        /* base: fill viewport & hide native scroll */
+        html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
 
-<div class="content-container ms-content text-right mx-auto p-4" dir="rtl" style="background-color:#fafafa;">
-    <div class="row p-3 mb-4">
-        <div class="col-12 col-md-12">
-            <p style="margin: 20px; font-size: 16px; text-align: justify; max-width: none !important;">شرکت سنا برق توان یکی از بزرگترین تولید کنندگان درایوهای صنعتی در ایران است. ایده اصلی لوگو مدل کارکرد یک درایو به زبان ساده میباشد. در درایوهای الکتریکی جریان ورودی به صورت جریان متناوب (AC) وارد و سپس تبدیل به جریان مستقیم (DC) شده و میزان توان آن بسته به نیاز تنظیم گشته و یکبار دیگر تبدیل به جریان AC شده و خارج می‌شود.</p>
-            <p style="margin: 20px; font-size: 16px; text-align: justify; max-width: none !important;"> برای نشان دادن این ایده از یک خط که به صورت افقی کلمه SBT را قطع می کند استفاده شده. در ابتدا و انتهای خط فرم شکسته که القای جریان برق مورد نظر عموم (AC) را می کند مورد استفاده قرار گرفته و بر روی حرف B خط به صورت کاملا صاف است تا بیانگر جریان مستقیم یا DC باشد. </p>
-            <p style="margin: 20px; font-size: 16px; text-align: justify; max-width: none !important;">برای القای بیشتر صنعتی بودن موضوع فرمی سنگین و بولد برای طراحی حروف استفاده شده است.</p>
+        .custom-container {
+            width: 100% !important;
+            margin: 110px auto 0 auto;
+            padding: 0 16px;
+        }
+
+
+        @media (min-aspect-ratio: 16/9) and (min-width: 1920px) {
+            .custom-container {
+                max-width: 1920px !important;
+            }
+        }
+
+        /* snap container */
+        .snap-container {
+            height: 100%;
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .section {
+            scroll-snap-align: start;
+        }
+
+        /* below lg (992px), revert to native scroll */
+        @media (max-width: 991.98px) {
+            html, body {
+                overflow: auto;
+            }
+
+            .snap-container {
+                scroll-snap-type: none;
+            }
+        }
+
+        /* initial state: invisible & slightly down */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* when we add .visible, it fades up into place */
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* your existing responsive tweaks */
+        @media (max-width: 772px) {
+            /* …all your .section-2, .section-3, etc overrides… */
+            .section-2 > img {
+                width: 220px;
+            }
+
+            .section-3, .section-4 {
+                padding: 0 3% !important;
+            }
+
+            .section-4 .d-flex {
+                padding: 20px 10px !important;
+            }
+
+            .section-4 h3 {
+                font-size: 17px !important;
+            }
+
+            .section-4 .text-end h4 {
+                font-size: 14px !important;
+            }
+
+            .section-4 .first-col {
+                margin-bottom: 0 !important;
+            }
+
+            .section-6 .d-flex h4 {
+                font-size: 14px !important;
+            }
+
+            .section-6 .d-flex {
+                padding: 10px !important;
+            }
+
+            .section-6 h2 {
+                font-size: 22px !important;
+            }
+
+            .section-8 h2 {
+                margin-bottom: 10px !important;
+            }
+
+            .sec8-col1 img {
+                margin: 0 !important;
+            }
+
+            .sec8-col2 img {
+                margin: 1rem !important;
+            }
+        }
+    </style>
+
+
+    <div class="snap-container">
+
+        <!-- Section 1 -->
+        <div class="section container d-flex flex-column justify-content-center align-items-center text-center"
+             style="height:85vh; background-color:#fff;">
+            <h2 class="portfolio-title fade-up RayBlack mb-5" style="font-size:50px;color:#00566b; direction: rtl; transition-delay: 0.2s">
+                طراحی لوگو SBT Eelectric
+            </h2>
+            <p class="mb-0 mt-4 fade-up" style="line-height:30px;direction:rtl; transition-delay: 0.4s">
+                شرکت سنا برق توان یکی از بزرگترین تولید کنندگان درایوهای صنعتی در ایران است. ایده اصلی لوگو مدل کارکرد
+                یک درایو به زبان ساده میباشد. در درایوهای الکتریکی جریان ورودی به صورت جریان متناوب (AC) وارد و سپس
+                تبدیل به جریان مستقیم (DC) شده و میزان توان آن بسته به نیاز تنظیم گشته و یکبار دیگر تبدیل به جریان AC
+                شده و خارج می‌شود.
+            </p>
         </div>
-    </div>
-    <div class="row p-3 mb-4">
-        <div class="col-12 col-md-12">
-            <img src="/static/images/portfolio-detail/sbt1.png" class="w-100" />
+
+        <!-- Section 2 -->
+        <div class="section  section-2 d-flex flex-column justify-content-center align-items-center text-center"
+             style="height:100vh; background-color:#fedc14;">
+            <img src="/static/portfolio/sbt/logo.svg" alt="SBT Electric Logo">
         </div>
-    </div>
-    <div class="row p-3 mb-4">
-        <div class="col-12 col-md-12">
-            <img src="/static/images/portfolio-detail/sbt2.png" class="w-100" />
+
+        <!-- Section 3 -->
+        <div class="section custom-container section-3 d-flex flex-column justify-content-center align-items-center text-center"
+             style="height:100vh; background-color:#ededed; padding:0 10%;">
+            <h2 class="portfolio-title RayBlack fade-up mb-5" style="font-size:50px;color:#000; transition-delay: 0.2s">
+                ایده اصلی
+            </h2>
+            <p class="mb-0 mt-4" style="line-height:30px;direction:rtl;text-align:right">
+                برای نشان دادن این ایده از یک خط که به صورت افقی کلمه SBT را قطع می کند استفاده شده. در ابتدا و انتهای
+                خط فرم شکسته که القای جریان برق مورد نظر عموم (AC) را می کند مورد استفاده قرار گرفته و بر روی حرف B خط
+                به صورت کاملا صاف است تا بیانگر جریان مستقیم یا DC باشد.
+                <br>
+                برای القای بیشتر صنعتی بودن موضوع فرمی سنگین و بولد برای طراحی حروف استفاده شده است.
+            </p>
+            <img class="mt-5" src="/static/portfolio/sbt/image1.png" alt="Idea graphic">
         </div>
+
+        <!-- Section 4 -->
+        <div class="section custom-container section-4 d-flex flex-column justify-content-center align-items-center text-center"
+             style="height:100vh; background-color:#fff; padding:0 10%;">
+            <h2 class="portfolio-title RayBlack mb-5" style="font-size:50px;color:#000">
+                PRIMARY COLOR PALETTE
+            </h2>
+            <div class="row row-cols-1 g-0 w-100">
+                <!-- Midnight Green -->
+                <div class="col first-col p-0 mb-5">
+                    <div class="d-flex justify-content-between align-items-center h-100 p-5" style="background:#00566B">
+                        <h3 class="fw-bold text-white mb-0">Midnight Green</h3>
+                        <div class="text-end">
+                            <h4 class="text-white mb-1 RayLight">HEX: #00566B</h4>
+                            <h4 class="text-white mb-1 RayLight">RGB: 0 86 107</h4>
+                            <h4 class="text-white mb-1 RayLight">CMYK: 100 20 0 58</h4>
+                            <h4 class="text-white mb-0 RayLight">PANTONE: 7708 C</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sizzling Sunrise -->
+                <div class="col p-0">
+                    <div class="d-flex justify-content-between align-items-center h-100 p-5" style="background:#FEDC08">
+                        <h3 class="RayBlack mb-0">Sizzling Sunrise</h3>
+                        <div class="text-end">
+                            <h4 class="text-dark mb-1 RayLight">HEX: #FEDC08</h4>
+                            <h4 class="text-dark mb-1 RayLight">RGB: 254 220 8</h4>
+                            <h4 class="text-dark mb-1 RayLight">CMYK: 0 10 100 0</h4>
+                            <h4 class="text-dark mb-0 RayLight">PANTONE: 108 C</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section custom-container container-fluid d-flex flex-column justify-content-center align-items-center text-center"
+             style="height:100vh; background-color:#fff; width:85%;">
+            <div class="w-100 py-5" style="border-top:1.5px solid #969696; border-bottom:1.5px solid #969696;">
+                <h2 class="RayLight mb-1" style="color:#727272">Contrast Ratio:</h2>
+                <h1 class="fw-bold mb-1" style="color:#969696">6.08 : 1</h1>
+                <h2 class="RayLight mb-0" style="color:#727272">WCAG 2.1 Level AA</h2>
+            </div>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section custom-container section-6 d-flex flex-column justify-content-center align-items-center text-center"
+             style="height:100vh; background-color:#00566b; padding:0 10% !important;">
+            <h2 class="portfolio-title RayBlack mb-3" style="font-size:50px;color:#fff">
+                SECONDARY COLOR PALETTE
+            </h2>
+            <div class="row row-cols-1 row-cols-lg-2 g-0 w-100">
+                <!-- Dark Jungle Green -->
+                <div class="col p-0">
+                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-4"
+                         style="background:#00272b">
+                        <h4 class="RayBlack text-white mb-1">Dark Jungle Green</h4>
+                        <h4 class="text-white mb-1 RayLight">HEX: #00272b</h4>
+                        <h4 class="text-white mb-1 RayLight">RGB: 0 39 43</h4>
+                        <h4 class="text-white mb-1 RayLight">CMYK: 100 9 0 83</h4>
+                        <h4 class="text-white mb-0 RayLight">PANTONE: 5463 C</h4>
+                    </div>
+                </div>
+                <!-- Middel Blue -->
+                <div class="col p-0">
+                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-4"
+                         style="background:#8bcdd8">
+                        <h4 class="RayBlack text-dark mb-1">Middel Blue</h4>
+                        <h4 class="text-dark mb-1 RayLight">HEX: #8bcdd8</h4>
+                        <h4 class="text-dark mb-1 RayLight">RGB: 139 205 216</h4>
+                        <h4 class="text-dark mb-1 RayLight">CMYK: 45 5 0 0</h4>
+                        <h4 class="text-dark mb-0 RayLight">PANTONE: 636 C</h4>
+                    </div>
+                </div>
+                <!-- Reef Gold -->
+                <div class="col p-0">
+                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-4"
+                         style="background:#aa9335">
+                        <h4 class="RayBlack text-white mb-1">Reef Gold</h4>
+                        <h4 class="text-white mb-1 RayLight">HEX: #aa9335</h4>
+                        <h4 class="text-white mb-1 RayLight">RGB: 170 147 53</h4>
+                        <h4 class="text-white mb-1 RayLight">CMYK: 0 15 70 33</h4>
+                        <h4 class="text-white mb-0 RayLight">PANTONE: 4021 C</h4>
+                    </div>
+                </div>
+                <!-- Canary Yellow -->
+                <div class="col p-0">
+                    <div class="d-flex flex-column justify-content-center align-items-center h-100 p-4 border border-4 border-primary"
+                         style="background:#fff985">
+                        <h4 class="RayBlack text-dark mb-1">Canary Yellow</h4>
+                        <h4 class="text-dark mb-1 RayLight">HEX: #fff985</h4>
+                        <h4 class="text-dark mb-1 RayLight">RGB: 255 249 133</h4>
+                        <h4 class="text-dark mb-1 RayLight">CMYK: 0 0 60 0</h4>
+                        <h4 class="text-dark mb-0 RayLight">PANTONE: 602 C</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="section custom-container row g-0 h-auto h-lg-100 min-vh-lg-100">
+            <div class="col-lg-6 p-0 h-auto h-lg-100">
+                <img src="/static/portfolio/sbt/Rectangle-2.png"
+                     class="w-100 h-auto h-lg-100" style="object-fit:cover" alt="">
+            </div>
+            <div class="col-lg-6 p-0 h-auto h-lg-100">
+                <img src="/static/portfolio/sbt/Rectangle.png"
+                     class="w-100 h-auto h-lg-100" style="object-fit:cover" alt="">
+            </div>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="section custom-container section-8 d-flex flex-column justify-content-center align-items-center text-center"
+             style="height:100vh; background-color:#fff; padding:0 10% !important;">
+            <h2 class="portfolio-title RayBlack mb-5" style="font-size:50px;color:#000">
+                گایدلاین‌ها
+            </h2>
+            <div class="row">
+                <div class="col-lg-6 sec8-col1">
+                    <img class="mt-5" src="/static/portfolio/sbt/image3.svg" alt="">
+                    <img class="mt-5" src="/static/portfolio/sbt/image4.svg" alt="">
+                </div>
+                <div class="col-lg-6 sec8-col2">
+                    <img class="mt-5" src="/static/portfolio/sbt/image2.svg" alt="">
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
+
+
+    <script>
+        (function () {
+            // only enable snap-scroll on >=992px
+            if (window.innerWidth < 992) return;
+
+            const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+            const delay = isSafari ? 1000 : 700;
+
+            const container = document.querySelector('.snap-container');
+            const sections = Array.from(container.querySelectorAll('.section'));
+            let current = 0, scrolling = false;
+
+            function scrollToSection(idx) {
+                scrolling = true;
+                sections[idx].scrollIntoView({behavior: 'smooth'});
+                setTimeout(() => scrolling = false, delay);
+            }
+
+            container.addEventListener('wheel', e => {
+                e.preventDefault();
+                if (scrolling) return;
+                const delta = e.deltaY;
+                if (delta > 0 && current < sections.length - 1) {
+                    current++;
+                    scrollToSection(current);
+                } else if (delta < 0 && current > 0) {
+                    current--;
+                    scrollToSection(current);
+                }
+            }, {passive: false});
+
+            window.addEventListener('keydown', e => {
+                if (scrolling) return;
+                if (e.key === 'ArrowDown' && current < sections.length - 1) {
+                    current++;
+                    scrollToSection(current);
+                } else if (e.key === 'ArrowUp' && current > 0) {
+                    current--;
+                    scrollToSection(current);
+                }
+            });
+
+            // start at the very first section
+            scrollToSection(0);
+        })();
+    </script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const elems = document.querySelectorAll('.fade-up');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: document.querySelector('.snap-container'),
+      threshold: 0.3
+    });
+    elems.forEach(el => obs.observe(el));
+  });
+</script>
+
+
 
 {% endblock %}

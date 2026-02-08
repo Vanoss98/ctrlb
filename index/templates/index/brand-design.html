@@ -1,0 +1,239 @@
+{% extends 'index/base.html' %}
+{% block content %}
+
+    <div class="margin-top-lg"></div>
+    <section class="hero hero--overlay-layer hero-default text-right" dir="rtl">
+        <div class="container">
+            <div class="hero__content">
+                {#            <span>نمونه کار ها</span>#}
+                <h2 class="portfolio-title RayBlack" style="text-align: center; font-size: 50px">طراحی برند</h2>
+{#                <p style="margin-top: 30px; font-size: 20px; text-align: justify; max-width: none !important;">هویت#}
+{#                    بصری، چهره‌ی برند شما در نگاه اول است؛ نشانه‌هایی که شناسایی شما را برای مخاطب آسان می‌کند و پیامی#}
+{#                    که بدون نیاز به کلمات منتقل می‌شود. این عناصر بصری از رنگ‌ها و فونت‌ها تا سبک گرافیکی، همگی نقش مهمی#}
+{#                    در ایجاد ارتباطی ماندگار و مؤثر با مخاطبان دارند.</p>#}
+            </div>
+        </div>
+    </section>
+
+{#    <div class="container ms-content text-right" dir="rtl">#}
+{##}
+{#        <div class="mb-4" style="display: flex; align-items: center; gap: 15px;">#}
+{#            <div style="flex-grow: 1; height: 1px; background-color: black;"></div>#}
+{#            <span>Logo Design</span>#}
+{#        </div>#}
+{#        <div class="work-grid row grid-content portfolio-feed ms-p2">#}
+{#            <div class="grid-sizer col-sm-12 col-md-4 col-sm-6"></div>#}
+{#            <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">#}
+{#                <div class="work-card card--is-link">#}
+{#                    <a href="{% url 'portfolio-sbt' %}" class="work-card__img-link"#}
+{#                       aria-label="The Kissing Eyes">#}
+{#                        <figure class="work-card__img media-wrapper media-wrapper--4:3">#}
+{#                            <img src="/static/images/sbt-logo.jpg"#}
+{#                                 alt="The Kissing Eyes">#}
+{#                            <span class="overlay"></span>#}
+{#                            <div class="glow-wrap"><i class="glow vertical"></i></div>#}
+{#                        </figure>#}
+{#                    </a>#}
+{#                    <div class="work-card__content text-overlay">#}
+                        {#                        <span class="work-card__badge margin-bottom-xxs">trend</span>#}
+{#                        <a href="{% url 'portfolio-sbt' %}" class="work-card__title">#}
+{#                            <h3>SBT</h3>#}
+{#                        </a>#}
+{#                        <h5 style="color: white; margin-top: 15px;">Logo Design</h5>#}
+{#                        <a href="{% url 'portfolio-sbt' %}" class="work-card__link">Show Project#}
+{#                            <svg class="icon" viewbox="0 0 12 12">#}
+{#                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">#}
+{#                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>#}
+{#                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>#}
+{#                                </g>#}
+{#                            </svg>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">#}
+{#                <div class="work-card card--is-link">#}
+{#                    <a href="{% url 'portfolio-breaking-muscle' %}" class="work-card__img-link"#}
+{#                       aria-label="Servant of Academy">#}
+{#                        <figure class="work-card__img media-wrapper media-wrapper--4:3">#}
+{#                            <img src="/static/images/breaking-muscle.jpg"#}
+{#                                 alt="Servant of Academy">#}
+{#                            <span class="overlay"></span>#}
+{#                            <div class="glow-wrap"><i class="glow vertical"></i></div>#}
+{#                        </figure>#}
+{#                    </a>#}
+{#                    <div class="work-card__content text-overlay">#}
+                        {#                        <span class="work-card__badge margin-bottom-xxs">design</span>#}
+{#                        <a href="{% url 'portfolio-breaking-muscle' %}" class="work-card__title">#}
+{#                            <h3 class="RaySemiBold">Breaking Muscle</h3>#}
+{#                        </a>#}
+{#                        <h5 style="color: white; margin-top: 15px;">Logo Design</h5>#}
+{#                        <a href="{% url 'portfolio-breaking-muscle' %}" class="work-card__link">Show Project#}
+{#                            <svg class="icon" viewbox="0 0 12 12">#}
+{#                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">#}
+{#                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>#}
+{#                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>#}
+{#                                </g>#}
+{#                            </svg>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">#}
+{#                <div class="work-card card--is-link">#}
+{#                    <a href="{% url 'portfolio-netentpoker' %}" class="work-card__img-link"#}
+{#                       aria-label="The Kissing Eyes">#}
+{#                        <figure class="work-card__img media-wrapper media-wrapper--4:3">#}
+{#                            <img src="/static/images/netentpoker.jpg"#}
+{#                                 alt="The Kissing Eyes">#}
+{#                            <span class="overlay"></span>#}
+{#                            <div class="glow-wrap"><i class="glow vertical"></i></div>#}
+{#                        </figure>#}
+{#                    </a>#}
+{#                    <div class="work-card__content text-overlay">#}
+                        {#                        <span class="work-card__badge margin-bottom-xxs">trend</span>#}
+{#                        <a href="{% url 'portfolio-netentpoker' %}" class="work-card__title">#}
+{#                            <h3>Netent Poker</h3>#}
+{#                        </a>#}
+{#                        <h5 style="color: white; margin-top: 15px;">Logo Design</h5>#}
+{#                        <a href="{% url 'portfolio-netentpoker' %}" class="work-card__link">Show Project#}
+{#                            <svg class="icon" viewbox="0 0 12 12">#}
+{#                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">#}
+{#                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>#}
+{#                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>#}
+{#                                </g>#}
+{#                            </svg>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">#}
+{#                <div class="work-card card--is-link">#}
+{#                    <a href="{% url 'portfolio-kunzite' %}" class="work-card__img-link" aria-label="Silk of Secrets">#}
+{#                        <figure class="work-card__img media-wrapper media-wrapper--4:3">#}
+{#                            <img src="/static/images/kunzite.jpg"#}
+{#                                 alt="Silk of Secrets">#}
+{#                            <span class="overlay"></span>#}
+{#                            <div class="glow-wrap"><i class="glow vertical"></i></div>#}
+{#                        </figure>#}
+{#                    </a>#}
+{#                    <div class="work-card__content text-overlay">#}
+                        {#                        <span class="work-card__badge margin-bottom-xxs">project</span>#}
+{#                        <a href="{% url 'portfolio-kunzite' %}" class="work-card__title">#}
+{#                            <h3>Kunzite</h3>#}
+{#                        </a>#}
+{#                        <h5 style="color: white; margin-top: 15px;">Logo Design</h5>#}
+{#                        <a href="{% url 'portfolio-kunzite' %}" class="work-card__link">Show Project#}
+{#                            <svg class="icon" viewbox="0 0 12 12">#}
+{#                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">#}
+{#                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>#}
+{#                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>#}
+{#                                </g>#}
+{#                            </svg>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#            <div class="grid-item col-sm-12 col-md-4 col-sm-6 pb-5">#}
+{#                <div class="work-card card--is-link">#}
+{#                    <a href="{% url 'portfolio-regenbogen' %}" class="work-card__img-link" aria-label="Silk of Secrets">#}
+{#                        <figure class="work-card__img media-wrapper media-wrapper--4:3">#}
+{#                            <img src="/static/images/regenbogen.jpg"#}
+{#                                 alt="Silk of Secrets">#}
+{#                            <span class="overlay"></span>#}
+{#                            <div class="glow-wrap"><i class="glow vertical"></i></div>#}
+{#                        </figure>#}
+{#                    </a>#}
+{#                    <div class="work-card__content text-overlay">#}
+                        {#                        <span class="work-card__badge margin-bottom-xxs">project</span>#}
+{#                        <a href="{% url 'portfolio-regenbogen' %}" class="work-card__title">#}
+{#                            <h3>regenbogen</h3>#}
+{#                        </a>#}
+{#                        <h5 style="color: white; margin-top: 15px;">Logo Design</h5>#}
+{#                        <a href="{% url 'portfolio-regenbogen' %}" class="work-card__link">Show Project#}
+{#                            <svg class="icon" viewbox="0 0 12 12">#}
+{#                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">#}
+{#                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>#}
+{#                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>#}
+{#                                </g>#}
+{#                            </svg>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{##}
+{#        </div>#}
+{#        <div class="mb-4" style="display: flex; align-items: center; gap: 15px;">#}
+{#            <div style="flex-grow: 1; height: 1px; background-color: black;"></div>#}
+{#            <span>Visual Identity Design</span>#}
+{#        </div>#}
+{##}
+{#        <div class="work-grid row grid-content portfolio-feed ms-p2">#}
+{#            <div class="grid-sizer col-sm-12 col-md-4 col-sm-6"></div>#}
+{#        </div>#}
+{##}
+{#        <div class="mb-4" style="display: flex; align-items: center; gap: 15px;">#}
+{#            <div style="flex-grow: 1; height: 1px; background-color: black;"></div>#}
+{#            <span>Concept Art</span>#}
+{#        </div>#}
+{##}
+{#        <div class="work-grid row grid-content portfolio-feed ms-p2">#}
+{#            <div class="grid-sizer col-sm-12 col-md-4 col-sm-6"></div>#}
+{#        </div>#}
+{##}
+{#        <div class="mb-4" style="display: flex; align-items: center; gap: 15px;">#}
+{#            <div style="flex-grow: 1; height: 1px; background-color: black;"></div>#}
+{#            <span>Layout Design</span>#}
+{#        </div>#}
+{##}
+{##}
+{#        <div class="work-grid justify-content-center m-auto row grid-content portfolio-feed ms-p2">#}
+{#            <div class="grid-sizer col-sm-12 col-md-4 col-sm-6"></div>#}
+{##}
+{##}
+{#            <div class="grid-item col-sm-12 col-md-4 col-sm-6 mx-auto pb-5">#}
+{#                <div class="work-card card--is-link">#}
+{#                    <a href="{% url 'portfolio-negah' %}" class="work-card__img-link" aria-label="Servant of Academy">#}
+{#                        <figure class="work-card__img media-wrapper media-wrapper--4:3">#}
+{#                            <img src="/static/images/portfolio-detail/negah1.jpg"#}
+{#                                 alt="Servant of Academy">#}
+{#                            <span class="overlay"></span>#}
+{#                            <div class="glow-wrap"><i class="glow vertical"></i></div>#}
+{#                        </figure>#}
+{#                    </a>#}
+{#                    <div class="work-card__content text-overlay">#}
+                        {#                        <span class="work-card__badge margin-bottom-xxs">design</span>#}
+{#                        <a href="{% url 'portfolio-negah' %}" class="work-card__title">#}
+{#                            <h3 class="RaySemiBold">Negah Holding</h3>#}
+{#                        </a>#}
+{#                        <h5 style="color: white; margin-top: 15px;">Layout Design</h5>#}
+{#                        <a href="{% url 'portfolio-negah' %}" class="work-card__link">Show Project#}
+{#                            <svg class="icon" viewbox="0 0 12 12">#}
+{#                                <g stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">#}
+{#                                    <line x1="11.5" y1="6" x2="0.5" y2="6"></line>#}
+{#                                    <polyline points="7.5 2 11.5 6 7.5 10"></polyline>#}
+{#                                </g>#}
+{#                            </svg>#}
+{#                        </a>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{##}
+{#            <div class="ms-pagination works-pagination">#}
+{##}
+{#                <circle cx="50" cy="50" r="30" stroke="" stroke-width="0" fill="none"></circle>#}
+{#                <circle cx="50" cy="50" r="30" stroke="" stroke-width="8" stroke-linecap="round" fill="none"#}
+{#                        transform="rotate(307.62 50 50)">#}
+{#                    <animatetransform attributename="transform" type="rotate" repeatcount="indefinite" dur="1s"#}
+{#                                      values="0 50 50;180 50 50;720 50 50" keytimes="0;0.5;1"></animatetransform>#}
+{#                    <animate attributename="stroke-dasharray" repeatcount="indefinite" dur="1s"#}
+{#                             values="18.84955592153876 169.64600329384882;94.2477796076938 94.24777960769377;18.84955592153876 169.64600329384882"#}
+{#                             keytimes="0;0.5;1"></animate>#}
+{#                </circle>#}
+{#                </svg></span></button></div>#}
+{#        </div>#}
+{##}
+{#    </div>#}
+
+{% endblock %}
