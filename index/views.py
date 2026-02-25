@@ -129,5 +129,9 @@ class PortfolioHapitooView(TemplateView):
     template_name = 'index/portfolio-hapitoo.html'
 
 
+class PortfolioSamView(TemplateView):
+    template_name = 'index/portfolio-sam.html'
+
+
 class WorksView(TemplateView):
     template_name = 'index/works.html'

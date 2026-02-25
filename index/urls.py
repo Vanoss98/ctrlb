@@ -38,6 +38,7 @@ urlpatterns = [
     path('portfolio/vita/detail', PortfolioVitaView.as_view(), name='portfolio-vita'),
     path('portfolio/vesta/detail', PortfolioVestaView.as_view(), name='portfolio-vesta'),
     path('portfolio/hapitoo/detail', PortfolioHapitooView.as_view(), name='portfolio-hapitoo'),
+    path('portfolio/sam/detail', PortfolioSamView.as_view(), name='portfolio-sam'),
 
     path('works/', WorksView.as_view(), name='works'),
 ]
