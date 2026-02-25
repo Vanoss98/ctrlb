@@ -90,29 +90,50 @@
       box-shadow: 0 16px 36px rgba(0,0,0,.12);
     }
 
-    .pg-media { position: relative; aspect-ratio: 4/3; overflow: hidden; background: #f6f7f8; }
-    .pg-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    /* Media */
+    .pg-media { position: relative; overflow: hidden; background: #f6f7f8; display:block; }
+    .pg-media img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; z-index: 1; }
 
-    /* Darkener */
-    .pg-media::after {
+    /* Hover image layer (driven by data-hover) */
+    .pg-media.has-hover::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image: var(--hover-img);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0;
+      transition: opacity .22s ease;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .pg-card:hover .pg-media.has-hover::after{ opacity: 1; }
+
+    /* Darkener (above images + hover layer) */
+    .pg-media::before {
       content: "";
       position: absolute; inset: 0;
       background: rgba(0,0,0,.18);
       transition: opacity .22s ease;
       pointer-events: none;
+      z-index: 3;
     }
-    .pg-card:hover .pg-media::after { opacity: .28; }
+    .pg-card:hover .pg-media::before { opacity: .28; }
 
     .pg-overlay {
       position: absolute; inset: 0;
       background: linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,0));
       opacity: 0; transition: opacity .22s ease;
+      z-index: 4;
+      pointer-events: none;
     }
     .pg-card:hover .pg-overlay { opacity: 1; }
 
     .pg-content {
       position: absolute; inset-inline: 10px; bottom: 10px;
       display: flex; flex-direction: column; align-items: flex-start; gap: 2px; color: #fff;
+      z-index: 5;
     }
     .pg-title-sm {
       margin: 0;
@@ -155,15 +176,10 @@
 
   <div class="pg-controls">
     <div class="pg-rail at-start at-end" style="background-color: #005776 !important;">
-      <!-- indicator -->
-
-
-      <!-- left arrow -->
       <button class="pg-nav is-left" aria-label="اسکرول به راست">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
       </button>
 
-      <!-- scrollable track -->
       <nav class="pg-filters" role="tablist" aria-label="فیلتر پروژه‌ها">
         <button class="pg-chip is-active" role="tab" aria-selected="true" aria-pressed="true" data-filter="all">همه</button>
         <button class="pg-chip" role="tab" aria-selected="false" aria-pressed="false" data-filter="brand-design">طراحی برند</button>
@@ -173,7 +189,6 @@
         <button class="pg-chip" role="tab" aria-selected="false" aria-pressed="false" data-filter="content-creation">طراحی و تولید محتوا</button>
       </nav>
 
-      <!-- right arrow -->
       <button class="pg-nav is-right" aria-label="اسکرول به چپ">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
@@ -183,238 +198,146 @@
   <div class="pg-grid-wrap">
     <div id="pg-grid" class="pg-grid" aria-live="polite">
 
-      <!-- Existing cards -->
+      <!-- Cards: add data-hover for each item -->
       <article class="pg-card" data-tags="tabligati branding social">
-        <a href="{% url 'jeanwest' %}" class="pg-media" aria-label="Jeanwest">
-          <img src="/static/portfolio/jeanwest/image1.png" alt="Jeanwest"><span class="pg-overlay"></span>
+        <a href="{% url 'jeanwest' %}"
+           class="pg-media has-hover"
+           aria-label="Jeanwest"
+           data-hover="/static/portfolio/thumbnails/jeanwest1.jpg">
+          <img src="/static/portfolio/thumbnails/jeanwest.jpg" alt="Jeanwest">
+          <span class="pg-overlay"></span>
         </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm RaySemiBold">Jeanwest</h3>
-          <a class="pg-link" href="{% url 'jeanwest' %}">See Project</a>
-        </div>
+{#        <div class="pg-content">#}
+{#          <h3 class="pg-title-sm RaySemiBold">Jeanwest</h3>#}
+{#          <a class="pg-link" href="{% url 'jeanwest' %}">See Project</a>#}
+{#        </div>#}
       </article>
 
       <article class="pg-card" data-tags="tabligati social product">
-        <a href="{% url 'portfolio-bunny-mode' %}" class="pg-media" aria-label="Avakatan">
-          <img src="/static/images/avakatan.jpg" alt="Avakatan"><span class="pg-overlay"></span>
+        <a href="{% url 'portfolio-navar' %}"
+           class="pg-media has-hover"
+           aria-label="Avakatan"
+           data-hover="/static/portfolio/thumbnails/navaar1.jpg">
+          <img src="/static/portfolio/thumbnails/navaar.jpg" alt="Avakatan">
+          <span class="pg-overlay"></span>
         </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm RaySemiBold">Avakatan</h3>
-          <a class="pg-link" href="{% url 'portfolio-bunny-mode' %}">See Project</a>
-        </div>
+{#        <div class="pg-content">#}
+{#          <h3 class="pg-title-sm RaySemiBold">Navar</h3>#}
+{#          <a class="pg-link" href="{% url 'portfolio-navar' %}">See Project</a>#}
+{#        </div>#}
       </article>
 
       <article class="pg-card" data-tags="sanati explainer">
-        <a href="{% url 'portfolio-negahban-mammut' %}" class="pg-media" aria-label="Negahban Mammut">
-          <img src="/static/images/negahban.jpg" alt="Negahban Mammut"><span class="pg-overlay"></span>
+        <a href="{% url 'portfolio-negahban-mammut' %}"
+           class="pg-media has-hover"
+           aria-label="Negahban Mammut"
+           data-hover="/static/portfolio/thumbnails/mammut1.jpg">
+          <img src="/static/portfolio/thumbnails/mammut.jpg" alt="Negahban Mammut">
+          <span class="pg-overlay"></span>
         </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Negahban Mammut</h3>
-          <a class="pg-link" href="{% url 'portfolio-negahban-mammut' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="explainer app">
-        <a href="{% url 'portfolio-azki' %}" class="pg-media" aria-label="Azki">
-          <img src="/static/images/azki.jpeg" alt="Azki"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Azki</h3>
-          <a class="pg-link" href="{% url 'portfolio-azki' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="branding tabligati">
-        <a href="{% url 'portfolio-monji' %}" class="pg-media" aria-label="Monji">
-          <img src="/static/images/monji.jpeg" alt="Monji"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Monji</h3>
-          <a class="pg-link" href="{% url 'portfolio-monji' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="explainer product">
-        <a href="{% url 'portfolio-kanirush' %}" class="pg-media" aria-label="Kanirush">
-          <img src="/static/images/kanirush.jpeg" alt="Kanirush"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Kanirush</h3>
-          <a class="pg-link" href="{% url 'portfolio-kanirush' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="sanati branding">
-        <a href="{% url 'portfolio-cheraghbargh' %}" class="pg-media" aria-label="چراغ برق">
-          <img src="/static/images/cheragh.jpg" alt="چراغ برق"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">چراغ برق</h3>
-          <a class="pg-link" href="{% url 'portfolio-cheraghbargh' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="explainer product">
-        <a href="{% url 'portfolio-negah' %}" class="pg-media" aria-label="Negah Holding">
-          <img src="/static/images/portfolio-detail/negah1.jpg" alt="Negah Holding"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm RaySemiBold">Negah Holding</h3>
-          <a class="pg-link" href="{% url 'portfolio-negah' %}">See Project</a>
-        </div>
-      </article>
-
-      <!-- New cards -->
-      <article class="pg-card" data-tags="branding product">
-        <a href="{% url 'portfolio-zelmond' %}" class="pg-media" aria-label="Zelmond">
-          <img src="/static/images/zelmond.jpg" alt="Zelmond"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm RaySemiBold">Zelmond</h3>
-            <a class="pg-link" href="{% url 'portfolio-zelmond' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="explainer product">
-        <a href="{% url 'portfolio-detail' %}" class="pg-media" aria-label="Ghoghnoos NGO">
-          <img src="/static/images/ghoghnoos.jpg" alt="Ghoghnoos NGO"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Ghoghnoos NGO</h3>
-          <a class="pg-link" href="{% url 'portfolio-detail' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="explainer branding">
-        <a href="{% url 'portfolio-lucano' %}" class="pg-media" aria-label="Lucano">
-          <img src="/static/images/lucano.jpg" alt="Lucano"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm RaySemiBold">Lucano</h3>
-          <a class="pg-link" href="{% url 'portfolio-lucano' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="explainer branding">
-        <a href="{% url 'portfolio-mammut-vip-tour' %}" class="pg-media" aria-label="Mammut VIP Tour">
-          <img src="/static/images/mammut-vip.jpeg" alt="Mammut VIP Tour"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Mammut VIP Tour</h3>
-          <a class="pg-link" href="{% url 'portfolio-mammut-vip-tour' %}">See Project</a>
-        </div>
+{#        <div class="pg-content">#}
+{#          <h3 class="pg-title-sm">Negahban Mammut</h3>#}
+{#          <a class="pg-link" href="{% url 'portfolio-negahban-mammut' %}">See Project</a>#}
+{#        </div>#}
       </article>
 
       <article class="pg-card" data-tags="branding product">
-        <a href="{% url 'portfolio-vesta' %}" class="pg-media" aria-label="Vesta">
-          <img src="/static/images/vesta.jpeg" alt="Vesta"><span class="pg-overlay"></span>
+        <a href="{% url 'portfolio-zelmond' %}"
+           class="pg-media has-hover"
+           aria-label="Zelmond"
+           data-hover="/static/images/zelmond1.jpg">
+          <img src="/static/images/zelmond.jpg" alt="Zelmond">
+          <span class="pg-overlay"></span>
         </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm RaySemiBold">Vesta</h3>
-          <a class="pg-link" href="{% url 'portfolio-vesta' %}">See Project</a>
-        </div>
+{#        <div class="pg-content">#}
+{#          <h3 class="pg-title-sm RaySemiBold">Zelmond</h3>#}
+{#          <a class="pg-link" href="{% url 'portfolio-zelmond' %}">See Project</a>#}
+{#        </div>#}
       </article>
 
-      <article class="pg-card" data-tags="branding product">
-        <a href="{% url 'portfolio-vita' %}" class="pg-media" aria-label="Vita heal">
-          <img src="/static/images/vita.jpg" alt="Vita heal"><span class="pg-overlay"></span>
+      <article class="pg-card" data-tags="explainer product">
+        <a href="{% url 'portfolio-detail' %}"
+           class="pg-media has-hover"
+           aria-label="Ghoghnoos NGO"
+           data-hover="/static/images/ghoghnoos1.jpg">
+          <img src="/static/images/ghoghnoos.jpg" alt="Ghoghnoos NGO">
+          <span class="pg-overlay"></span>
         </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Vita heal</h3>
-          <a class="pg-link" href="{% url 'portfolio-vita' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="explainer branding">
-        <a href="{% url 'portfolio-viana' %}" class="pg-media" aria-label="Viana">
-          <img src="/static/images/viana.png" alt="Viana"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Viana</h3>
-          <a class="pg-link" href="{% url 'portfolio-viana' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="explainer branding">
-        <a href="{% url 'portfolio-hapitoo' %}" class="pg-media" aria-label="HapiToo">
-          <img src="/static/images/hapitoo.png" alt="HapiToo"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">HapiToo</h3>
-          <a class="pg-link" href="{% url 'portfolio-hapitoo' %}">See Project</a>
-        </div>
+{#        <div class="pg-content">#}
+{#          <h3 class="pg-title-sm">Ghoghnoos NGO</h3>#}
+{#          <a class="pg-link" href="{% url 'portfolio-detail' %}">See Project</a>#}
+{#        </div>#}
       </article>
 
       <article class="pg-card" data-tags="explainer branding">
-        <a href="{% url 'portfolio-talashim' %}" class="pg-media" aria-label="Talashim">
-          <img src="/static/images/talashim.jpg" alt="Talashim"><span class="pg-overlay"></span>
+        <a href="{% url 'portfolio-lucano' %}"
+           class="pg-media has-hover"
+           aria-label="Lucano"
+           data-hover="/static/images/lucano1.jpg">
+          <img src="/static/images/lucano.jpg" alt="Lucano">
+          <span class="pg-overlay"></span>
         </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Talashim</h3>
-          <a class="pg-link" href="{% url 'portfolio-talashim' %}">See Project</a>
-        </div>
+{#        <div class="pg-content">#}
+{#          <h3 class="pg-title-sm RaySemiBold">Lucano</h3>#}
+{#          <a class="pg-link" href="{% url 'portfolio-lucano' %}">See Project</a>#}
+{#        </div>#}
+      </article>
+
+      <article class="pg-card" data-tags="explainer branding">
+        <a href="{% url 'portfolio-mammut-vip-tour' %}"
+           class="pg-media has-hover"
+           aria-label="Mammut VIP Tour"
+           data-hover="/static/images/mammut-vip1.jpeg">
+          <img src="/static/images/mammut-vip.jpeg" alt="Mammut VIP Tour">
+          <span class="pg-overlay"></span>
+        </a>
+{#        <div class="pg-content">#}
+{#          <h3 class="pg-title-sm">Mammut VIP Tour</h3>#}
+{#          <a class="pg-link" href="{% url 'portfolio-mammut-vip-tour' %}">See Project</a>#}
+{#        </div>#}
+      </article>
+
+      <article class="pg-card" data-tags="explainer branding">
+        <a href="{% url 'portfolio-hapitoo' %}"
+           class="pg-media has-hover"
+           aria-label="HapiToo"
+           data-hover="/static/portfolio/thumbnails/happitoo1.jpg">
+          <img src="/static/portfolio/thumbnails/happitoo.jpg" alt="HapiToo">
+          <span class="pg-overlay"></span>
+        </a>
+{#        <div class="pg-content">#}
+{#          <h3 class="pg-title-sm">HapiToo</h3>#}
+{#          <a class="pg-link" href="{% url 'portfolio-hapitoo' %}">See Project</a>#}
+{#        </div>#}
       </article>
 
       <article class="pg-card" data-tags="product branding">
-        <a href="{% url 'portfolio-dyarino' %}" class="pg-media" aria-label="Dyarino">
-          <img src="/static/images/dyarino.jpg" alt="Dyarino"><span class="pg-overlay"></span>
+        <a href="{% url 'portfolio-dyarino' %}"
+           class="pg-media has-hover"
+           aria-label="Dyarino"
+           data-hover="/static/images/dyarino1.jpg">
+          <img src="/static/images/dyarino.jpg" alt="Dyarino">
+          <span class="pg-overlay"></span>
         </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Dyarino</h3>
-          <a class="pg-link" href="{% url 'portfolio-dyarino' %}">See Project</a>
-        </div>
+{#        <div class="pg-content">#}
+{#          <h3 class="pg-title-sm">Dyarino</h3>#}
+{#          <a class="pg-link" href="{% url 'portfolio-dyarino' %}">See Project</a>#}
+{#        </div>#}
       </article>
 
       <article class="pg-card" data-tags="branding product">
-        <a href="{% url 'portfolio-sbt' %}" class="pg-media" aria-label="SBT">
-          <img src="/static/images/sbt-logo.jpg" alt="SBT"><span class="pg-overlay"></span>
+        <a href="{% url 'portfolio-sbt' %}"
+           class="pg-media has-hover"
+           aria-label="SBT"
+           data-hover="/static/portfolio/thumbnails/sbt1.jpg">
+          <img src="/static/portfolio/thumbnails/sbt.jpg" alt="SBT">
+          <span class="pg-overlay"></span>
         </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">SBT</h3>
-          <a class="pg-link" href="{% url 'portfolio-sbt' %}">See Project</a>
-        </div>
+{#        <div class="pg-content">#}
+{#          <h3 class="pg-title-sm">SBT</h3>#}
+{#          <a class="pg-link" href="{% url 'portfolio-sbt' %}">See Project</a>#}
+{#        </div>#}
       </article>
-
-      <article class="pg-card" data-tags="branding product">
-        <a href="{% url 'portfolio-breaking-muscle' %}" class="pg-media" aria-label="Breaking Muscle">
-          <img src="/static/images/breaking-muscle.jpg" alt="Breaking Muscle"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm RaySemiBold">Breaking Muscle</h3>
-          <a class="pg-link" href="{% url 'portfolio-breaking-muscle' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="branding product">
-        <a href="{% url 'portfolio-netentpoker' %}" class="pg-media" aria-label="Netent Poker">
-          <img src="/static/images/netentpoker.jpg" alt="Netent Poker"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Netent Poker</h3>
-          <a class="pg-link" href="{% url 'portfolio-netentpoker' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="branding product">
-        <a href="{% url 'portfolio-kunzite' %}" class="pg-media" aria-label="Kunzite">
-          <img src="/static/images/kunzite.jpg" alt="Kunzite"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">Kunzite</h3>
-          <a class="pg-link" href="{% url 'portfolio-kunzite' %}">See Project</a>
-        </div>
-      </article>
-
-      <article class="pg-card" data-tags="branding product">
-        <a href="{% url 'portfolio-regenbogen' %}" class="pg-media" aria-label="regenbogen">
-          <img src="/static/images/regenbogen.jpg" alt="regenbogen"><span class="pg-overlay"></span>
-        </a>
-        <div class="pg-content">
-          <h3 class="pg-title-sm">regenbogen</h3>
-          <a class="pg-link" href="{% url 'portfolio-regenbogen' %}">See Project</a>
-        </div>
-      </article>
-      <!-- /new cards -->
 
     </div>
   </div>
@@ -439,6 +362,16 @@
       const WORKS_BASE = '/works';
 
       const isRTL = (el) => getComputedStyle(el).direction === 'rtl';
+
+      // Hover image setup: use explicit data-hover on each .pg-media
+      function initHoverImages() {
+        const medias = $$('.pg-media.has-hover', root);
+        medias.forEach(media => {
+          const hover = media.getAttribute('data-hover');
+          if (!hover) return;
+          media.style.setProperty('--hover-img', `url("${hover}")`);
+        });
+      }
 
       function setActiveChipByFilter(filter) {
         const targetBtn = track.querySelector(`.pg-chip[data-filter="${CSS.escape(filter)}"]`) || track.querySelector('.pg-chip[data-filter="all"]');
@@ -531,7 +464,6 @@
 
         if (pushState) {
           const newPath = activeFilter === 'all' ? WORKS_BASE : `${WORKS_BASE}/${encodeURIComponent(activeFilter)}`;
-          // keep no querystring version canonical
           window.history.replaceState({}, '', newPath);
         }
       }
@@ -567,19 +499,16 @@
         });
       });
 
-      // Init: support /works?f=slug and pretty URLs /works/slug
       (function initFromURL() {
         const url = new URL(window.location);
         const qpFilter = url.searchParams.get('f');
 
         const pathParts = window.location.pathname.replace(/\/+$/,'').split('/').filter(Boolean);
-        // assuming route is /works or /works/<slug>
         const pathFilter = pathParts.length >= 2 && pathParts[0] === 'works' ? decodeURIComponent(pathParts[1]) : null;
 
         const initial = pathFilter || qpFilter || 'all';
         setActiveChipByFilter(initial);
 
-        // normalize URL to pretty path form
         const canonical = initial === 'all' ? WORKS_BASE : `${WORKS_BASE}/${encodeURIComponent(activeFilter)}`;
         if (window.location.pathname + window.location.search !== canonical) {
           window.history.replaceState({}, '', canonical);
@@ -587,6 +516,7 @@
 
         applyFilter(false);
         updateOverflowState();
+        initHoverImages();
       })();
     })();
   </script>
