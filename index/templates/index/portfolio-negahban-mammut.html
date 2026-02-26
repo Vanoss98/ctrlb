@@ -129,7 +129,7 @@
 
 
                 <!-- Top-left -->
-                <div class="col-12 col-lg-6 d-flex justify-content-center">
+                <div class="col-12 col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center">
                     <img
                             src="/static/portfolio/mamoot-guardian/section3-img1.jpg"
                             class="img-fluid"
@@ -174,15 +174,15 @@
 
 
     <section
-  style="
-    width:100%;
-    overflow:hidden;
-    position:relative;
-    user-select:none;
-    -webkit-user-select:none;
-    margin-bottom: 100px;
-  "
->
+      style="
+        width:100%;
+        overflow:hidden;
+        position:relative;
+        user-select:none;
+        -webkit-user-select:none;
+        margin-bottom: 100px;
+      "
+    >
   <style>
     .rd-film-viewport { cursor: grab; }
     .rd-film-viewport:active { cursor: grabbing; }
@@ -196,6 +196,72 @@
       height: auto;
       flex: 0 0 auto;
     }
+
+    .swiper-full-page .swiper-button-next,
+.swiper-full-page .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 80px;
+    opacity: 0.4;
+    -webkit-transition: opacity 250ms ease;
+    transition: opacity 250ms ease;
+    outline: 0;
+    margin-top: 0;
+    background-image: none !important;
+}
+
+.swiper-full-page .swiper-button-next:hover, .swiper-full-page .swiper-button-prev:hover {
+    opacity: 1;
+    }
+
+    
+
+    .rd-film-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      color: #fff;
+      font-size: 32px;
+      background-color: rgb(0,0,0,0.6);
+      padding: 10px;
+      border-radius: 10px;
+      line-height: 48px;
+      text-align: center;
+      cursor: pointer;
+      z-index: 10;
+      user-select: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    @media screen and (max-width:767px){
+      .rd-film-arrow{
+        width: 30px;
+        height: 30px;
+        padding:5px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+      }
+    }
+
+    .rd-film-arrow:hover {
+        transform: translateY(-50%) scale(1.1);
+    }
+
+
+    .rd-left {
+        right: 16px;
+        left: auto;
+    }
+
+    .rd-right {
+        left: 16px;
+        right: auto;
+    }
+
   </style>
 
   <div
@@ -236,12 +302,25 @@
       <img class="rd-film-img" src="/static/portfolio/mamoot-guardian/role3.png" style="" />
       <img class="rd-film-img" src="/static/portfolio/mamoot-guardian/role4.png" style="" />
     </div>
+
+    <div class="rd-film-arrow rd-left" id="rdLeftArrow">
+      <img src="/static/portfolio/mamoot-guardian/arrow-right.webp" style="" />
+    </div>
+
+    <div class="rd-film-arrow rd-right" id="rdRightArrow">
+      <img src="/static/portfolio/mamoot-guardian/arrow-left.png" style="" />
+    </div>
+
+
+              </div>
   </div>
 
   <script>
     (function () {
       const viewport = document.getElementById("rdFilmViewport");
       const track = document.getElementById("rdFilmTrack");
+      const leftArrow = document.getElementById("rdLeftArrow");
+      const rightArrow = document.getElementById("rdRightArrow");
       if (!viewport || !track) return;
 
       let isDown = false;
@@ -249,6 +328,7 @@
       let startOffset = 0;
       let offset = 0;
 
+      /* ===== Loop helpers ===== */
       function getHalfWidth() {
         return track.scrollWidth / 2;
       }
@@ -263,6 +343,7 @@
         track.style.transform = `translate3d(${offset}px,0,0)`;
       }
 
+      /* ===== Drag ===== */
       function clientXFromEvent(e) {
         return e.touches ? e.touches[0].clientX : e.clientX;
       }
@@ -271,6 +352,7 @@
         isDown = true;
         startX = clientXFromEvent(e);
         startOffset = offset;
+        stopAutoplay();
         viewport.style.cursor = "grabbing";
       }
 
@@ -278,15 +360,51 @@
         if (!isDown) return;
         e.preventDefault();
         const x = clientXFromEvent(e);
-        const dx = x - startX;
-        setOffset(startOffset + dx);
+        setOffset(startOffset + (x - startX));
       }
 
       function onUp() {
         isDown = false;
         viewport.style.cursor = "grab";
+        startAutoplay();
       }
 
+      /* ===== Arrows ===== */
+      const STEP = 260;
+
+      leftArrow.addEventListener("click", () => {
+        stopAutoplay();
+        setOffset(offset + STEP);
+        startAutoplay();
+      });
+
+      rightArrow.addEventListener("click", () => {
+        stopAutoplay();
+        setOffset(offset - STEP);
+        startAutoplay();
+      });
+
+      /* ===== Autoplay ===== */
+      let autoplayId = null;
+      const AUTOPLAY_SPEED = 0.85;
+
+      function autoplay() {
+        setOffset(offset - AUTOPLAY_SPEED);
+        autoplayId = requestAnimationFrame(autoplay);
+      }
+
+      function startAutoplay() {
+        if (!autoplayId) autoplay();
+      }
+
+      function stopAutoplay() {
+        if (autoplayId) {
+          cancelAnimationFrame(autoplayId);
+          autoplayId = null;
+        }
+      }
+
+      /* ===== Events ===== */
       viewport.addEventListener("mousedown", onDown);
       window.addEventListener("mousemove", onMove);
       window.addEventListener("mouseup", onUp);
@@ -295,14 +413,17 @@
       viewport.addEventListener("touchmove", onMove, { passive: false });
       viewport.addEventListener("touchend", onUp);
 
-      viewport.addEventListener("dragstart", (e) => e.preventDefault());
+      viewport.addEventListener("mouseenter", stopAutoplay);
+      viewport.addEventListener("mouseleave", startAutoplay);
+
+      viewport.addEventListener("dragstart", e => e.preventDefault());
+      window.addEventListener("resize", () => setOffset(offset));
 
       setOffset(0);
-      window.addEventListener("resize", () => setOffset(offset));
+      startAutoplay();
     })();
-  </script>
+    </script>
 </section>
-
 
 
     <section class="position-relative" style="overflow:hidden;">
@@ -368,7 +489,7 @@
   "
     >
         <!-- Beige band (NOT full height) -->
-        <div
+        <div class="bg-height"
                 style="
     position:absolute;
     left:0;
@@ -379,13 +500,20 @@
     z-index:0;
   "
         ></div>
+        <style>
+          @media screen and (max-width:767px){
+            .bg-height{
+              height:100%;
+            }
+          }
+        </style>
 
         <div class="container-fluid px-0 position-relative" style="z-index:1;">
             <div class="row g-0 align-items-center">
 
                 <!-- LEFT: images -->
                 <div
-                        class="col-lg-7 d-flex flex-column align-items-center"
+                        class="col-lg-7 d-flex flex-column align-items-center mb-4 mb-lg-0"
                         style="padding: 0 3vw; gap: 48px;"
                 >
                     <img
@@ -406,7 +534,7 @@
                 <!-- RIGHT: text -->
                 <div class="col-lg-5">
                     <div
-                            class="position-relative"
+                            class="position-relative pl-4 pl-lg-0"
                             style="direction:rtl; padding: 0 13vw 0 0;"
                     >
                         <!-- Title row (bar aligns to title center) -->
@@ -425,7 +553,7 @@
                                             right: -13vw;
                                             top: 50%;
                                             transform: translateY(-50%);
-                                            width: 90px;
+                                            width: 70px;
                                             height: 40px;
                                             background-color: #005675;
                                       "
@@ -637,7 +765,7 @@
                 style="background-color:#005675; width:85%;"
         >
             <div class="row py-4">
-                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0 d-flex justify-content-center align-items-center">
                     <img
                             src="/static/portfolio/mamoot-guardian/10.jpg"
                             class="img-fluid"
@@ -659,7 +787,7 @@
     </section>
 
 
-    <section
+    <section class="experience-section"
             style="
                 background-image: url('/static/portfolio/mamoot-guardian/back1.png');
                 background-repeat: no-repeat;
@@ -669,10 +797,22 @@
                 height: 110vh;
               "
     >
+
+    <style>
+      @media screen and (max-width:767px){
+        .experience-section{
+          background-image: none !important;
+        }
+        .experience{
+          margin-top: 0 !important;
+          padding: 0 10px !important;
+        }
+      }
+    </style>
         <div class="container-fluid">
             <div class="row">
                 <div
-                        class="col-lg-6 ms-auto"
+                        class="col-lg-6 ms-auto experience"
                         style="direction: rtl; text-align: justify; padding: 4rem 6.5rem; margin-top: 125px"
                 >
                     <h4 style="font-size: 26px; color: #005675" class="pb-4">تجربه رویداد</h4>
@@ -737,7 +877,6 @@
     </section>
 
     <style>
-        @media (min-width: 992px) {
             .section-2 {
                 position: relative;
                 background-image: url("/static/portfolio/mamoot-guardian/section2-big.png");
@@ -790,7 +929,6 @@
                 padding-right: 10px;
                 color: black;
             }
-        }
 
 
         /* ================= HERO ================= */
@@ -816,10 +954,13 @@
             user-select: none;
         }
 
-        @media (max-width: 576px) {
+        @media (max-width: 767px) {
             .hero-gif {
                 width: min(360px, 78vw);
                 top: 38%;
+            }
+            .mg-p-long{
+              font-size:1.7vw
             }
         }
 
