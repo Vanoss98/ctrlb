@@ -3,16 +3,14 @@
 
     <section style="position:relative;">
         <div class="container-fluid px-0 mx-0">
-            <div class="hero">
+            <div class="hero hero-gaurdian">
                 <video
                         src="/static/portfolio/mamoot-guardian/title.mp4"
                         alt="Hero animation"
-                        class="hero-gif"
+                        class="hero-gif gaurdian-video"
                         autoplay
                         muted
-
                         playsinline
-                        style="position:absolute; left:60%; top:35%; transform: translate(-50%, -50%); width: 30%"
                 ></video>
             </div>
         </div>
@@ -49,17 +47,25 @@
         <div class="container-fluid px-0 mx-0 section-2-inner" style="position:relative; z-index:1;">
             <!-- content overlays video -->
             <div class="section-2-content" dir="rtl" style="position:relative;">
+              <div class="row">
+                <div class="col-6 col-sm-12">
+                
                 <p class="mg-blue-tag">کارفرما</p>
                 <p class="mg-p">هلدینگ ماموت - خانواده فردوس</p>
 
                 <p class="mg-blue-tag">سال</p>
                 <p class="mg-p">۱۴۰۲</p>
+              </div>
 
+              <div class="col-6 col-sm-12">
                 <p class="mg-blue-tag">خدمات ارائه شده</p>
                 <p class="mg-p">مشاوره و طراحی <span dir="ltr">Core concept</span> رویداد</p>
                 <p class="mg-p">ایده‌پردازی خلاقانه</p>
                 <p class="mg-p">ساخت انیمیشن</p>
+              </div>
+              </div>
 
+              <div class="col-12 col-sm-6">
                 <p class="mg-p-long">
                     روز پدر ۱۴۰۲، فرصتی برای گرامیداشت مهندس بهروز فردوس فقید، بنیان‌گذار گروه صنعتی ماموت،
                     و رونمایی از کتاب خودزندگینامه ایشان بود. خانواده فردوس قصد داشتند با استفاده از تصاویر و
@@ -70,6 +76,7 @@
                     با توجه به تنوع زمانی و مکانی رویدادهای زندگی ایشان، سبک کلاژ به‌عنوان زبان بصری پروژه انتخاب شد تا
                     روایت بتواند بدون محدودیت میان دوره‌های مختلف حرکت کند.
                 </p>
+              </div>
             </div>
         </div>
     </section>
@@ -500,20 +507,13 @@
     z-index:0;
   "
         ></div>
-        <style>
-          @media screen and (max-width:767px){
-            .bg-height{
-              height:100%;
-            }
-          }
-        </style>
 
         <div class="container-fluid px-0 position-relative" style="z-index:1;">
-            <div class="row g-0 align-items-center">
+            <div class="row g-0 align-items-center flex-column-reverse flex-lg-row">
 
                 <!-- LEFT: images -->
                 <div
-                        class="col-lg-7 d-flex flex-column align-items-center mb-4 mb-lg-0"
+                        class="col-lg-7 d-flex flex-column align-items-center mb-4 mb-lg-0 leftImage"
                         style="padding: 0 3vw; gap: 48px;"
                 >
                     <img
@@ -547,7 +547,7 @@
                             </h3>
 
                             <!-- Blue bar: flush to viewport right, vertically centered to title -->
-                            <div
+                            <div class="bgAfter"
                                     style="
                                             position: absolute;
                                             right: -13vw;
@@ -568,7 +568,7 @@
                             حس خاطره‌انگیز به‌عنوان راوی برگزیده شد تا روایت با صدایی باورپذیر و گرم شنیده شود.
                         </p>
 
-                        <p style="font-size:20px; line-height:24px; text-align:justify; max-width:620px; margin-right:auto;">
+                        <p class="mb-4 mb-lg-0" style="font-size:20px; line-height:24px; text-align:justify; max-width:620px; margin-right:auto;">
                             صداگذاری، نریشن و موسیقی در هماهنگی کامل با تصویر و ریتم انیمیشن طراحی شدند و اجرای زنده
                             ارکستر در مراسم، به تقویت پویایی و تعامل روی صحنه کمک کرد.
                         </p>
@@ -689,14 +689,14 @@
 
 
     <section>
-        <div class="container-fluid" style="width: 80%;">
-            <div class="row">
+        <div class="container-fluid flowerSection" style="width: 80%;">
+            <div class="row d-flex flex-column-reverse flex-lg-row">
                 <!-- Text column -->
                 <div
                         class="col-lg-7 d-flex flex-column justify-content-center align-items-center"
                         style="direction: rtl;"
                 >
-                    <div style="max-width: 88%; padding-top: 200px">
+                    <div class="flowerDiv">
                         <h4
                                 class="pb-4"
                                 style="font-size:26px; color:#005675; text-align:right;"
@@ -716,7 +716,7 @@
 
                 <!-- Image column -->
                 <div
-                        class="col-lg-5 d-flex justify-content-center align-items-center"
+                        class="col-lg-5 d-flex justify-content-center align-items-center flowerWomanImage"
                 >
                     <img
                             src="/static/portfolio/mamoot-guardian/navazande.png"
@@ -798,17 +798,6 @@
               "
     >
 
-    <style>
-      @media screen and (max-width:767px){
-        .experience-section{
-          background-image: none !important;
-        }
-        .experience{
-          margin-top: 0 !important;
-          padding: 0 10px !important;
-        }
-      }
-    </style>
         <div class="container-fluid">
             <div class="row">
                 <div
@@ -842,9 +831,9 @@
                 background-size: contain;
                 background-repeat: no-repeat;
               ">
-        <div class="container-fluid w-75 py-5">
+        <div class="container-fluid w-75 py-5 lastSection">
             <div class="row">
-                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="col-6 d-flex justify-content-center align-items-center">
                     <img
                             src="/static/portfolio/mamoot-guardian/9R5A3403.JPG"
                             class="img-fluid"
@@ -853,7 +842,7 @@
                     >
                 </div>
 
-                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="col-6 d-flex justify-content-center align-items-center">
                     <img
                             src="/static/portfolio/mamoot-guardian/IMG_9269.jpg"
                             class="img-fluid"
@@ -925,7 +914,7 @@
             }
 
             .mg-p {
-                font-size: 2vw;
+                font-size: 1.5vw;
                 padding-right: 10px;
                 color: black;
             }
@@ -954,13 +943,118 @@
             user-select: none;
         }
 
+        .gaurdian-video{
+              position:absolute; 
+              left:60%; 
+              top:35%; 
+              transform: translate(-50%, -50%); 
+              width: 30%
+            }
+
         @media (max-width: 767px) {
             .hero-gif {
-                width: min(360px, 78vw);
-                top: 38%;
+                width: 80%;
+                top: 30%;
+            }
+            .gaurdian-video{
+              left: 50% !important;
             }
             .mg-p-long{
               font-size:1.7vw
+            }
+            .hero-gaurdian{
+                height: 94vh !important;
+                background-size: cover !important;
+              }
+              .mg-p{
+                font-size: 1rem;
+                padding-right: 0;
+              }
+              .mg-blue-tag{
+                font-size: 1.4rem;
+              }
+
+              .mg-p-long {
+                padding-top: 5vw;
+                padding-bottom: 10vw;
+                width: 90%;
+                font-size: 1rem;
+                color: black;
+                position: relative;
+                text-align: justify;
+                margin-right: auto;
+            }
+
+            .section-2-content{
+              width: 95%;
+              margin: 20px auto;
+            }
+
+            .section-2-content::after{
+              right: -1rem;
+              top: calc(10vw + 30vw);
+              width: 3rem;
+            }
+            .section-2{
+              min-height: 150vh;
+            }
+
+            .bg-height{
+              height:100% !important;
+              top: 54% !important;
+            }
+
+            .bgAfter{
+              width: 50px !important;
+            }
+
+            .leftImage img{
+              width: 85% !important;
+            }
+
+            .flowerSection{
+              width: 90% !important;
+            }
+
+            .flowerSection h4{
+              font-size: 20px !important;
+            }
+            .flowerSection p{
+              font-size: 16px !important;
+            }
+            .flowerDiv{
+              max-width: 88%; 
+              padding-top: 80px !important;
+            }
+
+            .flowerWomanImage{
+              margin-top: 60px;
+            }
+
+            .flowerWomanImage img{
+              width: 70% !important;
+            }
+
+            .experience-section{
+              height: 100vh !important;
+            }
+            .experience{
+              margin-top: 0 !important;
+              padding: 0 10px !important;
+            }
+
+            .experience h4{
+              font-size: 23px !important;
+            }
+            .experience p{
+              font-size: 16px !important;
+            }
+            .lastSection{
+              width: 100% !important;
+            }
+              
+            .lastSection img{
+              width: 85% !important;
             }
         }
 
@@ -971,6 +1065,18 @@
             line-height: 1;
             padding-right: 7px;
         }
+
+        .flowerDiv{
+          max-width: 88%; 
+          padding-top: 200px
+        }
+
+        .experience{
+          padding: 0rem 3rem !important;
+          margin-top: 0 !important;
+        }
+
+        
 
 
     </style>
