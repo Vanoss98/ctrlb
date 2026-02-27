@@ -1,19 +1,101 @@
 {% extends 'index/base.html' %}
 {% block content %}
 
+<style>
+    .first-section{
+        min-height: 100vh;
+        background-color: #051f3d;
+        background-image: url('/static/portfolio/navar/Asset 2.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 80px;   /* extra bottom spacing */
+        z-index: 0;
+    }
+    .second-section{
+        background-color: #fbb816;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        padding: 80px 0;
+        margin-top: -40px;
+        position: relative;
+        z-index: 2;
+    }
+    .base-section{
+        background-color: #051f3d;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        padding: 80px 0;
+        margin-top: -40px;
+        position: relative;
+        z-index: 3;
+    }
+    .skeletion-section{
+        background-color: #ecebe2;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        padding: 80px 0;
+        margin-top: -40px;
+        position: relative;
+        z-index: 4;
+    }
+    .image-section{
+        position: relative; 
+        width: 100%; 
+        padding: 200px 0;
+    }
+    .gallery-section{
+        background-color: #ecebe2;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        padding: 80px 0;
+        margin-top: -40px;
+        position: relative;
+        z-index: 6;
+    }
+    .gallery-section .row-cols-1{
+        row-gap: 10px;
+    }
+
+    @media screen and (max-width:767px){
+        .first-section{
+            height: 80vh;
+        }
+        .first-section .img-fluid{
+            max-width: 260px !important;
+        }
+        .second-section .container{
+            padding-top: 0px !important;
+        }
+        .second-section h2 , .base-section h2 , .skeletion-section h2{
+            font-size: 35px !important;
+        }
+        .second-section p , .skeletion-section p , .skeletion-section li{
+            font-size: 16px !important;
+        }
+        .base-section , .skeletion-section , .gallery-section{
+            padding: 10px 0 50px !important;
+        }
+        .base-section .row-cols-1 , .skeletion-section .row-cols-1{
+            row-gap: 1rem;
+        }
+        .image-section{
+            padding: 50px 0 !important;
+        }
+        .image-section img{
+            max-width: 50% !important;
+        }
+        .skeletion-section .colors{
+            gap: 10px;
+        }
+        
+    }
+</style>
+
     <section
-            style="
-    min-height: 100vh;
-    background-color: #051f3d;
-    background-image: url('/static/portfolio/navar/Asset 2.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    overflow: hidden;
-    padding-bottom: 80px;   /* extra bottom spacing */
-    z-index: 0;
-  "
+            class="first-section"
     >
         <div
                 style="
@@ -44,19 +126,10 @@
     </section>
 
     <section
-            class="container-fluid"
-            style="
-                background-color: #fbb816;
-                border-top-left-radius: 40px;
-                border-top-right-radius: 40px;
-                padding: 80px 0;
-                margin-top: -40px;
-                position: relative;
-                z-index: 2;
-              "
+            class="container-fluid second-section"
     >
         <div class="container" style="text-align: justify; direction: rtl; padding-top: 100px;">
-            <h2 class="mb-5 pb-3" style="font-size: 50px">نوار لذت شنیدن</h2>
+            <h2 class="mb-3 mb-lg-5 pb-3" style="font-size: 50px">نوار لذت شنیدن</h2>
             <p class="mb-4" style="font-size: 22px">
                 نوار راه‌حلی برای زندگی شلوغ و پرسرعت امروزی است. این پلتفرم به‌عنوان بستری جهت تولید عرضه محتوای کتاب
                 صوتی آغاز به کار کرد و همزمان با گسترش دامنه‌ی فعالیت و افزوده شدن بستر عرضه پادکست، سریال صوتی و خلاصه
@@ -134,16 +207,7 @@
 
     </section>
     <section
-            class="container-fluid"
-            style="
-    background-color: #051f3d;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    padding: 80px 0;
-    margin-top: -40px;
-    position: relative;
-    z-index: 3;
-  "
+            class="container-fluid base-section"
     >
         <!-- FULL-WIDTH headline wrapper (arrows stick to screen edges) -->
         <div style="position: relative; padding: 40px 0;">
@@ -179,11 +243,11 @@
 
             <!-- Headings stay nicely aligned with your layout -->
             <div class="container py-5" style="text-align: center; direction: rtl;">
-                <h2 class="mb-5 pb-3 pt-5 mt-5" style="font-size: 50px; color: white;">
+                <h2 class="mb-5 pb-3 pt-2 pt-lg-5 mt-3 mt-lg-5" style="font-size: 50px; color: white;">
                     پایه هویت بصری بر خطوط منحنی و فرم‌های گرد استوار است
                 </h2>
 
-                <h2 class="mb-5 pb-3" style="font-size: 50px; color: white;">
+                <h2 class="mb-2 mb-lg-5 pb-3" style="font-size: 50px; color: white;">
                     فرم مثلث جهت تاکید استفاده شده
                 </h2>
             </div>
@@ -237,16 +301,8 @@
     </section>
 
     <section
-            class="container-fluid"
-            style="
-    background-color: #ecebe2;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    padding: 80px 0;
-    margin-top: -40px;
-    position: relative;
-    z-index: 4;
-  "
+            class="container-fluid skeletion-section"
+            
     >
         <!-- Content container (RTL text + list) -->
         <div class="container" style="direction: rtl;">
@@ -303,7 +359,7 @@
         <!-- END container -->
 
         <!-- FULL-WIDTH arrows + centered image (OUTSIDE the container so arrows hit screen edges) -->
-        <div style="position: relative; width: 100%; padding: 200px 0;">
+        <div class="image-section">
 
             <!-- Left edge of screen -->
             <img
@@ -349,19 +405,19 @@
         <!-- Row of 4 images (lg: 4 in a row, md: 2 per row, sm: 1 per row) -->
         <div class="container-fluid text-center" style="padding-top: 40px; padding-bottom: 40px; width: 90%">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <div class="col text-center">
+                <div class="col-6 col-lg-3 d-flex justify-content-center align-items-center">
                     <img src="/static/portfolio/navar/Asset%2043.png" alt="Asset 40" class="img-fluid"
                          style="display:block; margin:0 auto;"/>
                 </div>
-                <div class="col text-center">
+                <div class="col-6 col-lg-3 d-flex justify-content-center align-items-center">
                     <img src="/static/portfolio/navar/Asset%2042.png" alt="Asset 41" class="img-fluid"
                          style="display:block; margin:0 auto;"/>
                 </div>
-                <div class="col text-center">
+                <div class="col-6 col-lg-3 d-flex justify-content-center align-items-center">
                     <img src="/static/portfolio/navar/Asset%2041.png" alt="Asset 42" class="img-fluid"
                          style="display:block; margin:0 auto;"/>
                 </div>
-                <div class="col text-center">
+                <div class="col-6 col-lg-3 d-flex justify-content-center align-items-center">
                     <img src="/static/portfolio/navar/Asset%2040.png" alt="Asset 43" class="img-fluid"
                          style="display:block; margin:0 auto;"/>
                 </div>
@@ -413,7 +469,7 @@
 
             <!-- 3 Color Cards (simple show/hide on hover) -->
             <div class="container py-5" style="direction: rtl;">
-                <div class="row g-4 justify-content-center">
+                <div class="row g-4 justify-content-center colors">
 
                     <!-- Card 1 (Blue) -->
                     <div class="col-12 col-md-4">
@@ -544,7 +600,7 @@
             </h2>
             <!-- 5 rows × 3 cards = 15 cards total (NEW class names) -->
             <div class="container py-5" style="direction: rtl;">
-                <div class="row g-4 justify-content-center">
+                <div class="row g-4 justify-content-center colors">
 
                     <!-- ====== SET 1 ====== -->
                     <div class="col-12 col-md-4 mb-4">
@@ -665,7 +721,7 @@
 
 
             <h2
-                    class="mb-4 mt-5 pt-5"
+                    class="mb-4 mt-2 mt-lg-5 pt-2 pt-lg-5"
                     style="
         font-size: 50px;
         color: #051f3d;
@@ -768,41 +824,28 @@
 
     <!-- SECTION 6 (Gray, rounded top corners, overlays previous section) -->
     <section
-            class="container-fluid"
-            style="
-    background-color: #ecebe2;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    padding: 80px 0;
-    margin-top: -40px;
-    position: relative;
-    z-index: 6;
-  "
+            class="container-fluid gallery-section"
     >
         <div class="container py-5">
 
             <!-- First 3 -->
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col text-center">
+                <div class="col-6 col-lg-4 d-flex justify-content-center align-items-center text-center">
                     <img width="57%" src="/static/portfolio/navar/Asset%2052.png" class="img-fluid"/>
                 </div>
-                <div class="col text-center">
+                <div class="col-6 col-lg-4 d-flex justify-content-center align-items-center text-center">
                     <img width="50%" src="/static/portfolio/navar/Asset%2051.png" class="img-fluid"/>
                 </div>
-                <div class="col text-center">
+                <div class="col-6 col-lg-4 d-flex justify-content-center align-items-center text-center">
                     <img width="50%" src="/static/portfolio/navar/Asset%2050.png" class="img-fluid"/>
                 </div>
-            </div>
-
-            <!-- Extra spacing -->
-            <div class="row row-cols-1 row-cols-md-3 g-4 pt-5 mt-3">
-                <div class="col text-center">
+                <div class="col-6 col-lg-4 d-flex justify-content-center align-items-center text-center">
                     <img width="50%" src="/static/portfolio/navar/Asset%2055.png" class="img-fluid"/>
                 </div>
-                <div class="col text-center">
+                <div class="col-6 col-lg-4 d-flex justify-content-center align-items-center text-center">
                     <img width="55%" src="/static/portfolio/navar/Asset%2054.png" class="img-fluid"/>
                 </div>
-                <div class="col text-center">
+                <div class="col-6 col-lg-4 d-flex justify-content-center align-items-center text-center">
                     <img width="50%" src="/static/portfolio/navar/Asset%2053.png" class="img-fluid"/>
                 </div>
             </div>
