@@ -17,7 +17,7 @@
     .pg-title { font-size: clamp(28px, 4vw, 48px); margin: 0; }
 
     /* Controls */
-    .pg-controls { margin: 8px auto 16px; max-width: 1100px; padding-inline: 8px; }
+    .pg-controls { margin: 8px auto 16px; max-width: 1440px; padding-inline: 8px; }
     .pg-rail {
       position: relative;
       border-radius: 16px;
@@ -67,7 +67,7 @@
     .pg-nav svg { width: 32px; height: 32px; stroke: #ffc609; }
 
     /* Grid + Cards */
-    .pg-grid-wrap { max-width: 1100px; margin: 0 auto; padding: 0 8px 24px; }
+    .pg-grid-wrap { max-width: 1440px; margin: 0 auto; padding: 0 8px 24px; }
     .pg-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -283,17 +283,17 @@
 {#        </div>#}
       </article>
 
-      <article class="pg-card" data-tags="explainer branding">
-        <a href="{% url 'portfolio-mammut-vip-tour' %}"
+        <article class="pg-card" data-tags="branding product">
+        <a href="{% url 'portfolio-sbt' %}"
            class="pg-media has-hover"
-           aria-label="Mammut VIP Tour"
-           data-hover="/static/images/mammut-vip1.jpeg">
-          <img src="/static/images/mammut-vip.jpeg" alt="Mammut VIP Tour">
+           aria-label="SBT"
+           data-hover="/static/portfolio/thumbnails/sbt1.jpg">
+          <img src="/static/portfolio/thumbnails/sbt.jpg" alt="SBT">
           <span class="pg-overlay"></span>
         </a>
 {#        <div class="pg-content">#}
-{#          <h3 class="pg-title-sm">Mammut VIP Tour</h3>#}
-{#          <a class="pg-link" href="{% url 'portfolio-mammut-vip-tour' %}">See Project</a>#}
+{#          <h3 class="pg-title-sm">SBT</h3>#}
+{#          <a class="pg-link" href="{% url 'portfolio-sbt' %}">See Project</a>#}
 {#        </div>#}
       </article>
 
@@ -325,23 +325,35 @@
 {#        </div>#}
       </article>
 
-      <article class="pg-card" data-tags="branding product">
-        <a href="{% url 'portfolio-sbt' %}"
+
+
+
+        <article class="pg-card" data-tags="explainer branding">
+        <a href="{% url 'portfolio-mammut-vip-tour' %}"
            class="pg-media has-hover"
-           aria-label="SBT"
-           data-hover="/static/portfolio/thumbnails/sbt1.jpg">
-          <img src="/static/portfolio/thumbnails/sbt.jpg" alt="SBT">
+           aria-label="Mammut VIP Tour"
+           data-hover="/static/images/mammut-vip1.jpeg">
+          <img src="/static/images/mammut-vip.jpeg" alt="Mammut VIP Tour">
           <span class="pg-overlay"></span>
         </a>
 {#        <div class="pg-content">#}
-{#          <h3 class="pg-title-sm">SBT</h3>#}
-{#          <a class="pg-link" href="{% url 'portfolio-sbt' %}">See Project</a>#}
+{#          <h3 class="pg-title-sm">Mammut VIP Tour</h3>#}
+{#          <a class="pg-link" href="{% url 'portfolio-mammut-vip-tour' %}">See Project</a>#}
 {#        </div>#}
       </article>
-
     </div>
-  </div>
 
+  </div>
+    <section style="max-width: 1440px; margin: auto; margin-top: 50px">
+        <div class="d-flex justify-content-center align-items-center"
+             style="background-color:#005675; height:80vh; margin-top: -20px">
+            <img
+                    src="/static/portfolio/mamoot-guardian/baroot-logo.png"
+                    class="img-fluid"
+                    alt="Baroot Logo" width="250vw"
+            >
+        </div>
+    </section>
   <script>
     (() => {
       const EASE = 'cubic-bezier(.2,.7,.3,1)';
